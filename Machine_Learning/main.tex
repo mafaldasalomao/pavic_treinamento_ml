@@ -104,21 +104,6 @@
 %==========================================================================================
 \begin{frame}
 	\frametitle{Perceptron}
-	\begin{block}{Função de ativação do perceptron}
-		\begin{itemize}
-			\item 0 se for negativo
-			\item 1 se maior ou igual a 0
-		\end{itemize}
-	\end{block}
-	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.4\linewidth]{figures/step_function}
-	\end{figure}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Perceptron}
 	\begin{itemize}
 		\item Modelo mais básico de NN
 		\item Um neurônio
@@ -133,8 +118,7 @@
 	\end{itemize}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.4\linewidth]{figures/neuron_ai.png}
-		\caption{Neurônio Artificial}
+		\includegraphics[width=0.6\linewidth]{figures/linear_regression}
 	\end{figure}
 	
 	\begin{gather*}
@@ -142,6 +126,22 @@
 	\end{gather*}
 \end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Perceptron}
+	\begin{block}{Função de ativação do perceptron}
+		\begin{itemize}
+			\item 0 se for negativo
+			\item 1 se maior ou igual a 0
+		\end{itemize}
+	\end{block}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/step_function}
+	\end{figure}
+\end{frame}
+%==========================================================================================
+
 \begin{frame}
 	\frametitle{Perceptron}
 		\begin{block}{Perceptron Rule}
@@ -161,6 +161,27 @@ Atualização dos pesos:
 
 \end{frame}
 %==========================================================================================
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{Perceptron}
+	\begin{block}{Ponto de partida diferente}
+		Com diferentes pontos de partida, o algoritmo encontra quase a mesma solução, embora com diferentes taxas de convergência.
+		
+		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/random_01.gif?raw=true}{\beamergotobutton{Caso 01}} \\
+		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/random_02.gif?raw=true}{\beamergotobutton{Caso 02}}
+	\end{block}
+	\begin{block}{Learning Rate - Taxa de aprendizagem}
+		\begin{itemize}
+			\item LR = 0.01 a velocidade de convergência é muito lenta.
+			Quando o cálculo se torna complicado, uma taxa de aprendizado muito baixa afetará a velocidade do algoritmo, mesmo nunca atingindo o destino.
+			\item LR = 0.5, o algoritmo se aproxima do alvo muito rapidamente após várias iterações. No entanto, o algoritmo falha ao convergir porque o salto é muito grande, fazendo com que ele fique parado no destino.
+		\end{itemize}
+		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/lr_01.gif}{\beamergotobutton{Caso 01}} \\
+		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/lr_02.gif}{\beamergotobutton{Caso 02}}
+	\end{block}
+\end{frame}
+%==========================================================================================
 \begin{frame}
 	\frametitle{Perceptron}
 	\begin{block}{Perceptron Rule}
@@ -174,21 +195,10 @@ Atualização dos pesos:
 	\begin{gather*}
 		b_i = b_i + \lambda*(y_i -  \hat{y}_i)
 	\end{gather*}
-
+	
 	
 \end{frame}
 
-%==========================================================================================
-\begin{frame}
-	\frametitle{Perceptron}
-	\begin{block}{Ponto de partida diferente}
-		Com diferentes pontos de partida, o algoritmo encontra quase a mesma solução, embora com diferentes taxas de convergência. Abaixo está uma ilustração do algoritmo GD para este problema:
-		
-		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine\%20Learning/figures/random_01.gif?raw=true}{\beamergotobutton{Caso 01}} \\
-		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine\%20Learning/figures/random_02.gif?raw=true}{\beamergotobutton{Caso 02}}
-	\end{block}
-\end{frame}
-%==========================================================================================
 %==========================================================================================
 %==========================================================================================
 %==========================================================================================
