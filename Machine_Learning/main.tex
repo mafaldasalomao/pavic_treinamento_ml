@@ -480,7 +480,6 @@ Atualização dos pesos:
 \end{frame}
 
 %==========================================================================================
-\section{Funções de Ativação}
 \begin{frame}
 	\frametitle{Funções de Ativação}
 	\begin{block}{Linear}
@@ -632,19 +631,84 @@ Atualização dos pesos:
 	\end{figure}
 	
 \end{frame}
-%===================================================================================
 %==========================================================================================
 \begin{frame}
 	\frametitle{Funções de Ativação}
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{figures/mais_activation_functions}
-		\caption{}
-		\label{fig:maisactivationfunctions}
 	\end{figure}
 
 \end{frame}
 %===================================================================================
+%==========================================================================================
+\begin{frame}
+	\frametitle{Funções de Ativação}
+	\begin{alertblock}{ Qual função de ativação usar?}
+		\begin{itemize}
+		\item	Evitar Sigmoid nas camadas ocultas, boa na saída
+		\item	Tanh usada em modelos generativos
+		\item	Relu Muito boa nas camadas ocultas
+		\item	Linear não usar em camadas escondidas
+		\item	Leaky Relu  raramente usadas
+		\end{itemize}
+	\end{alertblock}	
+\end{frame}
+%===================================================================================
+\begin{frame}
+	\frametitle{Funções de Ativação}
+	\begin{block}{Softmax}
+		\begin{itemize}
+			\item $y \in [0, 1]$ e $\sum_y = 1$
+			\item Aplicada em dois ou mais neurônios. Pega saída e converte
+			\item A saída é uma confiança
+			\item Nunca nas camadas ocultas
+			\item Multiclasses
+			\item Saída One-hot Encode
+		\end{itemize}
+		Função:
+		$$S_i = \frac{e^{\hat{y}_i}}{\sum_j e^{\hat{y}_i}} $$
+		Assim para cada k: $P^k = S_i^{[k]}$
+		Derivada: 	$$\frac{\partial S}{\partial y} = p^k * (1-p^k)$$
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Funções de Ativação}
+	\begin{block}{Softmax}
+		\begin{example}
+			$[0.1, 1.3, 2.5] \to [0.07, 0.22, 0.72] $ \\
+			$$\frac{e^{0.1}}{e^{0.1} + e^{0.3} + e^{2.5}}$$
+		\end{example}
+		Função:
+		$$S_i = \frac{e^{\hat{y}_i}}{\sum_j e^{\hat{y}_i}} $$
+		Assim para cada k: $P^k = S_i^{[k]}$
+		Derivada: 	$$\frac{\partial y}{\partial x} =
+		\left\{\begin{matrix}
+			\alpha, x \leq 0
+			\\ 
+			1, x > 0
+		\end{matrix}\right.$$
+	\end{block}
+\end{frame}
+%==========================================================================================
+%==========================================================================================
+\begin{frame}
+	\frametitle{Funções de Ativação}
+	\begin{block}{Vamos ver na prática}
+		Vamos praticar utilizando o notebook 03\_funções de ativação
+	\end{block}
+\end{frame}
+
+%==========================================================================================
+\section{Backpropagation}
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Vamos ver na prática}
+		Vamos praticar utilizando o notebook 03\_funções de ativação
+	\end{block}
+\end{frame}
+
 \section{Se Tornando Expert em Gradientes}
 
 \begin{frame}
