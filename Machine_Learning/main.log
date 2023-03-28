@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  27 MAR 2023 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  27 MAR 2023 20:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -827,31 +827,31 @@ Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subtable=\count357
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-35.
+36.
 
 (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -908,295 +908,47 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 35.
+Package hyperref Info: Link coloring OFF on input line 36.
  (main.out)
 (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 35.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 35.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 35.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 35.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 36.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 35.
+(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 35.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 35.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/b/n on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 35.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 35.
+(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
+(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 35.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 35.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 35.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 35.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmr/b/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmss/b/n --> OT1/lmss/b/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/b/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/b/it on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/b/n on input line 35.
-
-(C:\Program Files\MiKTeX\tex/latex/translator\translator-basic-dictionary-Engli
-sh.dict
-Dictionary: translator-basic-dictionary, Language: English 
-)
-(C:\Program Files\MiKTeX\tex/latex/translator\translator-bibliography-dictionar
-y-English.dict
-Dictionary: translator-bibliography-dictionary, Language: English 
-)
-(C:\Program Files\MiKTeX\tex/latex/translator\translator-environment-dictionary
--English.dict
-Dictionary: translator-environment-dictionary, Language: English 
-)
-(C:\Program Files\MiKTeX\tex/latex/translator\translator-months-dictionary-Engl
-ish.dict
-Dictionary: translator-months-dictionary, Language: English 
-)
-(C:\Program Files\MiKTeX\tex/latex/translator\translator-numbers-dictionary-Eng
-lish.dict
-Dictionary: translator-numbers-dictionary, Language: English 
-)
-(C:\Program Files\MiKTeX\tex/latex/translator\translator-theorem-dictionary-Eng
-lish.dict
-Dictionary: translator-theorem-dictionary, Language: English 
-)
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
- (main.nav)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-7.
- (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-37.
-
-(C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-37.
-
-(C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 37.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 37.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
-
-
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
-
-
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 37.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 37.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 37.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 37.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 37.
-<ente.png, id=33, 642.4pt x 731.73375pt>
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 37.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [1
-
-{C:/Users/salom/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./ente.png>]
- (main.toc)
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 42.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [2
-
-]
-<figures//neuron.png, id=101, 1276.77pt x 1300.86pt>
-File: figures//neuron.png Graphic file (type png)
-<use figures//neuron.png>
-Package pdftex.def Info: figures//neuron.png  used on input line 57.
-(pdftex.def)             Requested size: 136.91603pt x 139.48244pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 57.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [3
-
- <./figures//neuron.png>]
-<figures/neuron_ai.png, id=132, 1159.33125pt x 788.9475pt>
-File: figures/neuron_ai.png Graphic file (type png)
-<use figures/neuron_ai.png>
-Package pdftex.def Info: figures/neuron_ai.png  used on input line 69.
-(pdftex.def)             Requested size: 136.91603pt x 93.16481pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 69.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [4
-
- <./figures/neuron_ai.png>]
-<figures/neuron.png, id=162, 1276.77pt x 1300.86pt>
-File: figures/neuron.png Graphic file (type png)
-<use figures/neuron.png>
-Package pdftex.def Info: figures/neuron.png  used on input line 85.
-(pdftex.def)             Requested size: 154.03183pt x 156.93015pt.
-File: figures/neuron_ai.png Graphic file (type png)
-<use figures/neuron_ai.png>
-Package pdftex.def Info: figures/neuron_ai.png  used on input line 85.
-(pdftex.def)             Requested size: 154.03183pt x 104.81793pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 85.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [5
-
- <./figures/neuron.png>]
-File: figures/neuron_ai.png Graphic file (type png)
-<use figures/neuron_ai.png>
-Package pdftex.def Info: figures/neuron_ai.png  used on input line 103.
-(pdftex.def)             Requested size: 136.91603pt x 93.16481pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 103.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-
-[6
-
-]
-<figures/linear_regression.png, id=226, 861.2175pt x 520.94624pt>
-File: figures/linear_regression.png Graphic file (type png)
-<use figures/linear_regression.png>
-Package pdftex.def Info: figures/linear_regression.png  used on input line 127.
-
-(pdftex.def)             Requested size: 205.37926pt x 124.2268pt.
-
-Overfull \vbox (62.07976pt too high) detected at line 127
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 127.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[7
-
- <./figures/linear_regression.png>]
-<figures/step_function.png, id=272, 897.3525pt x 918.43124pt>
-File: figures/step_function.png Graphic file (type png)
-<use figures/step_function.png>
-Package pdftex.def Info: figures/step_function.png  used on input line 142.
-(pdftex.def)             Requested size: 136.91603pt x 140.12712pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 142.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [8
-
- <./figures/step_function.png>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 162.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-
-[9
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 183.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [10
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 200.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [11
-
-]
-Overfull \vbox (14.27077pt too high) detected at line 243
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 243.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[12
-
-]
-\tf@nav=\write6
-\openout6 = `main.nav'.
-
-\tf@toc=\write7
-\openout7 = `main.toc'.
-
-\tf@snm=\write8
-\openout8 = `main.snm'.
-
- (main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 56AA7348C9608EE1BB01A729FCDDEA8A;308.
- ) 
-Here is how much of TeX's memory you used:
- 25071 strings out of 475385
- 495945 string characters out of 2786721
- 807492 words of memory out of 3000000
- 45889 multiletter control sequences out of 15000+600000
- 515335 words of font info for 62 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 128i,16n,122p,427b,694s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/M
-iKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips
-/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Pro
-gram Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
-ss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Program Files/MiKTeX/fonts/typ
-e1/public/lm/lmss9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/lm/lmsy10.pfb>
-Output written on main.pdf (12 pages, 1628830 bytes).
-PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 473 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+(Font)                  OT1/lmss
