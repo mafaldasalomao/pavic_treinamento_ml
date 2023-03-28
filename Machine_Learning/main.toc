@@ -3,4 +3,4 @@
 \beamer@sectionintoc {3}{Neurônio Sigmoide}{19}{0}{3}
 \beamer@sectionintoc {4}{Funções de Ativação}{28}{0}{4}
 \beamer@sectionintoc {5}{Backpropagation}{44}{0}{5}
-\beamer@sectionintoc {6}{Se Tornando Expert em Gradientes}{45}{0}{6}
+\beamer@sectionintoc {6}{Se Tornando Expert em Gradientes}{47}{0}{6}

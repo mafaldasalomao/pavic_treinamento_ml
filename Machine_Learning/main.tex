@@ -3,10 +3,12 @@
 \usecolortheme{default}
 \usepackage{amsmath,amssymb,lmodern}
 \usepackage{caption}
+\usepackage{listings}
 \usepackage{animate}
 \usepackage{subcaption}
 \usepackage{xcolor}
 \usepackage{graphicx} %Loading the package
+
 \graphicspath{{figures/}} %Setting the graphicspath
 \title[Machine Learning]
 {Treinamento de Machine Learning e Deep Learning}
@@ -704,11 +706,67 @@ Atualização dos pesos:
 \section{Backpropagation}
 \begin{frame}
 	\frametitle{Backpropagation}
-	\begin{block}{Vamos ver na prática}
-		Vamos praticar utilizando o notebook 03\_funções de ativação
+	\begin{block}{Para que usamos o \textit{backpropagation}?}
+		Utilizamos o Backpropagation no treinamento das redes neurais
 	\end{block}
+	\begin{example}
+		Vamos tomar uma função simples de multiplicação:
+		$$f(x, y) = x * y$$
+			
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{figures/simple_multiply_gate}
+		\end{figure}
+	\end{example}
 \end{frame}
 
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+		Vamos tomar uma função simples de multiplicação:
+		$$f(x, y) = x * y$$
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{figures/simple_multiply_gate_part1}
+		\end{figure}
+		\alert{Com que força alterar as entradas desse circuito para de maneira ``leve'' alteremos a saída?}
+	\end{example}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+		Vamos tomar uma função simples de multiplicação:
+		$$f(x, y) = x * y$$
+		
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{figures/simple_multiply_gate_part2}
+\end{figure}
+		
+	\end{example}
+\end{frame}
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
+%==========================================================================================
 \section{Se Tornando Expert em Gradientes}
 
 \begin{frame}
