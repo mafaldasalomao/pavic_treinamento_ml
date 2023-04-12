@@ -771,24 +771,57 @@ Atualização dos pesos:
 	\frametitle{Backpropagation}
 	\begin{block}{Vamos ver na prática}
 		Vamos praticar utilizando o notebook 03\_backpropagation
+		Será apresentado a busca aleatória e a busca aleatória local
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
 	\frametitle{Backpropagation}
+	\begin{block}{Como atualizamos os pesos?}
+		Diante disso... \\
+		É possível encontrar a força de atualização dos pesos com \alert{derivadas}
+		
+			\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/random_01.gif?raw=true}{\beamergotobutton{Figura demonstrando}} 
+	\end{block}
+	\begin{block}{Qual a definição básica de derivada?}
+		A derivada em relação à $x$ pode ser definida como:
+		$$f'(x) = \lim_{h\rightarrow 0} \frac{f(x + h) - f (x))}{h}$$
+		Neste caso, o $h$ tende a $0$, ou seja, é um valor bem pequeno.
+	\end{block}
+\end{frame}
+%==========================================================================================
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Qual a definição básica de derivada parcial?}
+		E se tivéssemos $n$ argumentos (componentes)? \\
+		A derivada parcial de uma função com $n$ argumentos $(x_1, x_2, x_3,...,x_n)$ é dada por:
+		$$\frac{\partial f}{\partial x_i}(x_1,...,x_n) = \lim_{h \rightarrow 0} \frac{f(x_1, ...,x_i + h, x_n) - f (x_1, ..., x_n))}{h}$$
+		Basta derivar cada elemento, ou cada componente da função.
+	\end{block}
+\begin{example}
+	Derivada da função $f(x) = x^2$ \\
+	$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
+\end{example}
+\end{frame}
+%==========================================================================================
+\begin{frame}
 	\begin{example}
-		O Problema.....
-		\begin{itemize}
-			\item Para qual direção seguir?
-			\item Com que velocidade seguir?
-			\item Como sei se cheguei no local mais baixo?
-		\end{itemize}
-		
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.5\linewidth]{figures/alpinista.png}
-		\end{figure}
-		
+		Derivada da função $f(x) = x^2$ \\
+		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
+		$h \rightarrow 0$ tende a zero \\
+		$f(x + h)$ é p próprio $f(x)$ somado com um pequeno passo \\
+		$- f(x)$ que é a própria função \\
+		Dividido por $h$ normalizando a derivação \\
+		$$\frac{(x+h)^2 - x^2}{h} \rightarrow \frac{x^2+ 2xh +h^2 - x^2}{h} \rightarrow \frac{h(2x + h)}{h} \rightarrow 2x+h  \rightarrow 2x$$
+	\end{example}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\begin{example}
+		Derivada da função $f(x) = x*y$ \\
+		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
+		$$\frac{(x+h)^2 - x^2}{h} \rightarrow \frac{x^2+ 2xh +h^2 - x^2}{h} \rightarrow \frac{h(2x + h)}{h} \rightarrow 2x+h  \rightarrow 2x$$
 	\end{example}
 \end{frame}
 %==========================================================================================
