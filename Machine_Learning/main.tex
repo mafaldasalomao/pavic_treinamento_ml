@@ -2,6 +2,7 @@
 \usetheme{Madrid}
 \usecolortheme{default}
 \usepackage{amsmath,amssymb,lmodern}
+\usepackage[thicklines]{cancel}
 \usepackage{caption}
 \usepackage{listings}
 \usepackage{animate}
@@ -806,6 +807,7 @@ Atualização dos pesos:
 \end{frame}
 %==========================================================================================
 \begin{frame}
+	\frametitle{Backpropagation}
 	\begin{example}
 		Derivada da função $f(x) = x^2$ \\
 		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
@@ -813,19 +815,75 @@ Atualização dos pesos:
 		$f(x + h)$ é p próprio $f(x)$ somado com um pequeno passo \\
 		$- f(x)$ que é a própria função \\
 		Dividido por $h$ normalizando a derivação \\
-		$$\frac{(x+h)^2 - x^2}{h} \rightarrow \frac{x^2+ 2xh +h^2 - x^2}{h} \rightarrow \frac{h(2x + h)}{h} \rightarrow 2x+h  \rightarrow 2x$$
+		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
+		\renewcommand{\CancelColor}{\color{red}}
+		$$\frac{(x+h)^2 - x^2}{h} \rightarrow \frac{\cancel{x^2}+ 2xh +h^2 - \cancel{ x^2}}{h} \rightarrow \frac{\cancel{h}(2x + h)}{\cancel{h}} \rightarrow 2x+\cancelto{0}{h}  \rightarrow 2x$$
 	\end{example}
 \end{frame}
 %==========================================================================================
 \begin{frame}
+	\frametitle{Backpropagation}
 	\begin{example}
 		Derivada da função $f(x) = x*y$ \\
 		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
-		$$\frac{(x+h)^2 - x^2}{h} \rightarrow \frac{x^2+ 2xh +h^2 - x^2}{h} \rightarrow \frac{h(2x + h)}{h} \rightarrow 2x+h  \rightarrow 2x$$
+		\renewcommand{\CancelColor}{\color{red}}
+		$$\frac{\partial f(x,y)}{\partial x} = \frac{(x+h)y - xy}{h} = \frac{\cancel{xy} + yh - \cancel{ xy}}{h} = \frac{y\cancel{h}}{\cancel{h}} = y$$
+		$$\frac{\partial f(x,y)}{\partial y} = \frac{x(y+h) - xy}{h} = \frac{\cancel{xy} + xh - \cancel{ xy}}{h} = \frac{x\cancel{h}}{\cancel{h}} = x$$
 	\end{example}
 \end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Mais de duas variáveis na função...}
+		E se a função tiver 3 componentes?
+		$f(x,y,z) = (x+y)z$
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/circuitxyz}
+		\end{figure}
+	Neste caso, a melhor opção é decompor a função em subfunções, ou pequenos circuitos
+	\end{block}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Mais de duas variáveis na função...}
+		$f(x,y,z) = (x+y)z$ \\
+		$q(x,y) = x+y$ \\
+		$f(q,z) = qz$ \\
+	\end{block}
+\begin{example}
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			$$q(x,y) = x+y$$ \\
+			$$\frac{\partial f(x,y)}{\partial x} = 1$$ \\
+			$$\frac{\partial f(x,y)}{\partial y} = 1$$ \\
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			$$f(q,z) = qz$$ \\
+			$$\frac{\partial f(x,y)}{\partial q} = z$$ \\
+			$$\frac{\partial f(x,y)}{\partial z} = q$$ \\
+		\end{column}
+	\end{columns}
+\end{example}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Mais de duas variáveis na função...}
+		Se quisermos calcular a derivada em relação a uma entrada, utilizamos a regra da cadeia: \\
+		Ex: derivada em relação a $x$ de $f$
+		\begin{itemize}
+			\item É a derivada de $q$ em relação a $f$ 
+			\item Derivada de $x$ em relação a $q$
+		\end{itemize}
+	\end{block}
+	\begin{example}
+				$$\frac{\partial f(x,y)}{\partial x} = \frac{\partial f(x,y)}{\partial q} * \frac{\partial f(x,y)}{\partial x}$$ \\
+				$$\frac{\partial f(x,y)}{\partial y} = \frac{\partial f(x,y)}{\partial q} * \frac{\partial f(x,y)}{\partial y}$$ \\
+				$$\frac{\partial f(x,y)}{\partial z} = q$$ 
+	\end{example}
+\end{frame}
 %==========================================================================================
 %==========================================================================================
 %==========================================================================================
