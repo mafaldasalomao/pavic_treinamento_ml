@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.17)  13 APR 2023 09:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.17)  14 APR 2023 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1609,14 +1609,119 @@ Package pdftex.def Info: ente.png  used on input line 886.
 [55
 
 ]
-Overfull \vbox (14.27077pt too high) detected at line 936
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 899.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [56
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 912.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [57
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 927.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [58
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 945.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [59
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 963.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [60
+
+]
+<figures/sigmoidneuron_derivative.png, id=2360, 1833.85126pt x 650.43pt>
+File: figures/sigmoidneuron_derivative.png Graphic file (type png)
+<use figures/sigmoidneuron_derivative.png>
+Package pdftex.def Info: figures/sigmoidneuron_derivative.png  used on input li
+ne 979.
+(pdftex.def)             Requested size: 239.60567pt x 84.97571pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 979.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [61
+
+ <./figures/sigmoidneuron_derivative.png>]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1001.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+
+[62
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1025.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [63
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1056.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [64
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1079.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [65
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1088.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [66
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1113.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [67
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1125.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [68
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1143.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [69
+
+]
+Overfull \vbox (14.27077pt too high) detected at line 1180
  []
 
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 936.
+Package pdftex.def Info: ente.png  used on input line 1180.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[56
+[70
 
 ]
 \tf@nav=\write6
@@ -1628,21 +1733,26 @@ Package pdftex.def Info: ente.png  used on input line 936.
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
- (main.aux)
+
+
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (69 not 70).
+               Rerun to correct this.
+
+(main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 27B35EE6E7FA15C5F5A749F537223A56;794.
  ) 
 Here is how much of TeX's memory you used:
- 27085 strings out of 476339
- 532968 string characters out of 5797934
- 1874340 words of memory out of 5000000
- 46826 multiletter control sequences out of 15000+600000
+ 27250 strings out of 476339
+ 538286 string characters out of 5797934
+ 1876340 words of memory out of 5000000
+ 46962 multiletter control sequences out of 15000+600000
  561497 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,122p,398b,879s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTe
-X/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/
-lm-ts1.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Progra
+ 128i,17n,122p,398b,879s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/M
+iKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/
+lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Progra
 m Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Program Files/MiKTeX/fonts/
 type1/public/amsfonts/latxfont/linew10.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb
@@ -1654,10 +1764,10 @@ ts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/
 lmsso10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsso12.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lms
-y8.pfb>
-Output written on main.pdf (56 pages, 3079619 bytes).
+y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (70 pages, 3260596 bytes).
 PDF statistics:
- 2290 PDF objects out of 2487 (max. 8388607)
- 123 named destinations out of 1000 (max. 500000)
- 1920 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2911 PDF objects out of 2984 (max. 8388607)
+ 151 named destinations out of 1000 (max. 500000)
+ 2621 words of extra memory for PDF output out of 10000 (max. 10000000)
 

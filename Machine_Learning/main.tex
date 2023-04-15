@@ -885,18 +885,262 @@ Atualização dos pesos:
 	\end{example}
 \end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Mais de duas variáveis na função...}
+		Vamos verificar se dividindo a função principal em subfunções é válido.
+	\end{block}
+	\begin{example}
+		\renewcommand{\CancelColor}{\color{red}}
+		$\frac{\partial f(x,y, z)}{\partial x} = \lim_{h \rightarrow 0 }\frac{f(x+h, y,z) - f(x,y,z)}{h} = $ \\ 
+		
+		$ \frac{(x+h + y)*z - (x + y)*z}{h} = $ \\ $\frac{\cancel{xz}+hz + \cancel{yz} - \cancel{xz} - \cancel{yz}}{h} = $ \\ $\frac{\cancel{h}z}{\cancel{h}} = z $
+	\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Mais de duas variáveis na função...}
+		Vamos verificar se dividindo a função principal em subfunções é válido.
+	\end{block}
+	\begin{example}
+		\renewcommand{\CancelColor}{\color{red}}
+		$\frac{\partial f(x,y, z)}{\partial y} = \lim_{h \rightarrow 0 }\frac{f(x, y+h,z) - f(x,y,z)}{h} = $ \\ 
+		
+		$ \frac{(x + y + h)*z - (x + y)*z}{h} = $ \\ $\frac{\cancel{xz}+hz + \cancel{yz} - \cancel{xz} - \cancel{yz}}{h} = $ \\ $\frac{\cancel{h}z}{\cancel{h}} = z $
+	\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Mais de duas variáveis na função...}
+		Vamos verificar se dividindo a função principal em subfunções é válido.
+	\end{block}
+	\begin{example}
+		\renewcommand{\CancelColor}{\color{red}}
+		$\frac{\partial f(x,y, z)}{\partial z} = \lim_{h \rightarrow 0 }\frac{f(x, y,z+h) - f(x,y,z)}{h} = $ \\ 
+		
+		$ \frac{(x + y)*(z + h) - (x + y)*z}{h} = $ \\ $\frac{\cancel{xz}+xh + \cancel{yz} + yh - \cancel{xz} - \cancel{yz}}{h} = $ \\ $\frac{xh + yh}{h} =  $\\ $\frac{\cancel{h}(x + y)}{\cancel{h}} = x + y $
+		
+		Podemos notar que a saída é a porta de soma, ou seja. o próprio $q$
+	\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Vamos derivar o Neurônio Sigmoide}
+		\begin{itemize}
+			\item $y \in [0, + 1]$
+			\item Regressão Logística
+			\item Geralmente interpretada como probabilidade
+			\item Saída não centrada em $0$
+			\item Satura os gradientes
+			\item Não indicada para camadas ocultas
+			\item Converge lentamente
+		\end{itemize}
+		Função:
+		$$f(x) = \frac{1}{1-e^{-x}}$$
+	%	Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
+	\end{block}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Vamos derivar o Neurônio Sigmoide}
+		\begin{itemize}
+			\item $y \in [0, + 1]$
+			\item Regressão Logística
+			\item Geralmente interpretada como probabilidade
+			\item Saída não centrada em $0$
+			\item Satura os gradientes
+			\item Não indicada para camadas ocultas
+			\item Converge lentamente
+		\end{itemize}
+		Função:
+		$$f(x) = \frac{1}{1-e^{-x}}$$
+		%	Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
+	\end{block}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Vamos derivar o Neurônio Sigmoide}
+		Função:
+		$f(w, x) = \frac{1}{1-e^{-x}}$ \\ 
+		O $w$ são os pesos e o $x$ as entradas... \\
+		$f(w, x) = \frac{1}{1-e^{-(w_0x_0 + w_1x_1 + w_2)}}$
+		%	Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/sigmoidneuron_derivative}
+		\end{figure}
+		
+	\end{block}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+		Vamos praticar um pouquinho... \\
+		A derivada de $x = a * b$ é: \\
+		$da = b * dx$ \\
+		Sempre teremos a derivada de dentro \alert{$da $} multiplicando a derivada de quem está fora \alert{$dx$}. Desta forma, podemos decompor qualquer função complexa. E $db = a * dx$
+		\begin{columns}
+			\begin{column}{0.35\textwidth}
+				 $$x = a * b$$ 
+				$$da = b * dx$$ 
+				$$db = a * dx$$ 
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				$$x = a + b$$ 
+				$$da = 1 * dx$$ 
+				$$db = 1 * dx$$ 
+			\end{column}
+		\end{columns}
+	\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+		Vamos ver a derivada da função $x = a + b + c$ \\
+		Primeiro vamos dividir por partes: 
+		$q = a+b$ e  $x = q+c$ 
+		\begin{columns}
+			\begin{column}{0.35\textwidth}
+				$$dq = 1 * dx$$
+				$$dc = 1 * dx$$
+				$$db = 1 * dq$$
+				$$da = 1 * dq$$
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				$$x = a + b + c$$ 
+				$$da = 1 * dx$$ 
+				$$db = 1 * dx$$
+				$$dc = 1 * dx$$ 
+			\end{column}
+		\end{columns}
+		Intuitivamente pode-se perceber que a derivação da soma sempre será $1 * dx$
+	\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+
+		\begin{columns}
+			\begin{column}{0.35\textwidth}
+				\begin{example}
+					$$x = a * b + c$$
+					$$q = a*b dx$$ 
+					$$x = q+c$$ 
+					$$dq = 1 * dx$$
+					$$dc = 1 * dx$$
+					$$db = a * dq$$
+					$$da = b * dq$$
+				\end{example}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\begin{example}
+					$$x = a * a$$ 
+					$$da = 2a * dx$$
+				\end{example} 
+				\begin{example}
+				$$x = a * a + b * b + c * c$$ 
+				$$da = 2a * dx$$
+				$$db = 2b * dx$$
+				$$dc = 2c * dx$$
+			\end{example} 
+			\end{column}
+		\end{columns}
+
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+		Vamos ver este exemplo mais complexo
+		\begin{columns}
+			\begin{column}{0.35\textwidth}
+				$$x = ((a * b + c) * d)^2$$
+				$$x_1 = a*b+c$$ 
+				$$x_2 = x_1*d$$ 
+				$$x = x_2 * x_2 $$
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				$$dx_2 = 2x_2 * dx$$ 
+				$$dx_1 = d * dx_2$$ 
+				$$dd = x_1*dx_2$$
+				$$da = b*dx_1$$
+				$$db = a*dx_1$$
+				$$dc = 1*dx_1$$
+			\end{column}
+		\end{columns}
+	\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+		\begin{example}
+			Vamos ver este exemplo de divisão
+			$$x = \frac{1}{a}$$
+			$$da = (\frac{1}{a*a})*dx_1$$
+		\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			
+				$$x = \frac{a+ b}{c +d}$$
+				$$x_1 = a + b$$
+				$$x_2 = c + d$$
+				$$x_3 = \frac{1}{x_2} $$
+				$$x = x_1 * x_3$$
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			$$dx_1 = x_3 * dx$$
+			$$dx_3 = x_1 * dx$$
+			$$dx_2 = \frac{1}{x_2 * x_2}*dx_3$$
+			$$dc = 1 * dx_2$$
+			$$dd = 1 * dx_2$$
+			$$da = 1 * dx_1$$
+			$$db = 1 * dx_1$$
+		\end{column}
+	\end{columns}
+\end{example}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}
+		$$x = max(a, b)$$
+		$$da = x == a ? 1 * dx : 0$$
+		$$da = x == b ? 1 * dx : 0$$
+		Lembram da Relu?
+		$$x = max(0, a)$$
+		$$da = a> 0 ? 1 * dx : 0$$
+	\end{example}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Como fazer derivação de matrizes}
+		O que vimos até agora foram números escalares... \\
+		Como derivar uma matriz?
+	\end{block}
+	\begin{example}	
+		$W = np.random.randn(5, 10)$
+		$X = np.random.randn(3, 10)$
+		$Y = X.dot(W^T)$ 
+		Multiplicação
+		$dY = np.random.randn(*Y.shape)$
+		$dW = dY^T.dot(X)$
+		$dY = dY.dot(W)$
+		A derivada de uma matriz deverá possuir o mesmo shape da matriz original, neste caso $Y$ tem $3x5$ e $dY$ também
+	\end{example}
+\end{frame}
 %==========================================================================================
 %==========================================================================================
 %==========================================================================================
