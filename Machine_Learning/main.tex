@@ -1083,7 +1083,7 @@ Atualização dos pesos:
 		\begin{example}
 			Vamos ver este exemplo de divisão
 			$$x = \frac{1}{a}$$
-			$$da = (\frac{1}{a*a})*dx_1$$
+			$$da = (-\frac{1}{a*a})*dx_1$$
 		\end{example}
 \end{frame}
 %==========================================================================================
@@ -1102,7 +1102,7 @@ Atualização dos pesos:
 		\begin{column}{0.35\textwidth}
 			$$dx_1 = x_3 * dx$$
 			$$dx_3 = x_1 * dx$$
-			$$dx_2 = \frac{1}{x_2 * x_2}*dx_3$$
+			$$dx_2 = - \frac{1}{x_2 * x_2}*dx_3$$
 			$$dc = 1 * dx_2$$
 			$$dd = 1 * dx_2$$
 			$$da = 1 * dx_1$$
@@ -1131,32 +1131,92 @@ Atualização dos pesos:
 		Como derivar uma matriz?
 	\end{block}
 	\begin{example}	
-		$W = np.random.randn(5, 10)$
-		$X = np.random.randn(3, 10)$
-		$Y = X.dot(W^T)$ 
-		Multiplicação
-		$dY = np.random.randn(*Y.shape)$
-		$dW = dY^T.dot(X)$
-		$dY = dY.dot(W)$
-		A derivada de uma matriz deverá possuir o mesmo shape da matriz original, neste caso $Y$ tem $3x5$ e $dY$ também
+		
+		$W = np.random.randn(5, 10)$ \\
+		$X = np.random.randn(3, 10)$ \\
+		$Y = X.dot(W^T)$ \\
+		$W$ são nossos pesos, $X$ nossas entradas, $Y$ a saída \\
+		$10$ é a dimensão da entrada, $3$ Qtd de amostras, $5$ Qtd de neurônios. \\
+		Anteriormente só tínhamos 1 neurônio \\ 
+		A multiplicação de uma matriz de $3x10 * 10x5$ gerará uma saída $3x5$
 	\end{example}
 \end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{example}	
+		Vamos imaginar que nosso $Y = WX$
+		Se a multiplicação de uma matriz de $3x10 * 10x5$ gerará uma saída $3x5$ a derivação de $dY$ deverá ter a dimensão de $3x5$. Assim, a derivada de uma matriz sempre terá o shape da matriz original \\
+		$dY = np.random.randn(*Y.shape)$ \\
+		A derivada de $W$ dado $Y = WX$ será o de dentro * o de fora $X * dY$, assim: \\
+		$dW = dY^T.dot(X)$\\
+		A derivada de $X$ dado $Y = WX$ será o de dentro * o de fora $W * dY$, assim: \\
+		$dY = dY.dot(W)$
+		
+		\alert{A derivada de uma matriz deverá possuir o mesmo \textit{shape} da matriz original, neste caso $Y$ tem $3x5$ e $dY$ também}
+	\end{example}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Resumo das derivadas}
+		Vamos tomar este exemplo:
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/simple_circuit}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Resumo das derivadas}
+		Vamos tomar este exemplo:
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/simple_circuit2}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Derivando o neurônio Sigmoide}
+		Agora que sabemos como derivar, vamos retornar ao neurônio Sigmoide:
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/sigmoidneuron_derivative}
+		\end{figure}
+	\end{block}
+\end{frame}
 %==========================================================================================
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Derivando o neurônio Sigmoide}
+		Vamos fazer o processo de \textit{forward}.
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/sigmoid_example}
+		\end{figure}
+	\end{block}
+\end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Backpropagation}
+	\begin{block}{Derivando o neurônio Sigmoide}
+		Após o \textit{forward}, faremos agora a propagação reversa ou \textit{backpropagation}.
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/sigmoid_example_backprop}
+		\end{figure}
+	\end{block}
+\end{frame}
 %==========================================================================================
 \section{Se Tornando Expert em Gradientes}
 
 \begin{frame}
 \frametitle{Highlighting text}
-
-\begin{gather}
-	W = np.random.randn(5, 10) \\
-	X = np.random.randn(3, 10) \\
-	Y = X.dot(W^{T}) \\
-	f(x)
-\end{gather}
 %
 %\begin{align}
 %	a + b  q q= c \\        
