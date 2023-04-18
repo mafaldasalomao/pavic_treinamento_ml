@@ -1213,7 +1213,46 @@ Atualização dos pesos:
 	\end{block}
 \end{frame}
 %==========================================================================================
-\section{Se Tornando Expert em Gradientes}
+\begin{frame}
+	\frametitle{Funções de Ativação}
+	\begin{block}{Vamos ver na prática}
+		Vamos praticar utilizando o notebook 04\_backpropagation
+	\end{block}
+\end{frame}
+%==========================================================================================
+
+
+
+
+\section{Redes Neurais Profundas}
+
+\begin{frame}
+	\frametitle{Redes Neurais Profundas}
+	\begin{block}{Dimensão das matrizes}
+		Até o momento vimos que um neurônio pode ser dado pela equação: $y = f(xw^T + b)$. Sendo $f$ uma função de ativação. A função de ativação não altera o \textit{shape} dos dados. \\
+		A princípio tivemos $x = [1x D_{in}]$ \textit{shape}. Onde $1$ era a quantidade de amostras e $D_{in}$ o dimensões da amostra, por exemplo, a porta OR que recebe duas entradas $(x_1, x_2)$, assim $D_{in} = 2$. \\
+		O mesmo ocorre para a saída, $y = [1x D_{out}]$ \textit{shape}. Onde $1$ era a quantidade de amostras e $D_{out}$ a dimensão de saída, em todos casos visto até agora igual a $1$. Mas podemos ter quantas saídas forem necessárias. \\
+		Mas qual a dimensão do \textit{bias} e dos nossos pesos?
+				
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Redes Neurais Profundas}
+	\begin{block}{Dimensão das matrizes}
+		Assim...
+		\begin{itemize}
+			\item $x = [1x D_{in}]$
+			\item $y = [1x D_{out}]$
+			\item $bias = [1x D_{out}]$
+			\item $w^T = [D_{in} x D_{out}]$
+			\item $[1x D_{out}] = [1 x D_{in}] * [D_{in} x D_{out}] + [1x D_{out}]$
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Highlighting text}
