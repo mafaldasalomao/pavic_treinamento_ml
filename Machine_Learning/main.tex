@@ -1237,7 +1237,7 @@ Atualização dos pesos:
 	\end{block}
 \end{frame}
 
-
+%==========================================================================================
 \begin{frame}
 	\frametitle{Redes Neurais Profundas}
 	\begin{block}{Dimensão das matrizes}
@@ -1249,12 +1249,177 @@ Atualização dos pesos:
 			\item $w^T = [D_{in} x D_{out}]$
 			\item $[1x D_{out}] = [1 x D_{in}] * [D_{in} x D_{out}] + [1x D_{out}]$
 		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Redes Neurais Profundas}
+	\begin{block}{Dimensão das matrizes}
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/simple_nn1}
+				\end{figure}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				\begin{table}[]
+					\begin{tabular}{|l|l|l|l|}
+						\hline
+						$[1 x D_{in}]$ & $[D_{in} x D_{out}]$ &  $[1x D_{out}]$ & $ [1x D_{out}]$ \\ \hline
+						$1X3$ & $3x4$ &  $1x4$ & $1x4$  \\ \hline
+					\end{tabular}
+				\end{table}
+			A multiplicação das matrizes $1X3 * 3x4$ nos retornará uma matriz $1x4$, que deve ser a mesma dimensão do \textit{bias}. \\
+			\textit{B} = $1x4$ Cada neurônio possui um bias.
+			\end{column}
+		\end{columns}
+
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Redes Neurais Profundas}
+	\begin{block}{Dimensão das matrizes}
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/simple_nn2}
+				\end{figure}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				X = $1X4$ \\
+				W = $4x4$ \\
+				Y = $1x4$ \\
+				A multiplicação das matrizes $1X4 * 4x4$ nos retornará uma matriz $1x4$, que deve ser a mesma dimensão do \textit{bias}. \\
+				\textit{B} = $1x4$ Cada neurônio possui um bias.
+			\end{column}
+		\end{columns}
 		
 	\end{block}
 \end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Redes Neurais Profundas}
+	\begin{block}{Dimensão das matrizes}
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/simple_nn3}
+				\end{figure}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				X = $1X4$ \\
+				W = $4x1$ \\
+				Y = $1x1$ \\
+				A multiplicação das matrizes $1X1 * 4x1$ nos retornará uma matriz $1x1$, que deve ser a mesma dimensão do \textit{bias}. \\
+				\textit{B} = $1x1$ Cada neurônio possui um bias.
+			\end{column}
+		\end{columns}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Redes Neurais Profundas}
+	\begin{block}{Dimensão das matrizes}
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/simple_nn}
+				\end{figure}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				Quantos parâmetros treináveis esta rede possui? \\
+				$12 + 4$  \\
+				$16 + 4$  \\
+				$4 + 1$  \\
+				$41$ Parâmetros
+			\end{column}
+		\end{columns}
+	\end{block}
+\end{frame}
+%==========================================================================================
+
+
+\section{Funções de Custo}
+
+\begin{frame}
+	\frametitle{Funções de Custo - Regressão}
+		\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\begin{block}{MAE- mean of absolute errors}
+				$$J = \frac{1}{N} \sum |y_i - \hat{y}_i|$$ \\
+				$$\frac{\partial J}{\partial \hat{y}} = \frac{1}{N} \left\{\begin{matrix}
+					+1 se \hat{y} > y
+					\\ 
+					-1 se \hat{y} < y
+				\end{matrix}\right.$$ 
+			\end{block}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{block}{MSE- mean of squared errors}
+				$$J = \frac{1}{2N} \sum |y_i - \hat{y}_i|^2$$ \\
+				$$\frac{\partial J}{\partial \hat{y}} = -(y-\hat{y})\frac{1}{N}$$ 
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
+%==========================================================================================
+
+\begin{frame}
+	\frametitle{Funções de Custo - Classificação binária}
+	\begin{block}{Sigmoid Cross Entropy}
+		$$J = \frac{1}{N} \sum y_iln(\hat{y}_i)+(1-y_i)ln(1-\hat{y}_i)$$ \\
+		$$\frac{\partial J}{\partial \hat{y}} = \frac{-(y-\hat{y})}{\hat{y}(1-\hat{y})}\frac{1}{N}$$ 
+	\end{block}
+\end{frame}
+
+%==========================================================================================
+
+\begin{frame}
+	\frametitle{One hot Encode}
+	\begin{block}{One hot Encode}
+		Antes de falar sobre classificação de classes, vamos entender a seguinte situação:
+		\begin{columns}
+			\begin{column}{0.4 \textwidth}
+				\begin{table}[]
+					\begin{tabular}{|l|l|}
+						\hline
+						y & One-hot \\ \hline
+						1 & 1 0 0 0 \\ \hline
+						2 & 0 1 0 0 \\ \hline
+						3 & 0 0 1 0 \\ \hline
+						4 & 0 0 0 1 \\ \hline
+					\end{tabular}
+				\end{table}
+			\end{column}
+			\begin{column}{0.4 \textwidth}
+				\begin{table}[]
+					\begin{tabular}{|l|l|}
+						\hline
+						y & One-hot \\ \hline
+						3 & 0 0 1 0 \\ \hline
+						2 & 0 1 0 0 \\ \hline
+						4 & 0 0 0 1 \\ \hline
+						1 & 1 0 0 0 \\ \hline
+					\end{tabular}
+				\end{table}
+			\end{column}
+		\end{columns}
+
+
+	\end{block}
+\end{frame}
+
+%==========================================================================================
 
 
 \begin{frame}
+	
 \frametitle{Highlighting text}
 %
 %\begin{align}
