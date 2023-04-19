@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.17)  19 APR 2023 09:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.17)  19 APR 2023 10:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1818,11 +1818,11 @@ Package pdftex.def Info: ente.png  used on input line 1279.
 <figures/simple_nn2.png, id=3157, 1050.92625pt x 834.11626pt>
 File: figures/simple_nn2.png Graphic file (type png)
 <use figures/simple_nn2.png>
-Package pdftex.def Info: figures/simple_nn2.png  used on input line 1301.
+Package pdftex.def Info: figures/simple_nn2.png  used on input line 1306.
 (pdftex.def)             Requested size: 136.91603pt x 108.66801pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1301.
+Package pdftex.def Info: ente.png  used on input line 1306.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [80
 
@@ -1830,11 +1830,11 @@ Package pdftex.def Info: ente.png  used on input line 1301.
 <figures/simple_nn3.png, id=3198, 1050.92625pt x 834.11626pt>
 File: figures/simple_nn3.png Graphic file (type png)
 <use figures/simple_nn3.png>
-Package pdftex.def Info: figures/simple_nn3.png  used on input line 1323.
+Package pdftex.def Info: figures/simple_nn3.png  used on input line 1333.
 (pdftex.def)             Requested size: 136.91603pt x 108.66801pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1323.
+Package pdftex.def Info: ente.png  used on input line 1333.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [81
 
@@ -1842,41 +1842,55 @@ Package pdftex.def Info: ente.png  used on input line 1323.
 <figures/simple_nn.png, id=3235, 1050.92625pt x 749.80125pt>
 File: figures/simple_nn.png Graphic file (type png)
 <use figures/simple_nn.png>
-Package pdftex.def Info: figures/simple_nn.png  used on input line 1344.
+Package pdftex.def Info: figures/simple_nn.png  used on input line 1360.
 (pdftex.def)             Requested size: 136.91603pt x 97.68352pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1344.
+Package pdftex.def Info: ente.png  used on input line 1360.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
 [82
 
  <./figures/simple_nn.png>]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1370.
+Package pdftex.def Info: ente.png  used on input line 1386.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [83
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1379.
+Package pdftex.def Info: ente.png  used on input line 1395.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [84
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1416.
+Package pdftex.def Info: ente.png  used on input line 1432.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [85
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1444.
+Package pdftex.def Info: ente.png  used on input line 1446.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [86
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1471.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [87
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1507.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [88
 
 ]
 \tf@nav=\write6
@@ -1893,10 +1907,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8EC371FA5D0C5FE4C9CB07866ABB3840;878.
  ) 
 Here is how much of TeX's memory you used:
- 27502 strings out of 476339
- 545606 string characters out of 5797934
- 1877340 words of memory out of 5000000
- 47173 multiletter control sequences out of 15000+600000
+ 27528 strings out of 476339
+ 546478 string characters out of 5797934
+ 1880340 words of memory out of 5000000
+ 47195 multiletter control sequences out of 15000+600000
  561497 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,122p,398b,879s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1915,9 +1929,9 @@ lmsso10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsso12.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lms
 y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (86 pages, 3980197 bytes).
+Output written on main.pdf (88 pages, 4008492 bytes).
 PDF statistics:
- 3572 PDF objects out of 3580 (max. 8388607)
- 184 named destinations out of 1000 (max. 500000)
- 3269 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3681 PDF objects out of 4296 (max. 8388607)
+ 188 named destinations out of 1000 (max. 500000)
+ 3437 words of extra memory for PDF output out of 10000 (max. 10000000)
 
