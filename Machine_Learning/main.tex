@@ -1470,9 +1470,38 @@ Atualização dos pesos:
 	\end{alertblock}
 \end{frame}
 %==========================================================================================
+\begin{frame}
+	\frametitle{Funções de Custo}
+	\begin{block}{Qual função de custo utilizar?}
+	\begin{table}[]
+		\begin{tabular}{c|ccc|}
+			\cline{2-4}
+			& \multicolumn{3}{c|}{Problema}                                             \\ \hline
+			\multicolumn{1}{|c|}{} &
+			\multicolumn{1}{c|}{Regressão} &
+			\multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Classificação\\ Binária\end{tabular}} &
+			\begin{tabular}[c]{@{}c@{}}Classificação\\ Multiclasse\end{tabular} \\ \hline
+			\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}\#neurônios\\ ult. camada\end{tabular}} & \multicolumn{1}{c|}{\#outputs} & \multicolumn{1}{c|}{1}       & \#classes \\ \hline
+			\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}F. Ativação\\ ult. camada\end{tabular}} & \multicolumn{1}{c|}{Linear}    & \multicolumn{1}{c|}{Sigmoid} & Linear    \\ \hline
+			\multicolumn{1}{|c|}{F. de Custo} &
+			\multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}MSE, MAE,\\ SSE, ...\end{tabular}} &
+			\multicolumn{1}{c|}{Cross Entropy} &
+			\begin{tabular}[c]{@{}c@{}}Softmax +\\ Neg. Log-Likelihood\end{tabular} \\ \hline
+		\end{tabular}
+	\end{table}
+	\end{block}
+\end{frame}
 
+%==========================================================================================
 
-
+%==========================================================================================
+\begin{frame}
+	\frametitle{Funções de Ativação}
+	\begin{block}{Vamos ver na prática}
+		Vamos praticar utilizando o notebook 05\_redesneuraisintuicao
+	\end{block}
+\end{frame}
+%==========================================================================================
 
 
 
