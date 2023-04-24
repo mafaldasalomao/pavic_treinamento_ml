@@ -5,3 +5,4 @@
 \beamer@sectionintoc {5}{Backpropagation}{44}{0}{5}
 \beamer@sectionintoc {6}{Redes Neurais Profundas}{77}{0}{6}
 \beamer@sectionintoc {7}{Funções de Custo}{83}{0}{7}
+\beamer@sectionintoc {8}{Rede Neural do Zero}{90}{0}{8}

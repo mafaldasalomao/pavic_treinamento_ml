@@ -1388,8 +1388,8 @@ Atualização dos pesos:
 
 \begin{frame}
 	\frametitle{Funções de Custo - Classificação binária}
-	\begin{block}{Sigmoid Cross Entropy}
-		$$J = \frac{1}{N} \sum y_iln(\hat{y}_i)+(1-y_i)ln(1-\hat{y}_i)$$ \\
+	\begin{block}{Binary Cross Entropy}
+		$$J = -\frac{1}{N} \sum y_iln(\hat{y}_i)+(1-y_i)ln(1-\hat{y}_i)$$ \\
 		$$\frac{\partial J}{\partial \hat{y}} = \frac{-(y-\hat{y})}{\hat{y}(1-\hat{y})}\frac{1}{N}$$ 
 	\end{block}
 \end{frame}
@@ -1503,9 +1503,45 @@ Atualização dos pesos:
 \end{frame}
 %==========================================================================================
 
+\section{Rede Neural do Zero}
 
-
-
+\begin{frame}
+	\frametitle{Funções de Custo - Regressão}
+	\begin{block}{Passo 1}
+		Primeiramente vamos implementar nossas funções de custo... \\
+		Será Utilizado o notebook 06\_rede neural
+	\end{block}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\begin{block}{MAE- mean of absolute errors}
+				$$J = \frac{1}{N} \sum |y_i - \hat{y}_i|$$ \\
+				$$\frac{\partial J}{\partial \hat{y}} = \frac{1}{N} \left\{\begin{matrix}
+					+1 se \hat{y} > y
+					\\ 
+					-1 se \hat{y} < y
+				\end{matrix}\right.$$ 
+			\end{block}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{block}{MSE- mean of squared errors}
+				$$J = \frac{1}{2N} \sum |y_i - \hat{y}_i|^2$$ \\
+				$$\frac{\partial J}{\partial \hat{y}} = -(y-\hat{y})\frac{1}{N}$$ 
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Funções de Custo - Classificação binária}
+	\begin{block}{Passo 2}
+		Vamos implementar nossas funções de custo... \\
+	\end{block}
+	\begin{block}{Binary Cross Entropy}
+		$$J = -\frac{1}{N} \sum y_iln(\hat{y}_i)+(1-y_i)ln(1-\hat{y}_i)$$ \\
+		$$\frac{\partial J}{\partial \hat{y}} = \frac{-(y-\hat{y})}{\hat{y}(1-\hat{y})}\frac{1}{N}$$ 
+	\end{block}
+\end{frame}
+%==========================================================================================
 
 
 
