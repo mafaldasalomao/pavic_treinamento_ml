@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  26 APR 2023 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  26 APR 2023 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2010,24 +2010,119 @@ Package pdftex.def Info: ente.png  used on input line 1668.
 [97
 
  <./figures/pesos_glorot_normal.png>]
-<figures/weights_init.png, id=3939, 1031.35312pt x 251.43938pt>
+<figures/weights_init.png, id=3940, 1031.35312pt x 251.43938pt>
 File: figures/weights_init.png Graphic file (type png)
 <use figures/weights_init.png>
-Package pdftex.def Info: figures/weights_init.png  used on input line 1678.
-(pdftex.def)             Requested size: 171.14764pt x 41.72357pt.
+Package pdftex.def Info: figures/weights_init.png  used on input line 1680.
+(pdftex.def)             Requested size: 342.2953pt x 83.44714pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1678.
+Package pdftex.def Info: ente.png  used on input line 1680.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [98
 
  <./figures/weights_init.png>]
+File: figures/weights_init.png Graphic file (type png)
+<use figures/weights_init.png>
+Package pdftex.def Info: figures/weights_init.png  used on input line 1690.
+(pdftex.def)             Requested size: 342.2953pt x 83.44714pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1690.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+
+[99
+
+]
 File: ente.png Graphic file (type png)
 <use ente.png>
 Package pdftex.def Info: ente.png  used on input line 1706.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [100
 
-[99
+]
+<figures/dropout.png, id=4059, 239.39438pt x 118.94438pt>
+File: figures/dropout.png Graphic file (type png)
+<use figures/dropout.png>
+Package pdftex.def Info: figures/dropout.png  used on input line 1716.
+(pdftex.def)             Requested size: 342.2953pt x 170.08371pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1716.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [101
+
+ <./figures/dropout.png>]
+Overfull \vbox (9.96326pt too high) detected at line 1734
+ []
+
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1734.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+[102
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1753.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [103
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1770.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [104
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1786.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [105
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1801.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [106
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1813.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [107
+
+]
+<figures/comparacao_regularizacao.jpeg, id=4335, 1081.03876pt x 395.4775pt>
+File: figures/comparacao_regularizacao.jpeg Graphic file (type jpg)
+<use figures/comparacao_regularizacao.jpeg>
+Package pdftex.def Info: figures/comparacao_regularizacao.jpeg  used on input l
+ine 1826.
+(pdftex.def)             Requested size: 342.2953pt x 125.22176pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1826.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [108
+
+ <./figures/comparacao_regularizacao.jpeg>]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1844.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [109
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1870.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [110
 
 ]
 \tf@nav=\write6
@@ -2041,7 +2136,7 @@ Package pdftex.def Info: ente.png  used on input line 1706.
 
 
 
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (98 not 99).
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (109 not 110).
                Rerun to correct this.
 
 (main.aux)
@@ -2049,10 +2144,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7859767D568B7DADD9E0DEA182936BC1;1025.
  ) 
 Here is how much of TeX's memory you used:
- 27641 strings out of 475385
- 550094 string characters out of 2786721
- 850713 words of memory out of 3000000
- 48227 multiletter control sequences out of 15000+600000
+ 27782 strings out of 475385
+ 554431 string characters out of 2786721
+ 853748 words of memory out of 3000000
+ 48341 multiletter control sequences out of 15000+600000
  518469 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,122p,427b,876s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -2070,10 +2165,11 @@ ts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/
 lmsso10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsso12.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lms
-y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (99 pages, 4287548 bytes).
+y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (110 pages, 4475464 bytes).
 PDF statistics:
- 4150 PDF objects out of 4296 (max. 8388607)
- 211 named destinations out of 1000 (max. 500000)
- 3942 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4596 PDF objects out of 5155 (max. 8388607)
+ 233 named destinations out of 1000 (max. 500000)
+ 4348 words of extra memory for PDF output out of 10000 (max. 10000000)
 

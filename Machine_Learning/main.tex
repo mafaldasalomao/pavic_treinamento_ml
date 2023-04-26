@@ -1672,13 +1672,177 @@ Atualização dos pesos:
 	\begin{block}{Qual método de inicialização utilizar?}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.5\linewidth]{figures/weights_init}
+		\includegraphics[width=1\linewidth]{figures/weights_init}
 	\end{figure}
+	Vamos ver isso na prática utilizando o notebook das Redes Neurais! \\
+	Vamos refazer nossos experimentos e analisar os resultados
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Métodos de Inicialização de Pesos}
+	\begin{block}{Qual método de inicialização utilizar?}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/weights_init}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Dropout}
+		\begin{itemize}
+			\item Zerar aleatoriamente a ativação de alguns neurônios por camada utilizando uma probabilidade $p$
+			\item Se $p=0.5$ é a probabilidade de zerar 50\% dos neurônios
+			\item Cuidado para não tornar a rede ineficiente
+			\item A cada iteração diferentes neurônios serão desabilitados, dando a ideia do treinamento de varias sub-redes
+			\item os neurônios subsequentes não recebem dados de todos neurônios anteriores.
+			\item Uma das melhores técnicas de regularização
+			\item Só aplicado no banco de treinamento
+			\item Só usado quando ocorre overfitting
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Dropout}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/dropout}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L1}
+		\begin{itemize}
+			\item Criar uma rede menor capaz de resolver o problema
+			\item Solução esparsas, atualizando alguns pesos e bias para zeros
+			\item Semelhante ao Dropout
+			\item Ela deixa apenas os atributos mais relevantes para a rede
+			\item A rede é obrigada a aprender com pesos pequenos! E ter o mesmo resultado
+			\item A dificuldade é estimar o $\lambda$
+			\item Só usado quando ocorre overfitting
+		\end{itemize}
+	$$J = L(y, w, b) + \frac{\lambda}{m} \sum ||w||$$
+	$L(y, w, b)$ é nossa Cost Function \\
+	Na L1 é adicionado o termo $ \frac{\lambda}{m} \sum ||w||$  somar o valor absoluto dos pesos e multiplicar por um fator de regularização $\lambda$ e dividir pela Qtd. de amostras. Adicionado isso á nossa MSE, MAE,...
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L1}
+		A derivada da regularização... \\
+		Vamos tomar como exemplo a MSE
+		$$J = \frac{1}{2} \sum (y - \hat{y})^2 + \frac{\lambda}{m} \sum |w|$$
+		A derivada da MSE é:
+		$\frac{\partial J1}{\partial w} = -(y - \hat{y})x$ \\
+		A derivada do termo pode ser dado por:
+		$$\frac{\partial J2}{\partial w} =  \left\{\begin{matrix}
+			+1, w > 0
+			\\ 
+			-1, w < 0
+		\end{matrix}\right.$$
+	Vamos aplicar isso na formula de atualização dos pesos:
+	$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos 
 	\end{block}
 \end{frame}
 %==========================================================================================
 
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L1}
+		Vamos aplicar isso na formula de atualização dos pesos:
+		$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos \\
+		Agora... Já que a derivada da soma é a soma das derivadas \\
+		$w = w - \eta [\frac{\partial J1}{\partial w} + \frac{\partial J2}{\partial w}]$ \\
+		Agora vamos atualizar os pesos da seguinte forma:
+		$$w =  \left\{\begin{matrix}
+			w - \eta [-(y-\hat{y})x + \frac{\lambda}{m}], w > 0
+			\\ 
+			w - \eta [-(y-\hat{y})x - \frac{\lambda}{m}], w < 0
+		\end{matrix}\right.$$
+	\end{block}
+\end{frame}
+%==========================================================================================
 
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L2}
+		\begin{itemize}
+			\item Criar uma rede na qual nenhum atributo seja tão mais importante que os outros
+			\item Diminui e espalha os valores dos pesos
+			\item Mais utilizada que a L1
+			\item Conhecida como Weight decay
+			\item A dificuldade é estimar o $\lambda$
+			\item Só usado quando ocorre overfitting
+		\end{itemize}
+		$$J = L(y, w, b) + \frac{\lambda}{2m} \sum w_i^2$$
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L2}
+		A derivada da regularização... \\
+		Vamos tomar como exemplo a MSE
+		$$J = \frac{1}{2} \sum (y - \hat{y})^2 + \frac{\lambda}{2m} \sum w_i^2$$
+		A derivada da MSE é:
+		$\frac{\partial J1}{\partial w} = -(y - \hat{y})x$ \\
+		A derivada do termo pode ser dado por:
+		$$\frac{\partial J2}{\partial w} =  \frac{\lambda w}{m}$$
+		Vamos aplicar isso na formula de atualização dos pesos:
+		$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos 
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L2}
+		Vamos aplicar isso na formula de atualização dos pesos:
+		$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos \\
+		Agora... Já que a derivada da soma é a soma das derivadas \\
+		$w = w - \eta [\frac{\partial J1}{\partial w} + \frac{\partial J2}{\partial w}]$ \\
+		Agora vamos atualizar os pesos da seguinte forma:
+		$$w =  w - \eta [-(y-\hat{y})x + \frac{\lambda w}{m}]$$
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnicas de Regularização}
+	\begin{block}{Regularização L2}
+		Vamos ver o impacto da regularização nestas imagens
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/comparacao_regularizacao}
+		\end{figure}
+	Vamos implementar no notebook de redes neurais os métodos de regularização vistos
+	\end{block}
+
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Técnica Momentum}
+	\begin{block}{Momentum}
+		\begin{itemize}
+			\item Utilizada no gradiente descendente
+			\item Adiciona velocidade ao Gradiente Descendente
+			\item Soma o gradiente da iteração anterior multiplicado pr fator momentum
+			\item Conhecida como Weight decay
+			\item A dificuldade é estimar o $\lambda$
+			\item Só usado quando ocorre overfitting
+		\end{itemize}
+		
+		$$\triangledown w = \eta \frac{\partial J}{\partial w} + \mu \triangledown w^{t-1}$$
+		Vamos implementar no notebook de redes neurais os métodos de regularização vistos
+	\end{block}
+	
+\end{frame}
+%==========================================================================================
 
 \begin{frame}
 	
