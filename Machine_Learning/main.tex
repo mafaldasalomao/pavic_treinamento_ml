@@ -1831,10 +1831,11 @@ Atualização dos pesos:
 		\begin{itemize}
 			\item Utilizada no gradiente descendente
 			\item Adiciona velocidade ao Gradiente Descendente
-			\item Soma o gradiente da iteração anterior multiplicado pr fator momentum
-			\item Conhecida como Weight decay
-			\item A dificuldade é estimar o $\lambda$
-			\item Só usado quando ocorre overfitting
+			\item Soma o gradiente da iteração anterior $t-1$ multiplicado por um fator momentum $\mu$
+			\item 	\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/nomomentum1d.gif?raw=true}{\beamergotobutton{Sem Momentum}}
+			\item \href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/momentum1d.gif?raw=true}{\beamergotobutton{Com Momentum}}
+			\item Fonte \href{https://machinelearningcoban.com/2017/01/16/gradientdescent2/}{\beamergotobutton{Fonte}}
+			
 		\end{itemize}
 		
 		$$\triangledown w = \eta \frac{\partial J}{\partial w} + \mu \triangledown w^{t-1}$$
