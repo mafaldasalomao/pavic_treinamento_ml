@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  26 APR 2023 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  27 APR 2023 09:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2113,16 +2113,170 @@ Package pdftex.def Info: ente.png  used on input line 1826.
  <./figures/comparacao_regularizacao.jpeg>]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1845.
+Package pdftex.def Info: ente.png  used on input line 1844.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [109
 
 ]
+<figures/minibatch.png, id=4419, 1854.93pt x 472.76625pt>
+File: figures/minibatch.png Graphic file (type png)
+<use figures/minibatch.png>
+Package pdftex.def Info: figures/minibatch.png  used on input line 1866.
+(pdftex.def)             Requested size: 342.2953pt x 87.23676pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1871.
+Package pdftex.def Info: ente.png  used on input line 1866.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [110
+
+ <./figures/minibatch.png>]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1897.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [111
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1910.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [112
+
+]
+<figures/lr_decay1.png, id=4538, 870.25125pt x 652.4375pt>
+File: figures/lr_decay1.png Graphic file (type png)
+<use figures/lr_decay1.png>
+Package pdftex.def Info: figures/lr_decay1.png  used on input line 1938.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+<figures/lr_decay2.png, id=4539, 870.25125pt x 652.4375pt>
+File: figures/lr_decay2.png Graphic file (type png)
+<use figures/lr_decay2.png>
+Package pdftex.def Info: figures/lr_decay2.png  used on input line 1938.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+<figures/lr_decay3.png, id=4540, 870.25125pt x 652.4375pt>
+File: figures/lr_decay3.png Graphic file (type png)
+<use figures/lr_decay3.png>
+Package pdftex.def Info: figures/lr_decay3.png  used on input line 1938.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1938.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [113
+
+ <./figures/lr_decay1.png> <./figures/lr_decay2.png> <./figures/lr_decay3.png>]
+<figures/lr_decay4.png, id=4580, 870.25125pt x 652.4375pt>
+File: figures/lr_decay4.png Graphic file (type png)
+<use figures/lr_decay4.png>
+Package pdftex.def Info: figures/lr_decay4.png  used on input line 1967.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+<figures/lr_decay5.png, id=4581, 870.25125pt x 652.4375pt>
+File: figures/lr_decay5.png Graphic file (type png)
+<use figures/lr_decay5.png>
+Package pdftex.def Info: figures/lr_decay5.png  used on input line 1967.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+<figures/lr_decay6.png, id=4582, 870.25125pt x 652.4375pt>
+File: figures/lr_decay6.png Graphic file (type png)
+<use figures/lr_decay6.png>
+Package pdftex.def Info: figures/lr_decay6.png  used on input line 1967.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1967.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [114
+
+ <./figures/lr_decay4.png> <./figures/lr_decay5.png> <./figures/lr_decay6.png>]
+<figures/lr_decay7.png, id=4622, 870.25125pt x 652.4375pt>
+File: figures/lr_decay7.png Graphic file (type png)
+<use figures/lr_decay7.png>
+Package pdftex.def Info: figures/lr_decay7.png  used on input line 1995.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+<figures/lr_decay8.png, id=4623, 870.25125pt x 652.4375pt>
+File: figures/lr_decay8.png Graphic file (type png)
+<use figures/lr_decay8.png>
+Package pdftex.def Info: figures/lr_decay8.png  used on input line 1995.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+<figures/lr_decay9.png, id=4624, 870.25125pt x 652.4375pt>
+File: figures/lr_decay9.png Graphic file (type png)
+<use figures/lr_decay9.png>
+Package pdftex.def Info: figures/lr_decay9.png  used on input line 1995.
+(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1995.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [115
+
+ <./figures/lr_decay7.png> <./figures/lr_decay8.png> <./figures/lr_decay9.png>]
+<figures/early_stop.png, id=4665, 1085.55562pt x 879.285pt>
+File: figures/early_stop.png Graphic file (type png)
+<use figures/early_stop.png>
+Package pdftex.def Info: figures/early_stop.png  used on input line 2010.
+(pdftex.def)             Requested size: 119.80544pt x 97.03023pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 2010.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [116
+
+ <./figures/early_stop.png>]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 2025.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [117
+
+]
+<figures/batch_norm_feed.png, id=4745, 1207.51125pt x 868.24374pt>
+File: figures/batch_norm_feed.png Graphic file (type png)
+<use figures/batch_norm_feed.png>
+Package pdftex.def Info: figures/batch_norm_feed.png  used on input line 2048.
+(pdftex.def)             Requested size: 171.14764pt x 123.05035pt.
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 2048.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [118
+
+ <./figures/batch_norm_feed.png>]
+<figures/batch_norm_back.png, id=4785, 1488.56125pt x 865.2325pt>
+File: figures/batch_norm_back.png Graphic file (type png)
+<use figures/batch_norm_back.png>
+Package pdftex.def Info: figures/batch_norm_back.png  used on input line 2059.
+(pdftex.def)             Requested size: 342.2953pt x 198.95969pt.
+
+Overfull \vbox (1.58524pt too high) detected at line 2059
+ []
+
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 2059.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+[119
+
+ <./figures/batch_norm_back.png>]
+File: figures/simple_nn.png Graphic file (type png)
+<use figures/simple_nn.png>
+Package pdftex.def Info: figures/simple_nn.png  used on input line 2074.
+(pdftex.def)             Requested size: 239.60567pt x 170.94044pt.
+
+Overfull \vbox (12.89935pt too high) detected at line 2074
+ []
+
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 2074.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+[120
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 2101.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+ [121
 
 ]
 \tf@nav=\write6
@@ -2139,10 +2293,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7859767D568B7DADD9E0DEA182936BC1;1025.
  ) 
 Here is how much of TeX's memory you used:
- 27784 strings out of 475385
- 554449 string characters out of 2786721
- 854700 words of memory out of 3000000
- 48343 multiletter control sequences out of 15000+600000
+ 27989 strings out of 475385
+ 560219 string characters out of 2786721
+ 857650 words of memory out of 3000000
+ 48513 multiletter control sequences out of 15000+600000
  518469 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,122p,427b,876s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -2162,9 +2316,9 @@ ram Files/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lms
 y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (110 pages, 4476597 bytes).
+Output written on main.pdf (121 pages, 5362612 bytes).
 PDF statistics:
- 4599 PDF objects out of 5155 (max. 8388607)
- 233 named destinations out of 1000 (max. 500000)
- 4348 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5050 PDF objects out of 5155 (max. 8388607)
+ 255 named destinations out of 1000 (max. 500000)
+ 4809 words of extra memory for PDF output out of 10000 (max. 10000000)
 

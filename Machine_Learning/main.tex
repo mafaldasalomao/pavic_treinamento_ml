@@ -1839,14 +1839,244 @@ Atualização dos pesos:
 		\end{itemize}
 		
 		$$\triangledown w = \eta \frac{\partial J}{\partial w} + \mu \triangledown w^{t-1}$$
-		Vamos implementar no notebook de redes neurais os métodos de regularização vistos
+		Vamos implementar no notebook de redes neurais o nosso momentum
 	\end{block}
-	
 \end{frame}
 %==========================================================================================
 
+
+%==========================================================================================
 \begin{frame}
+	\frametitle{Mini-Batch}
+	\begin{block}{Mini-Batch}
+		\begin{itemize}
+			\item Divide o treinamento em conjuntos menores (memória)
+			\item É importante dar shuffle (embaralhar) antes de cada epoch
+			\item 1 epoch = processar todos os batchs
+			\item Em geral, é a estratégia de GD mais utilizada	
+			
+		\end{itemize}
+		Vamos tomar um dataset com $100$ amostras e seja dividi-lo em $10$ batchs. Cada batch terá $10$ amostras.
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/minibatch.png}
+		\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Gradiente Descendente}
+	\begin{block}{Gradiente Descendente}
+		Qual a diferença entre o Gradiente Estocástico para o Gradiente Baseado em Mini-batch e Bath \\
+		\begin{columns}
+			\begin{column}{0.3 \textwidth}
+				\textbf{Stochastic Gradient} \\
+				Amostra por amostra\\
+				Aponta para a direção da amostra \\
+				Converge lentamente \\
+				Anula vetorização
+			\end{column}
+			\begin{column}{0.3 \textwidth}
+				\textbf{Mini-Batch GD} \\
+				Calcula as atualizações por lote \\
+				Aponta para a direção que desce \\
+				Converge rápido \\
+				Rápida execução
+			\end{column}
+			\begin{column}{0.3 \textwidth}
+				\textbf{Batch GD} \\
+				Todas as amostras de uma vez \\
+				Aponta para a direção que desce sempre \\
+				Converge rápido \\
+				Lenta execução
+			\end{column}
+		\end{columns}
+		
+	\end{block}
+\end{frame}
+
 	
+%==========================================================================================
+\begin{frame}
+	\frametitle{Learning Rate Decay}
+	\begin{block}{Learning Rate Decay}
+		\begin{itemize}
+			\item A learning rate alta irá dificultar o aprendizado do algoritmo, mas se livrará de mínimos locais
+			\item A learning rate baixa irá ajudar no aprendizado da rede mas irá ter problemas com mínimos locais
+			\item Com a Learning Rate Decay, a taxa de aprendizado será reduzida ao longo das épocas
+		\end{itemize}
+	\end{block}
+\end{frame}	
+	%==========================================================================================
+	\begin{frame}
+		\frametitle{Learning Rate Decay}
+		\begin{block}{Learning Rate Decay - Time-based}
+			$$\lambda_t = \frac{1}{1 + \alpha *t}$$ 
+			Onde $t$ são as épocas
+			\begin{columns}
+				\begin{column}{0.3 \textwidth}
+					\begin{figure}
+						\centering
+						\includegraphics[width=1\linewidth]{figures/lr_decay1.png}
+					\end{figure}
+				\end{column}
+				\begin{column}{0.3 \textwidth}
+					\begin{figure}
+						\centering
+						\includegraphics[width=1\linewidth]{figures/lr_decay2.png}
+					\end{figure}
+				\end{column}
+				\begin{column}{0.3 \textwidth}
+					\begin{figure}
+						\centering
+						\includegraphics[width=1\linewidth]{figures/lr_decay3.png}
+					\end{figure}
+				\end{column}
+			\end{columns}
+		\end{block}
+	\end{frame}	
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{Learning Rate Decay}
+	\begin{block}{Learning Rate Decay - Exponential}
+		$$\lambda_t = \lambda_0 *\alpha^t$$ 
+		Onde $\alpha^t$ é o fator exponencial do decaimento da Learning rate
+		\begin{columns}
+			\begin{column}{0.3 \textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/lr_decay4.png}
+				\end{figure}
+			\end{column}
+			\begin{column}{0.3 \textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/lr_decay5.png}
+				\end{figure}
+			\end{column}
+			\begin{column}{0.3 \textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1\linewidth]{figures/lr_decay6.png}
+				\end{figure}
+			\end{column}
+		\end{columns}
+	\end{block}
+\end{frame}	
+%==========================================================================================
+\begin{frame}
+		\frametitle{Learning Rate Decay}
+		\begin{block}{Learning Rate Decay - Staircase}
+			$$\lambda_t = \lambda_0 *\alpha^{t/ds}$$ 
+			Onde $\alpha^{t/ds}$ é o fator exponencial do decaimento da Learning rate e o $ds$ é de quanta em quanta épocas ocorrerá o decay.
+			\begin{columns}
+				\begin{column}{0.3 \textwidth}
+					\begin{figure}
+						\centering
+						\includegraphics[width=1\linewidth]{figures/lr_decay7.png}
+					\end{figure}
+				\end{column}
+				\begin{column}{0.3 \textwidth}
+					\begin{figure}
+						\centering
+						\includegraphics[width=1\linewidth]{figures/lr_decay8.png}
+					\end{figure}
+				\end{column}
+				\begin{column}{0.3 \textwidth}
+					\begin{figure}
+						\centering
+						\includegraphics[width=1\linewidth]{figures/lr_decay9.png}
+					\end{figure}
+				\end{column}
+			\end{columns}
+		\end{block}
+	\end{frame}	
+	
+%==========================================================================================
+\begin{frame}
+	\frametitle{Stop Early}
+	\begin{block}{Stop Early}
+		\begin{itemize}
+			\item A ideia é guardar seu melhor modelo. Quando a perda tiver valor mínimo em validação!
+			\item Fator patient indica quando o modelo deve parar de treinar a partir da última melhor acurácia. Por exemplo, se na época 7 o modelo apresentou acurácia de 75\% e nas 10 (patient) próximas épocas o modelo não melhorou, então o treinamento é finalizado.
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.35\linewidth]{figures/early_stop}
+		\end{figure}
+	\end{block}
+\end{frame}	
+	
+%==========================================================================================
+\begin{frame}
+	\frametitle{Batch Normalization}
+	\begin{block}{Batch Normalization}
+		\begin{itemize}
+			\item Normaliza entradas ou saídas das camadas de ativação
+			\item Estima a média e desvio padrão baseado no batch (média móvel)
+			\item Regulariza camadas e não neurônios
+			\item Pode substituir o dropout
+			\item Uma das melhores técnicas
+			\item Não usado na validação ou teste!
+		\end{itemize}
+	\end{block}
+\end{frame}	
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{Batch Normalization}
+	\begin{block}{Batch Normalization - FeedForward}
+	\begin{columns}
+		\begin{column}{0.5 \textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=1\linewidth]{figures/batch_norm_feed.png}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5 \textwidth}
+			\begin{itemize}
+				\item Cada batch será normalizado subtraindo da média $\mu$ e dividindo pelo desvio padrão $\sigma^2$ = $\hat{x}_i$
+				\item $\gamma$ e $\beta$ são parâmetros que a rede vai aprender
+				\item se $\gamma = \sigma^2 $ e $\mu = \beta$ a função se anula, assim a rede pode recusar o batch normalization sozinha!
+			\end{itemize}
+		\end{column}
+	\end{columns}
+
+	\end{block}
+\end{frame}	
+	
+%==========================================================================================
+\begin{frame}
+	\frametitle{Batch Normalization}
+	\begin{block}{Batch Normalization - Backpropagation}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/batch_norm_back.png}
+		\end{figure}
+	\end{block}
+\end{frame}		
+	
+%==========================================================================================
+\begin{frame}
+	\frametitle{Freezing}
+	\begin{block}{Freezing}
+		\begin{itemize}
+			\item Congelamento de certas camadas no \textbf{treinamento}
+			\item Muito usada em transfer learning e Fine-tuning
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/simple_nn.png}
+		\end{figure}
+	\end{block}
+\end{frame}			
+	
+	
+	
+	
+\begin{frame}	
 \frametitle{Highlighting text}
 %
 %\begin{align}
