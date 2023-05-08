@@ -92,12 +92,16 @@
 \begin{frame}
 	\frametitle{Pytorch Regressão Linear}
 	\begin{block}{Pytorch Regressão Linear}
+		
 		Se recordam da fórmula da função linear? 
 		$$y = a + b*X$$
 		
 		Vamos ver isso diretamente no notebook enquanto acompanhamos os slides! \\
 		Agora vamos avançar para a construção de um modelo que pode aprender a relação entre X (features) e y (labels).
 	\end{block}
+\begin{alertblock}
+	Vamos usar o notebook 08
+\end{alertblock}
 \end{frame}
 %==========================================================================================
 
@@ -530,92 +534,141 @@
 \end{frame}
 %==========================================================================================
 
-\section{Neurônio Sigmoide}
+\section{PyTorch Computer Vision}
 
 
 %==========================================================================================
 \begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.4\linewidth]{figures/neuron_ai}
-		\caption{Neurônio Artificial}
-		\label{fig:neuronai_sig}
-	\end{figure}
-\end{frame}
-
-%==========================================================================================
-%==========================================================================================
-%==========================================================================================
-\begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	\begin{itemize}
-		\item Modelo mais básico de NN
-		\item Um neurônio
-		\item N entradas, Uma saída ŷ
-		\item Custo: Entropia Cruzada
-		\item Classificação binária não-linear
-		\item Pequenas alterações nos parâmetros geram pequenas alterações nas saídas
-		\item Sabe o quanto 'errou'
-		\item Aplica-se o gradiente descendente
-	\end{itemize}
-	
-	\begin{gather*}
-		\hat{y} = f( \sum_i w_i x_i + b)
-	\end{gather*}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	\begin{block}{Função de ativação do Neurônio Sigmoide}
-		$$f(x) = \frac{1}{1-e^{-x}}$$
-		\begin{itemize}
-			\item Possibilita o cálculo da derivada em todos pontos
-			\item Aplicado em problemas de regressão logística
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision}
+		Vamos utilizar o notebook 09
+			\begin{itemize}
+			\item Arte de ensinar um computador a ver
+			\item Modelo para classificar se uma foto é de um gato ou de um cachorro (classificação binária)
+			\item Ou se a foto é de um gato, cachorro ou galinha (classificação multiclasse)
+			\item Ou identificar onde um carro aparece em um quadro de vídeo (detecção de objeto)
+			\item Ou descobrir onde diferentes objetos em uma imagem podem ser separados (segmentação panóptica)
+			\item Usado no seu celular, câmera, indústria, medicina, etc.
 		\end{itemize}
 	\end{block}
-	
-\begin{figure}
-	\centering
-	\includegraphics[width=0.35\linewidth]{figures/sigmoid_function}
-\end{figure}
+\end{frame}
 
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Computer Vision}
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/vision_comp}
+	\end{figure}
 	
 \end{frame}
 %==========================================================================================
-
 \begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	\begin{block}{Entropia Cruzada}
-		$p_j$ é o valor a ser predito e $t_j$ é o valor predito
-		\begin{gather*}
-			L = - \frac{1}{N} \left [ \sum_{j=1}^{N} [t_j log(p_j) + (1-t_j)log(1-p_j)] \right ] 
-		\end{gather*}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - O que vamos fazer}
+		\begin{itemize}
+			\item Adquirindo o Dataset Fashion:
+			\begin{itemize}
+				\item Escala de cinza
+				\item 10 tipos de roupas
+			\end{itemize}
+			\item Verificar a primeira amostra de dados de treinamento
+			\item Vizualizar o Input e Output dos dados:
+			\begin{itemize}
+				\item Ordem dos dados no tensor: CHW (color channels first) or HWC (color channels last)
+				\item NCHW - Número de imagens, Ex: batch\_size=32 - [32, 1, 28, 28]
+			\end{itemize}
+			\item Visualizar total de imagens de treinamento (60000) e teste (10000)
+			\item Visualizar as 10 classes
+			\item Visualizar uma imagem, transforma-la na escala de cinza
+			\item Visualizar mais exemplares de imagens
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - O que vamos fazer}
+		\begin{itemize}
+			\item Prepare o dataloader
+			\begin{itemize}
+				\item Usado para carregar as imagens para o modelo
+				\item Treinamento e Inferência
+				\item Divide o nosso dataset em Batchs ou Mini-Batches
+			\end{itemize}
+			\item Montar o modelo Base
+			\item Vizualizar o Input e Output dos dados:
+			\begin{itemize}
+				\item Ordem dos dados no tensor: CHW (color channels first) or HWC (color channels last)
+				\item NCHW - Número de imagens, Ex: batch\_size=32 - [32, 1, 28, 28]
+			\end{itemize}
+			\item Visualizar total de imagens de treinamento (60000) e teste (10000)
+			\item Visualizar as 10 classes
+			\item Visualizar uma imagem, transforma-la na escala de cinza
+			\item Visualizar mais exemplares de imagens
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - O que vamos fazer}
+		\begin{itemize}
+			\item Construir o modelo base
+			\begin{itemize}
+				\item Modelo simples
+				\item Melhorar o modelo subsequentemente
+				\item MODELO: flatten - Linear - Linear
+			\end{itemize}
+			\item Montar o modelo Base
+			\item Selecionar a função de perda, otimizador e métricas de avaliação
+		\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
 
 \begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	Vamos tomar:
-	% Please add the following required packages to your document preamble:
-	% \usepackage[table,xcdraw]{xcolor}
-	% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-	\begin{table}[]
-		\begin{tabular}{|l|l|l|l|}
-			\hline
-			$p_j$ & $t_j$ & Erro  & $L$ \\ \hline
-			0  & 0  & 0 - 0 = 0  & \textcolor{green}{0}  \\ \hline
-			0  & 1  & 0 - 1 = -1 & $\infty$ \\ \hline
-			1  & 0  & 1 - 0 = 1  & $\infty$ \\ \hline
-			1  & 1  & 1 - 1 = 0  & 0 \\ \hline
-		\end{tabular}
-	\end{table}
-	\begin{block}{Entropia Cruzada}
-		Para entrada $0, 0$ e saída predita $\textcolor{red}{0}$ e a saída desejada for $\textcolor{blue}{0}$
-		\begin{gather*}
-			L = - \frac{1}{N} \left [ \sum_{j=1}^{N} [\textcolor{red}{0} log(\textcolor{blue}{0} ) + (1-\textcolor{red}{0})log(1-\textcolor{blue}{0} )] \right ] 
-		\end{gather*}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - O que vamos fazer}
+		\begin{itemize}
+			\item Criar uma função para medir a velocidade da execução na CPU vs GPU
+			\item CPU:
+			\begin{itemize}
+				\item Treinar
+				\item Testar
+			\end{itemize}
+			\item GPU:
+			\begin{itemize}
+				\item Setar ambiente de execução para GPU
+				\item Construir um modelo melhor com não linearidade
+				\item Selecionar a função de perda, otimizador e métricas de avaliação
+				\item Funcionalização de loops de treinamento e teste
+				\item Treinar e comparar a velocidade de execução vs CPU
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{alertblock}{Nota}
+		Note que, Construir um modelo melhor com não linearidade piorou nossos resultados, aconteceu overfitting. \\
+		Exercício: evitar overfitting mudando o modelo ou com conjunto de dados maior
+	\end{alertblock}
+\end{frame}
+%==========================================================================================
+
+\begin{frame}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - Redes Neurais Convolucionais}
+		\begin{itemize}
+			\item CNN ou ConvNet \href{https://en.wikipedia.org/wiki/Convolutional_neural_network}{\beamergotobutton{CNN}} 
+			\item Identifica padrões em imagens
+			\item Vamos conhecer o CNN EXPLAINER \href{https://poloclub.github.io/cnn-explainer/}{\beamergotobutton{CNN Site}} 
+			\begin{itemize}
+				\item Input layer - [Convolutional layer - activation layer - pooling layer] - Output layer
+			\end{itemize}
+			\begin{alertblock}{Nota}
+				Note que, Construir um modelo melhor com não linearidade piorou nossos resultados, aconteceu overfitting. \\
+				Exercício: evitar overfitting mudando o modelo ou com conjunto de dados maior
+			\end{alertblock}
+		\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
