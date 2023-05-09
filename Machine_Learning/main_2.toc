@@ -3,8 +3,7 @@
 \beamer@sectionintoc {3}{PyTorch Neural Network Classification}{18}{0}{3}
 \beamer@sectionintoc {4}{PyTorch Computer Vision}{29}{0}{4}
 \beamer@sectionintoc {5}{PyTorch Custom Datasets}{38}{0}{5}
-\beamer@sectionintoc {6}{Funções de Ativação}{40}{0}{6}
-\beamer@sectionintoc {7}{Backpropagation}{56}{0}{7}
-\beamer@sectionintoc {8}{Redes Neurais Profundas}{89}{0}{8}
-\beamer@sectionintoc {9}{Funções de Custo}{95}{0}{9}
-\beamer@sectionintoc {10}{Rede Neural do Zero}{102}{0}{10}
+\beamer@sectionintoc {6}{Backpropagation}{56}{0}{6}
+\beamer@sectionintoc {7}{Redes Neurais Profundas}{89}{0}{7}
+\beamer@sectionintoc {8}{Funções de Custo}{95}{0}{8}
+\beamer@sectionintoc {9}{Rede Neural do Zero}{102}{0}{9}

@@ -725,7 +725,7 @@
 \begin{frame}
 	\frametitle{PyTorch Custom Datasets}
 	\begin{block}{Custom Datasets}
-		O que vamos fazer
+		O que vamos fazer:
 		\begin{itemize}
 			\item Importar cuda
 			\item Vamos adquirir os dados:
@@ -734,208 +734,228 @@
 				\item 1000 imagens de 101 tipos de comidas diferentes = 101.000 imagens (75.750 treinamento e 25250 para teste)
 				\item Qual a complexidade deste modelo para predizer 101 tipos de comidas diferentes?
 			\end{itemize}
-			\item Ou, se estivéssemos tentando criar um modelo para classificar se uma avaliação baseada em texto em um site era positiva ou negativa.
-			\item Ou, se estivéssemos tentando criar um aplicativo de classificação de som, nosso conjunto de dados personalizado poderia ser amostras de som junto com seus rótulos de amostra.
-			\item Ou, se estivéssemos tentando criar um sistema de recomendação para clientes que compram coisas em nosso site, nosso conjunto de dados personalizado pode ser exemplos de produtos que outras pessoas compraram.
+			\item Pré-processamento dos dados - preparação
+			\item Visualize uma imagem
+			\item Transforme os dados no tensor do Pytorch
 		\end{itemize}
 	\end{block}
 \end{frame}
 
 %==========================================================================================
-\section{Funções de Ativação}
 \begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{itemize}
-		\item Localizada a saída de cada neurônio
-		\item Usada para mapear entradas em novas saídas
-		\item Pode alterar o range ex: $[-100 \; 100]$ para $[1 \; 0]$
-	\end{itemize}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.4\linewidth]{figures/neuron_ai}
-		\caption{Neurônio Artificial}
-	\end{figure}
-	
-	\begin{gather*}
-		\hat{y} = f( \sum_i w_i x_i + b)
-	\end{gather*}
-\end{frame}
-
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Linear}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Custom Datasets}
+		O que vamos fazer:
 		\begin{itemize}
-			\item $y \in [- \infty, + \infty]$
-			\item Função de ativação simples
-			\item Comumente usada em regressão
-			\item Baixa complexidade
-			\item Baixo poder de aprendizagem
+			\item Transforme os dados no tensor do Pytorch
+			\item Vamos ver o funcionamento do torchvision.transforms:
+			\begin{itemize}
+				\item Manipulação dos dados
+				\item Data augmentation (Redimensionamento, Flip, e transformação para tensor)
+				\item Todas as alterações são compiladas utilizando o $torchvision.transforms.Compose()$
+			\end{itemize}
+			\item Vamos construir uma função que mostrará mais imagens
 		\end{itemize}
-	Função:
-			$$f(x) = x$$
-	Derivada: 	$$\frac{\partial y}{\partial x} = 1$$
-	
 	\end{block}
 \end{frame}
 
 %==========================================================================================
 \begin{frame}
-	\frametitle{Funções de Ativação}
+	\frametitle{PyTorch Custom Datasets - Opções para carregar o dataset}
+	\begin{block}{Opção 1: ImageFolder}
+		Muito utilizado para carregar datasets de classificação $torchvision.datasets.ImageFolder$
+		\begin{itemize}
+			\item Vamos carregar as imagens utilizando o ImageFolder
+			\item Carregar os dados para o DataLoader  
+			\begin{itemize}
+				\item Deixa os dados iteráveis
+				\item Deixa os dados ordenados em \textit{sample} e \textit{targets} 
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets - Opções para carregar o dataset}
+	\begin{block}{Opção 2: Carregando o dataset com Custom Dataset}
+		Carregue seu dataset personalizado
+		\begin{itemize}
+			\item Usado quando o ImageFolder não for útil
+			\item Usado em problemas específicos
+			\begin{itemize}
+				\item $os$ do Python para lidar com diretórios (nossos dados são armazenados em diretórios).
+				\item $pathlib$ do Python para lidar com caminhos de arquivo (cada uma de nossas imagens tem um caminho de arquivo exclusivo).
+				\item $torch$ para todas as coisas PyTorch.
+				\item $Image$ PIL para carregar imagens.
+				\item $torch.utils.data.Dataset$ para criar uma subclasse e criar nosso próprio Dataset personalizado
+				\item $torchvision.transforms$ para transformar nossas imagens em tensores.
+				\item Vários tipos do módulo $typing$ do Python para adicionar dicas de tipo ao nosso código
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets - Opções para carregar o dataset}
+	\begin{block}{Opção 2: Carregando o dataset com Custom Dataset}
+		Vamos criar nosso dataset customizado
+		\begin{itemize}
+			\item Importe as bibliotecas
+			\item Crie uma função para adquirir o nome das classes do seu dataset
+			\item Crie a Classe para o Dataset Customizado
+			\item Crie os transformers
+			\item Carregue as imagens utilizando a função criada
+			\item Vamos ver como estão os dados
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{PyTorch Custom Datasets}
+		\begin{itemize}
+			\item Vamos criar uma função para mostrar imagens aleatórias
+			\item Mostre as imagens utilizando a função criada acima
+			\item Vamos carregar nossos dados no $Dataloader$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Outras formas de transforms (data augmentation)}
+		A documentação dos transformers pode ser acessado: \href{https://pytorch.org/vision/stable/transforms.html}{\beamergotobutton{torchvision.transforms}} \\
+		Um dos objetivos de se utilizar \textit{data augmentation} é \textbf{artificialmente} aumentar a diversidade e tamanho do nosso conjunto de treinamento.
+		Dessa forma, esperamos que o modelo passe a generalizar mais os resultados (padrão não vistos).\\
+		Neste link podemos ver alguns exemplos: \href{https://pytorch.org/vision/stable/auto_examples/plot_transforms.html\#illustration-of-transforms}{\beamergotobutton{Exemplos}}. \\
+		How to Train State-Of-The-Art Models Using TorchVision’s Latest Primitives \href{https://pytorch.org/blog/how-to-train-state-of-the-art-models-using-torchvision-latest-primitives/\#break-down-of-key-accuracy-improvements}{\beamergotobutton{Acessar}} 
+	\end{block}
 	\begin{alertblock}{Atenção}
-		Note este caso: Porque construir modelos apenas com Lineares? \\
-		input:	``10 → 100 → 200 → 10'' \\
-		pesos:	``10 → 2 → 00.5 = 10 x 10 = 10'' \\
-		Podemos substituir todos pesos por um só
+		Normalmente usamos augmentation no conjunto de treinamento, para que melhore o desempenho no conjunto de teste. Mas, alterar o tamanho das imagens de treinamento é considerado aumento de dados? Altera a performance?
 	\end{alertblock}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.4\linewidth]{figures/linear_function.png}
-	\end{figure}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Sigmoid}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG \textbf{SEM} data augmentation}
 		\begin{itemize}
-			\item $y \in [0, + 1]$
-			\item Regressão Logística
-			\item Geralmente interpretada como probabilidade
-			\item Saída não centrada em $0$
-			\item Satura os gradientes
-			\item Não indicada para camadas ocultas
-			\item Converge lentamente
+			\item Vamos classificar nosso dataset em pizza, sushi ou bife
+			\item Image size: (64, 64)
+			\item Criar os transformers e carregar os dados para o Model 0:
+			\begin{itemize}
+				\item Carregar as imagens utilizando $torchvision.datasets.ImageFolder()$
+				\item Carregar no DataLoader $torch.utils.data.DataLoader()$ 
+				\item batch\_size=32
+			\end{itemize}
+			\item Vamos criar a classe do modelo TinyVGG
 		\end{itemize}
-		Função:
-		$$f(x) = \frac{1}{1-e^{-x}}$$
-		Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
 	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-\begin{figure}
-	\centering
-	\includegraphics[width=0.4\linewidth]{figures/sigmoid_function.png}
-\end{figure}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Tanh}
-		\begin{itemize}
-			\item $y \in [-1, + 1]$
-			\item Uma versão da Sigmoid
-			\item Saída centrada em $0$
-			\item Satura os gradientes. um pouco menos que a Sigmoid
-			\item Converge lentamente
-		\end{itemize}
-		Função:
-		$$f(x) = \frac{e^x - e^{-x}}{e^x+e^{-x}}$$
-		Derivada: 	$$\frac{\partial y}{\partial x} = 1 - y^2$$
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-\begin{figure}
-	\centering
-	\includegraphics[width=0.4\linewidth]{figures/tanh_function}
-\end{figure}
-\end{frame}
-%==========================================================================================
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Relu}
-		\begin{itemize}
-			\item $y \in [0, + \infty]$
-			\item Não tem derivada para valores $<0$
-			\item Simples e Eficiente
-			\item Evita a saturação dos gradientes
-			\item Converge mais rápido
-			\item Usada nas camadas escondidas
-			\item Ela mata neurônio
-		\end{itemize}
-		Função:
-		$$f(x) = max(0, x)$$
-		Derivada: 	$$\frac{\partial y}{\partial x} =
-		\left\{\begin{matrix}
-			0,\; if \; x \leq 0
-			\\ 
-			1, \; if \; x > 0
-		\end{matrix}\right.$$
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.4\linewidth]{figures/relu_function}
-	\end{figure}
-\end{frame}
-%==========================================================================================
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Leaky Relu}
-		\begin{itemize}
-			\item $y \in [- \infty, + \infty]$
-			\item Tem derivada para valores $<0$
-			\item Simples e Eficiente
-			\item Evita a saturação dos gradientes
-			\item Converge mais rápido
-			\item Usada nas camadas escondidas
-			\item Diminui as mortes de neurônios
-		\end{itemize}
-		Função:
-		$$f(x) = 		\left\{\begin{matrix}
-			\alpha(e^x - 1), x \leq 0
-			\\ 
-			x, x > 0
-		\end{matrix}\right.$$
-	
-		Derivada: 	$$\frac{\partial y}{\partial x} =
-		\left\{\begin{matrix}
-			\alpha, x \leq 0
-			\\ 
-			1, x > 0
-		\end{matrix}\right.$$
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.4\linewidth]{figures/leaky_relu_function}
-	\end{figure}
-	
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{figures/mais_activation_functions}
-	\end{figure}
+\end{frame}           
 
-\end{frame}
+%==========================================================================================
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG sem data augmentation}
+		Tente um forward em uma única imagem (para testar o modelo)
+		\begin{itemize}
+			\item Obtenha um lote de imagens e rótulos do DataLoader
+			\item Obtenha uma única imagem do lote e unsqueeze() a imagem para que ela tenha um tamanho de lote de 1 (para que sua forma se ajuste ao modelo).
+			\item Realize a inferência em uma única imagem (certificando-se de enviar a imagem para o dispositivo de destino).
+			\item Imprima o que está acontecendo e converta os logits brutos de saída do modelo em probabilidades de previsão com torch.softmax() (já que estamos trabalhando com dados multiclasse) e converta as probabilidades de previsão em rótulos de previsão com torch.argmax( ).
+		\end{itemize}
+	\end{block}
+\end{frame}  
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG sem data augmentation}
+		\begin{itemize}
+			\item Use torchinfo para ter uma ideia das formas passando pelo nosso modelo
+			\item Vamos criar o Loop de treinamento e teste (vamos fazer 3 funções)
+			\begin{itemize}
+				\item train\_step(): receberá: modelo, Dalatoader, Loss Function, Otimizador e treinará o modelo
+				\item test\_step(): receberá: modelo, Dalatoader, Loss Function, Otimizador e avaliará o modelo
+				\item train(): Juntará as duas funções anteriores com um número de épocas e retornará um dicionário com resultados
+			\end{itemize}
+			\item Vamos treinar e avaliar o modelo com as funções criadas: 5 épocas, Adam e CrossEntropyLoss serão os hiperparâmetros utilizados
+			\item vamos plotar as curvas de perda do modelo
+		\end{itemize}
+	\end{block}
+\end{frame} 
+%==========================================================================================
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG sem data augmentation}
+		Overfitting, como evitar?
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/acc_curve_over}
+		\end{figure}
+
+	\end{block}
+\end{frame} 
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG sem data augmentation}
+		Overfitting, como evitar?		
+		\begin{itemize}
+			\item Mais dados
+			\item Simplificar o modelo
+			\item Usar data augmentation
+			\item Usar Transfer Learning
+			\item Dropout
+			\item Leraning rate decay
+			\item Early stopping
+		\end{itemize}
+	\end{block}
+\end{frame} 
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG \textbf{COM} data augmentation}
+		\begin{itemize}
+			\item Vamos classificar nosso dataset em pizza, sushi ou bife
+			\item Image size: (64, 64)
+			\item Criar os transformers e carregar os dados para o Model 1:
+			\begin{itemize}
+				\item Carregar as imagens utilizando $torchvision.datasets.ImageFolder()$
+				\item Carregar no DataLoader $torch.utils.data.DataLoader()$ 
+				\item batch\_size=32
+			\end{itemize}
+			\item Vamos criar o modelo
+			\item Vamos treinar o modelo e analisar a curva de perda
+			\item Vamos comparar os resultados dos modelos
+		\end{itemize}
+	\end{block}
+\end{frame}           
+
 %===================================================================================
 %==========================================================================================
 \begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{alertblock}{ Qual função de ativação usar?}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Model 0: TunyVGG \textbf{COM} data augmentation}
 		\begin{itemize}
-		\item	Evitar Sigmoid nas camadas ocultas, boa na saída
-		\item	Tanh usada em modelos generativos
-		\item	Relu Muito boa nas camadas ocultas
-		\item	Linear não usar em camadas escondidas
-		\item	Leaky Relu  raramente usadas
+			\item Vamos classificar nosso dataset em pizza, sushi ou bife
+			\item Image size: (64, 64)
+			\item Criar os transformers e carregar os dados para o Model 1:
+			\begin{itemize}
+				\item Carregar as imagens utilizando $torchvision.datasets.ImageFolder()$
+				\item Carregar no DataLoader $torch.utils.data.DataLoader()$ 
+				\item batch\_size=32
+			\end{itemize}
+			\item Vamos criar o modelo
+			\item Vamos treinar o modelo e analisar a curva de perda
+			\item Compararemos os modelos
+			\item Faremos a predição de uma imagens, e com uma imagem do seus arquivos pessoais
+			Criaremos uma função de predição e plot da imagem de teste
 		\end{itemize}
-	\end{alertblock}	
-\end{frame}
+	\end{block}
+\end{frame}           
+
 %===================================================================================
 \begin{frame}
 	\frametitle{Funções de Ativação}
