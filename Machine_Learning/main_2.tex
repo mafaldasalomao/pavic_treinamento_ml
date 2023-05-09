@@ -99,7 +99,7 @@
 		Vamos ver isso diretamente no notebook enquanto acompanhamos os slides! \\
 		Agora vamos avançar para a construção de um modelo que pode aprender a relação entre X (features) e y (labels).
 	\end{block}
-\begin{alertblock}
+\begin{alertblock}{Nota}
 	Vamos usar o notebook 08
 \end{alertblock}
 \end{frame}
@@ -634,8 +634,7 @@
 			\item Criar uma função para medir a velocidade da execução na CPU vs GPU
 			\item CPU:
 			\begin{itemize}
-				\item Treinar
-				\item Testar
+				\item Treinar e Testar
 			\end{itemize}
 			\item GPU:
 			\begin{itemize}
@@ -662,87 +661,83 @@
 			\item Identifica padrões em imagens
 			\item Vamos conhecer o CNN EXPLAINER \href{https://poloclub.github.io/cnn-explainer/}{\beamergotobutton{CNN Site}} 
 			\begin{itemize}
-				\item Input layer - [Convolutional layer - activation layer - pooling layer] - Output layer
+				\item Input layer - [Convolutional layer - activation layer - pooling layer] - Output layer (Bloco)
 			\end{itemize}
-			\begin{alertblock}{Nota}
-				Note que, Construir um modelo melhor com não linearidade piorou nossos resultados, aconteceu overfitting. \\
-				Exercício: evitar overfitting mudando o modelo ou com conjunto de dados maior
-			\end{alertblock}
+			\item Vamos criar um modelo CNN conforme o visto no site CNN Explainer
+			\item O que é a convolução 2D: $nn.conv2d()$? ...
 		\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	Vamos tomar:
-	% Please add the following required packages to your document preamble:
-	% \usepackage[table,xcdraw]{xcolor}
-	% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-	\begin{table}[]
-		\begin{tabular}{|l|l|l|l|}
-			\hline
-			$p_j$ & $t_j$ & Erro  & $L$ \\ \hline
-			0  & 0  & 0 - 0 = 0  & \textcolor{green}{0}  \\ \hline
-			0  & 1  & 0 - 1 = -1 & \textcolor{red}{$\infty$} \\ \hline
-			1  & 0  & 1 - 0 = 1  & $\infty$ \\ \hline
-			1  & 1  & 1 - 1 = 0  & 0 \\ \hline
-		\end{tabular}
-	\end{table}
-	\begin{block}{Entropia Cruzada}
-		Para entrada $0, 1$ e saída predita $\textcolor{red}{0}$ e a saída desejada for $\textcolor{blue}{1}$
-		\begin{gather*}
-			L = - \frac{1}{N} \left [ \sum_{j=1}^{N} [\textcolor{red}{0} log(\textcolor{blue}{1} ) + (1-\textcolor{red}{0})log(1-\textcolor{blue}{1} )] \right ] 
-		\end{gather*}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - Redes Neurais Convolucionais}
+		Vamos ver a algumas características da convolução 2D na prática:
+		\begin{itemize}
+			\item in\_channels (int) - Número de canais na imagem de entrada.
+			\item out\_channels (int) - Número de canais produzidos pela convolução.
+			\item kernel\_size (int ou tupla) - Tamanho do kernel/filtro de convolução.
+			\item stride (int ou tupla, opcional) - O tamanho do passo que o kernel convolutivo leva por vez. Padrão: 1.
+			\item padding (int, tuple, str) - Padding adicionado a todos os quatro lados da entrada. Padrão: 0.
+			\item Gif da Conv2d\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/03-conv2d-layer.gif?raw=true}{\beamergotobutton{Conv2d}} 
+			\item Vamos alterar os parâmetros da Conv2d
+		\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	Vamos tomar:
-	\begin{table}[]
-	\begin{tabular}{|l|l|l|l|}
-		\hline
-		$p_j$ & $t_j$ & Erro  & $L$ \\ \hline
-		0  & 0  & 0 - 0 = 0  & \textcolor{green}{0}  \\ \hline
-		0  & 1  & 0 - 1 = -1 & \textcolor{red}{$\infty$} \\ \hline
-		1  & 0  & 1 - 0 = 1  & \textcolor{red}{$\infty$} \\ \hline
-		1  & 1  & 1 - 1 = 0  & 0 \\ \hline
-	\end{tabular}
-\end{table}
-\begin{block}{Entropia Cruzada}
-	Para entrada $1, 0$ e saída predita $\textcolor{red}{1}$ e a saída desejada for $\textcolor{blue}{0}$
-	\begin{gather*}
-		L = - \frac{1}{N} \left [ \sum_{j=1}^{N} [\textcolor{red}{1} log(\textcolor{blue}{0} ) + (1-\textcolor{red}{1})log(1-\textcolor{blue}{0} )] \right ] 
-	\end{gather*}
-\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	Vamos tomar:
-	\begin{table}[]
-		\begin{tabular}{|l|l|l|l|}
-			\hline
-			$p_j$ & $t_j$ & Erro  & $L$ \\ \hline
-			0  & 0  & 0 - 0 = 0  & \textcolor{green}{0}  \\ \hline
-			0  & 1  & 0 - 1 = -1 & \textcolor{red}{$\infty$} \\ \hline
-			1  & 0  & 1 - 0 = 1  & \textcolor{red}{$\infty$} \\ \hline
-			1  & 1  & 1 - 1 = 0  & \textcolor{green}{0} \\ \hline
-		\end{tabular}
-	\end{table}
-	\begin{block}{Entropia Cruzada}
-		Para entrada $1, 1$ e saída predita $\textcolor{red}{1}$ e a saída desejada for $\textcolor{blue}{1}$
-		\begin{gather*}
-			L = - \frac{1}{N} \left [ \sum_{j=1}^{N} [\textcolor{red}{1} log(\textcolor{blue}{1} ) + (1-\textcolor{red}{1})log(1-\textcolor{blue}{1} )] \right ] 
-		\end{gather*}
+	\frametitle{PyTorch Computer Vision}
+	\begin{block}{Computer Vision - Redes Neurais Convolucionais}
+		\begin{itemize}
+			\item Selecione a função de Perda e Otimizador
+			\item Vamos treinar o modelo
+			\item Vamos avaliar o modelo
+			\item Vamos comparar o desempenhos dos 3 modelos desenvolvidos:
+			\begin{itemize}
+				\item model\_0 - nosso modelo básico com duas camadas nn.Linear().
+				\item model\_1 - a mesma configuração do nosso modelo base, exceto com as camadas nn.ReLU() entre as camadas nn.Linear().
+				\item model\_2 - nosso primeiro modelo CNN que imita a arquitetura TinyVGG no site CNN Explainer.
+			\end{itemize}
+			\item Vamos fazer mais predições com nosso melhor modelo
+			\item Construir a matriz de confusão
+			\item Salvar, carregar e testar nosso melhor modelo
+		\end{itemize}
 	\end{block}
 \end{frame}
 
+
+%==========================================================================================
+\section{PyTorch Custom Datasets}
+\begin{frame}
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Custom Datasets}
+		
+		\begin{itemize}
+			\item Um conjunto de dados personalizado é uma coleção de dados relacionados a um problema específico no qual você está trabalhando.
+			\item Por exemplo, se estivéssemos criando um aplicativo de classificação de imagens de alimentos, nosso conjunto de dados personalizado poderia ser imagens de alimentos.
+			\item Ou, se estivéssemos tentando criar um modelo para classificar se uma avaliação baseada em texto em um site era positiva ou negativa.
+			\item Ou, se estivéssemos tentando criar um aplicativo de classificação de som, nosso conjunto de dados personalizado poderia ser amostras de som junto com seus rótulos de amostra.
+			\item Ou, se estivéssemos tentando criar um sistema de recomendação para clientes que compram coisas em nosso site, nosso conjunto de dados personalizado pode ser exemplos de produtos que outras pessoas compraram.
+		\end{itemize}
+	\end{block}
+\end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Neurônio Sigmoide}
-	\begin{block}{Vamos ver na prática}
-		Vamos praticar utilizando o notebook 02\_neuronio\_sigmoid
+	\frametitle{PyTorch Custom Datasets}
+	\begin{block}{Custom Datasets}
+		O que vamos fazer
+		\begin{itemize}
+			\item Importar cuda
+			\item Vamos adquirir os dados:
+			\begin{itemize}
+				\item Usaremos um subconjunto do dataset \href{https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/}{\beamergotobutton{Food-101}} 
+				\item 1000 imagens de 101 tipos de comidas diferentes = 101.000 imagens (75.750 treinamento e 25250 para teste)
+				\item Qual a complexidade deste modelo para predizer 101 tipos de comidas diferentes?
+			\end{itemize}
+			\item Ou, se estivéssemos tentando criar um modelo para classificar se uma avaliação baseada em texto em um site era positiva ou negativa.
+			\item Ou, se estivéssemos tentando criar um aplicativo de classificação de som, nosso conjunto de dados personalizado poderia ser amostras de som junto com seus rótulos de amostra.
+			\item Ou, se estivéssemos tentando criar um sistema de recomendação para clientes que compram coisas em nosso site, nosso conjunto de dados personalizado pode ser exemplos de produtos que outras pessoas compraram.
+		\end{itemize}
 	\end{block}
 \end{frame}
 
