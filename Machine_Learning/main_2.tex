@@ -957,42 +957,36 @@
 \end{frame}           
 
 %===================================================================================
+\section{PyTorch Transfer Learning}
 \begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Softmax}
+	\frametitle{PyTorch Transfer Learning}
+	\begin{block}{PyTorch Transfer Learning}
 		\begin{itemize}
-			\item $y \in [0, 1]$ e $\sum_y = 1$
-			\item Aplicada em dois ou mais neurônios. Pega saída e converte
-			\item A saída é uma confiança
-			\item Nunca nas camadas ocultas
-			\item Multiclasses
-			\item Saída One-hot Encode
+			\item Permite pegar padrões (pesos) que outro modelo aprendeu e aplicar em um problema específico
+			\item Ex: Modelo treinado no ImageNet para usar no FoodVision Minimodelo
+			\item Permite melhorar um modelo existente em problemas semelhantes
+			\item Melhora o treinamento e consequentemente os resultados
+			\item Benéfica ao tempo e custo de treinamento
+			\item Jeremy Howard: ``As coisas que realmente fazem a diferença (aprendizado por transferência), se pudermos fazer melhor no aprendizado por transferência, é essa coisa que muda o mundo. De repente, muito mais pessoas podem fazer um trabalho de classe mundial com menos recursos e menos dados''
 		\end{itemize}
-		Função:
-		$$S_i = \frac{e^{\hat{y}_i}}{\sum_j e^{\hat{y}_i}} $$
-		Assim para cada k: $P^k = S_i^{[k]}$
-		Derivada: 	$$\frac{\partial S}{\partial y} = p^k * (1-p^k)$$
 	\end{block}
-\end{frame}
+\end{frame}     
 %==========================================================================================
 \begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Softmax}
-		\begin{example}
-			$[0.1, 1.3, 2.5] \to [0.07, 0.22, 0.72] $ \\
-			$$\frac{e^{0.1}}{e^{0.1} + e^{0.3} + e^{2.5}}$$
-		\end{example}
-		Função:
-		$$S_i = \frac{e^{\hat{y}_i}}{\sum_j e^{\hat{y}_i}} $$
-		Assim para cada k: $P^k = S_i^{[k]}$
-		Derivada: 	$$\frac{\partial y}{\partial x} =
-		\left\{\begin{matrix}
-			\alpha, x \leq 0
-			\\ 
-			1, x > 0
-		\end{matrix}\right.$$
+	\frametitle{PyTorch Transfer Learning}
+	\begin{block}{PyTorch Transfer Learning}
+		Os passos que vamos fazer:
+		\begin{itemize}
+			\item[1] Vamos configurar o ambiente do colab para usar GPU
+			\item[2] Obter dados
+			\item[3] Criar conjunto de dados e Dataloader
+			\item[4] Adquirir modelo pré-treinado
+			\item[5] Treinar o modelo
+			\item[6] Avaliar o modelo
+			\item[7] Realizar predição com o modelo
+		\end{itemize}
 	\end{block}
-\end{frame}
+\end{frame}    
 %==========================================================================================
 %==========================================================================================
 \begin{frame}
