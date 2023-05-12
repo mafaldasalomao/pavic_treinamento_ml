@@ -957,7 +957,99 @@
 \end{frame}           
 
 %===================================================================================
+\section{PyTorch Transformando o código em módulos}
+\begin{frame}
+	\frametitle{PyTorch Transformando o código em módulos}
+	\begin{block}{PyTorch Transformando o código em módulos}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/modular}
+		\end{figure}
+	\end{block}
+\end{frame}
+%===================================================================================
+\begin{frame}
+	\frametitle{PyTorch Transformando o código em módulos}
+	\begin{block}{Na linha de comando: Comand line}
+		train.py -model MODEL\_NAME -batch\_size BATCH\_SIZE -lr LEARNING\_RATE -num\_epochs NUM\_EPOCHS
+	\end{block}
+	\begin{block}{Cell mode}
+		O notebook aqui utilizado será disponibilizado baseado no notebook do tópico anterior, porém enxuto.
+		\begin{itemize}
+			\item O que é um notebook cell mode? É o que vimos até agora no curso (texto/códigos)
+			\item Vamos executar esse notebook normalmente:
+			\begin{itemize}
+				\item[1] Aquisição dos dados
+				\item[2] Criar Datasets e DataLoaders
+				\item[3] Construir o model0 (TinyVGG)
+				\item[4] Criar as funções train\_step() e test\_step() e train() para combiná-las
+				\item[5] Criar uma função para salvar o modelo
+				\item[6] Treinar, avaliar e salvar o modelo
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+\end{frame}
+%===================================================================================
+\begin{frame}
+	\frametitle{PyTorch Transformando o código em módulos}
+	\begin{block}{Script mode}
+		\begin{itemize} 
+			\item As células específicas são transformadas em scripts de python
+			\item Quando quisermos executar o código faremos:
+			\begin{itemize}
+				\item !python going\_modular/train.py para executar linha de comando em uma célula do colab
+				\item python going\_modular/train.py se formos executar no CMD ou terminal diretamente
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{example}
+		\textit{\%\%writefile hello\_world.py \\
+		print("hello world, machine learning is fun!")} \\
+		Será escrito em um arquivo  \textit{hello\_word.py} \\
+		Se digitarmos no terminar: \textit{python hello\_world.py} \\
+		A saída será: \textit{hello world, machine learning is fun!}
+	\end{example}
+\end{frame}
+%===================================================================================
+\begin{frame}
+	\frametitle{PyTorch Transformando o código em módulos}
+	\begin{block}{A estrutura que montaremos seguirá este padrão}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/modular}
+		\end{figure}
+	\end{block}
+\end{frame}
+%===================================================================================
+\begin{frame}
+	\frametitle{PyTorch Transformando o código em módulos}
+	\begin{block}{Transformando o cell mode para Script mode}
+		\begin{itemize}
+			\item[0] Criar pasta ``going\_modular''
+			\item[1] Aquisição dos dados
+			\item[2] Criar Datasets e DataLoaders
+			\item[3] Criar Datasets e DataLoaders no \textbf{script mode}
+			\item[4] Construir o model0 (TinyVGG)
+			\item[5] Construir o model0 (TinyVGG) no \textbf{script mode}
+			\item[6] Criar as funções train\_step() e test\_step() e train() para combiná-las
+			\item[7] Criar as funções train\_step() e test\_step() e train() \textbf{script mode}
+			\item[8] Criar uma função para salvar o modelo
+			\item[9] Criar uma função para salvar o modelo \textbf{script mode}
+			\item[10] Treinar, avaliar e salvar o modelo
+			\item[11] Treinar, avaliar e salvar o modelo \textbf{script mode}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+
+
+
+%===================================================================================
 \section{PyTorch Transfer Learning}
+
+
+
 \begin{frame}
 	\frametitle{PyTorch Transfer Learning}
 	\begin{block}{PyTorch Transfer Learning}
@@ -970,7 +1062,7 @@
 			\item Jeremy Howard: ``As coisas que realmente fazem a diferença (aprendizado por transferência), se pudermos fazer melhor no aprendizado por transferência, é essa coisa que muda o mundo. De repente, muito mais pessoas podem fazer um trabalho de classe mundial com menos recursos e menos dados''
 		\end{itemize}
 	\end{block}
-\end{frame}     
+\end{frame}    
 %==========================================================================================
 \begin{frame}
 	\frametitle{PyTorch Transfer Learning}
