@@ -1069,89 +1069,107 @@
 	\begin{block}{PyTorch Transfer Learning}
 		Os passos que vamos fazer:
 		\begin{itemize}
-			\item[1] Vamos configurar o ambiente do colab para usar GPU
+			\item[1] Vamos configurar o ambiente do colab para usar GPU e baixar o repositório modular
 			\item[2] Obter dados
 			\item[3] Criar conjunto de dados e Dataloader
+			\begin{itemize}
+				\item Creating a transform for torchvision.models (manual creation)
+				\item Creating a transform for torchvision.models (auto creation)
+			\end{itemize}
 			\item[4] Adquirir modelo pré-treinado
-			\item[5] Treinar o modelo
-			\item[6] Avaliar o modelo
-			\item[7] Realizar predição com o modelo
+			\begin{itemize}
+				\item Qual modelo escolher?
+				\item Configurando um modelo pré treinado
+				\item Olhando mais informações com o summary do nosso modelo `torchinfo.summary()`
+			\end{itemize}
 		\end{itemize}
 	\end{block}
 \end{frame}    
 %==========================================================================================
 %==========================================================================================
 \begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Vamos ver na prática}
-		Vamos praticar utilizando o notebook 03\_funções de ativação
+	\frametitle{PyTorch Transfer Learning}
+	\begin{block}{Configurando um modelo pré treinado}
+		%weights = torchvision.models.EfficientNet\_B0\_Weights.DEFAULT # .DEFAULT = best available weights for ImageNet
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/transfer_learning01}
+	\end{figure}
+		
 	\end{block}
-\end{frame}
-
-%==========================================================================================
-\section{Backpropagation}
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Para que usamos o \textit{backpropagation}?}
-		Utilizamos o Backpropagation no treinamento das redes neurais
-	\end{block}
-	\begin{example}
-		Vamos tomar uma função simples de multiplicação:
-		$$f(x, y) = x * y$$
-			
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.5\linewidth]{figures/simple_multiply_gate}
-		\end{figure}
-	\end{example}
-\end{frame}
+\end{frame} 
 
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Vamos tomar uma função simples de multiplicação:
-		$$f(x, y) = x * y$$
-		
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.5\linewidth]{figures/simple_multiply_gate_part1}
-		\end{figure}
-		\alert{Com que força alterar as entradas desse circuito para de maneira ``leve'' alteremos a saída?}
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Vamos tomar uma função simples de multiplicação:
-		$$f(x, y) = x * y$$
-		
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\linewidth]{figures/simple_multiply_gate_part2}
-\end{figure}
-		
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		O Problema.....
+	\frametitle{PyTorch Transfer Learning}
+	\begin{block}{PyTorch Transfer Learning}
+		Os passos que vamos fazer:
 		\begin{itemize}
-			\item Para qual direção seguir?
-			\item Com que velocidade seguir?
-			\item Como sei se cheguei no local mais baixo?
+			\item[5] Vamos trocar a saída da última camada da EfficientNetb0 de 1000 (ImageNet) para 3 (FoodVision) e deixar as demais camadas congeladas
+			\item[5] Treinar o modelo
+			\item[6] Avaliar o modelo
+			\item[7] Realizar predição com o modelo no conjunto de teste
+			\item[8] Fazendo previsões em uma imagem personalizada
 		\end{itemize}
-		
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.5\linewidth]{figures/alpinista.png}
-		\end{figure}
-		
-	\end{example}
-\end{frame}
+	\end{block}
+\end{frame} 
+
+%==========================================================================================
+\section{PyTorch Transfer Learning}
+
+
+
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Machine Learning Research paper}
+		Geralmente um artigo de Machine Learning é organizado da seguinte forma:
+		% Please add the following required packages to your document preamble:
+		% \usepackage{graphicx}
+		\begin{table}[]
+			\resizebox{\textwidth}{!}{%
+				\begin{tabular}{|l|l|}
+					\hline
+					\textbf{Seção} & \textbf{Objetivo}                          \\ \hline
+					Resumo     & \begin{tabular}[c]{@{}l@{}}Overview/summary do artigo contendo\\ principais achados/contribuições.\end{tabular}                    \\ \hline
+					Introdução & \begin{tabular}[c]{@{}l@{}}Qual o problema a ser explorado.\\ Métodos antecessores usados neste problema.\end{tabular}             \\ \hline
+					Métodos    & \begin{tabular}[c]{@{}l@{}}Passos para que pesquisadores possam\\ conduzir sua pesquisa (Datasource, trainning, etc).\end{tabular} \\ \hline
+					Resultados & \begin{tabular}[c]{@{}l@{}}Resultado do paper. Uma comparação\\ com resultados de outras pesquisas.\end{tabular}                   \\ \hline
+					Conclusões     & Conclusões, limitações e trabalhos futuros \\ \hline
+					Referências    & Fontes/outras pesquisas                    \\ \hline
+					Apendices      & Recursos extras                            \\ \hline
+				\end{tabular}%
+			}
+		\end{table}
+	\end{block}
+\end{frame}  
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Machine Learning Research paper}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/an-image-is-worth-16x16-words-transformers-1}
+	\end{figure}
+	\end{block}
+\end{frame} 
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Por que replicar um artigo}
+		\begin{itemize}
+			\item Porque é divertido e desafiador!
+			\item 
+		\end{itemize}
+	\end{block}
+	\begin{block}{Por que replicar um artigo}
+		George Hotz. fundador da comma.ai
+		\begin{itemize}
+			\item Baixe o artigo
+			\item Replique ele
+			\item Continue fazendo até você ter mais habilidades/skills
+		\end{itemize}
+	\end{block}
+\end{frame} 
 %==========================================================================================
 \begin{frame}
 	\frametitle{Backpropagation}

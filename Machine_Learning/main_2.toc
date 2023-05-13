@@ -5,7 +5,6 @@
 \beamer@sectionintoc {5}{PyTorch Custom Datasets}{38}{0}{5}
 \beamer@sectionintoc {6}{PyTorch Transformando o código em módulos}{53}{0}{6}
 \beamer@sectionintoc {7}{PyTorch Transfer Learning}{58}{0}{7}
-\beamer@sectionintoc {8}{Backpropagation}{61}{0}{8}
-\beamer@sectionintoc {9}{Redes Neurais Profundas}{94}{0}{9}
-\beamer@sectionintoc {10}{Funções de Custo}{100}{0}{10}
-\beamer@sectionintoc {11}{Rede Neural do Zero}{107}{0}{11}
+\beamer@sectionintoc {8}{Redes Neurais Profundas}{94}{0}{8}
+\beamer@sectionintoc {9}{Funções de Custo}{100}{0}{9}
+\beamer@sectionintoc {10}{Rede Neural do Zero}{107}{0}{10}
