@@ -1115,16 +1115,13 @@
 \end{frame} 
 
 %==========================================================================================
-\section{PyTorch Transfer Learning}
+\section{PyTorch Paper Replicating}
 
 
 
 \begin{frame}
 	\frametitle{PyTorch - Paper Replicating}
 	\begin{block}{Machine Learning Research paper}
-		Geralmente um artigo de Machine Learning é organizado da seguinte forma:
-		% Please add the following required packages to your document preamble:
-		% \usepackage{graphicx}
 		\begin{table}[]
 			\resizebox{\textwidth}{!}{%
 				\begin{tabular}{|l|l|}
@@ -1158,7 +1155,7 @@
 	\begin{block}{Por que replicar um artigo}
 		\begin{itemize}
 			\item Porque é divertido e desafiador!
-			\item 
+			\item Os avanços da ciência são registrados em artigos, podemos aplicá-los aos nossos problemas.
 		\end{itemize}
 	\end{block}
 	\begin{block}{Por que replicar um artigo}
@@ -1172,28 +1169,34 @@
 \end{frame} 
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Vamos ver na prática}
-		Vamos praticar utilizando o notebook 03\_backpropagation
-		Será apresentado a busca aleatória e a busca aleatória local
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform}
+		Transformer architecture é qualquer rede que utiliza mecanismos de atenção. Similar às redes CNN que usam convolução nas camadas iniciais. Vamos fazer:
+		\begin{itemize}
+			\item[1] Configurar o ambiente e projeto
+			\item[2] Obter dados
+			\item[3] Criar conjunto de dados e carregar nos Dataloaders
+			\item[4] Replicar o artigo ViT: uma visão geral
+			\item[5] Equação 1: a incorporação do patch
+			\item[6] Equação 2: Atenção Multihead (MSA)
+			\item[7] Equação 3: Multilayer Perceptron (MLP)
+		\end{itemize}
 	\end{block}
-\end{frame}
+\end{frame} 
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Como atualizamos os pesos?}
-		Diante disso... \\
-		É possível encontrar a força de atualização dos pesos com \alert{derivadas}
-		
-			\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/random_01.gif?raw=true}{\beamergotobutton{Figura demonstrando}} 
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform}
+		Transformer architecture é qualquer rede que utiliza mecanismos de atenção. Similar às redes CNN que usam convolução nas camadas iniciais. Vamos fazer:
+		\begin{itemize}
+			\item[8] Criar o Transformer Encode
+			\item[9] Juntar tudo para criar o ViT
+			\item[10] Configurar o código de treinamento para nosso modelo ViT
+			\item[11] Usar um ViT pré-treinado de torchvision.models
+			\item[12] Fazer previsões em uma imagem personalizada
+		\end{itemize}
 	\end{block}
-	\begin{block}{Qual a definição básica de derivada?}
-		A derivada em relação à $x$ pode ser definida como:
-		$$f'(x) = \lim_{h\rightarrow 0} \frac{f(x + h) - f (x))}{h}$$
-		Neste caso, o $h$ tende a $0$, ou seja, é um valor bem pequeno.
-	\end{block}
-\end{frame}
-%==========================================================================================
+\end{frame} 
 %==========================================================================================
 \begin{frame}
 	\frametitle{Backpropagation}
