@@ -1198,123 +1198,101 @@
 	\end{block}
 \end{frame} 
 %==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Qual a definição básica de derivada parcial?}
-		E se tivéssemos $n$ argumentos (componentes)? \\
-		A derivada parcial de uma função com $n$ argumentos $(x_1, x_2, x_3,...,x_n)$ é dada por:
-		$$\frac{\partial f}{\partial x_i}(x_1,...,x_n) = \lim_{h \rightarrow 0} \frac{f(x_1, ...,x_i + h, x_n) - f (x_1, ..., x_n))}{h}$$
-		Basta derivar cada elemento, ou cada componente da função.
-	\end{block}
-\begin{example}
-	Derivada da função $f(x) = x^2$ \\
-	$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
-\end{example}
-\end{frame}
+
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Derivada da função $f(x) = x^2$ \\
-		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
-		$h \rightarrow 0$ tende a zero \\
-		$f(x + h)$ é p próprio $f(x)$ somado com um pequeno passo \\
-		$- f(x)$ que é a própria função \\
-		Dividido por $h$ normalizando a derivação \\
-		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
-		\renewcommand{\CancelColor}{\color{red}}
-		$$\frac{(x+h)^2 - x^2}{h} \rightarrow \frac{\cancel{x^2}+ 2xh +h^2 - \cancel{ x^2}}{h} \rightarrow \frac{\cancel{h}(2x + h)}{\cancel{h}} \rightarrow 2x+\cancelto{0}{h}  \rightarrow 2x$$
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Derivada da função $f(x) = x*y$ \\
-		$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x + h)-f(x)}{h}$$
-		\renewcommand{\CancelColor}{\color{red}}
-		$$\frac{\partial f(x,y)}{\partial x} = \frac{(x+h)y - xy}{h} = \frac{\cancel{xy} + yh - \cancel{ xy}}{h} = \frac{y\cancel{h}}{\cancel{h}} = y$$
-		$$\frac{\partial f(x,y)}{\partial y} = \frac{x(y+h) - xy}{h} = \frac{\cancel{xy} + xh - \cancel{ xy}}{h} = \frac{x\cancel{h}}{\cancel{h}} = x$$
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Mais de duas variáveis na função...}
-		E se a função tiver 3 componentes?
-		$f(x,y,z) = (x+y)z$
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{figures/circuitxyz}
-		\end{figure}
-	Neste caso, a melhor opção é decompor a função em subfunções, ou pequenos circuitos
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Mais de duas variáveis na função...}
-		$f(x,y,z) = (x+y)z$ \\
-		$q(x,y) = x+y$ \\
-		$f(q,z) = qz$ \\
-	\end{block}
-\begin{example}
-	\begin{columns}
-		\begin{column}{0.35\textwidth}
-			$$q(x,y) = x+y$$ \\
-			$$\frac{\partial f(x,y)}{\partial x} = 1$$ \\
-			$$\frac{\partial f(x,y)}{\partial y} = 1$$ \\
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			$$f(q,z) = qz$$ \\
-			$$\frac{\partial f(x,y)}{\partial q} = z$$ \\
-			$$\frac{\partial f(x,y)}{\partial z} = q$$ \\
-		\end{column}
-	\end{columns}
-\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Mais de duas variáveis na função...}
-		Se quisermos calcular a derivada em relação a uma entrada, utilizamos a regra da cadeia: \\
-		Ex: derivada em relação a $x$ de $f$
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Configurar o ambiente e projeto}
 		\begin{itemize}
-			\item É a derivada de $q$ em relação a $f$ 
-			\item Derivada de $x$ em relação a $q$
+			\item Escrevemos bastante código útil nas últimas seções, vamos baixá-lo e garantir que possamos usá-lo novamente.
+			\item Vamos importar nossos scripts modular.
+			\item Vamos importar algumas funções helper\_functions.py
+			\item Utilize a GPU modificando nas configurações do Colab
 		\end{itemize}
 	\end{block}
-	\begin{example}
-				$$\frac{\partial f(x,y)}{\partial x} = \frac{\partial f(x,y)}{\partial q} * \frac{\partial f(x,y)}{\partial x}$$ \\
-				$$\frac{\partial f(x,y)}{\partial y} = \frac{\partial f(x,y)}{\partial q} * \frac{\partial f(x,y)}{\partial y}$$ \\
-				$$\frac{\partial f(x,y)}{\partial z} = q$$ 
-	\end{example}
+	\begin{alertblock}{Nota}
+		Sempre reinicie o ambiente do colab ao fazer novas instalações
+	\end{alertblock}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Mais de duas variáveis na função...}
-		Vamos verificar se dividindo a função principal em subfunções é válido.
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Obter dados}
+		\begin{itemize}
+			\item Baixe o dataset usando a função download\_data() do helper\_functions.py
+			\item Crie os caminhos de diretórios de train e test
+		\end{itemize}
 	\end{block}
-	\begin{example}
-		\renewcommand{\CancelColor}{\color{red}}
-		$\frac{\partial f(x,y, z)}{\partial x} = \lim_{h \rightarrow 0 }\frac{f(x+h, y,z) - f(x,y,z)}{h} = $ \\ 
-		
-		$ \frac{(x+h + y)*z - (x + y)*z}{h} = $ \\ $\frac{\cancel{xz}+hz + \cancel{yz} - \cancel{xz} - \cancel{yz}}{h} = $ \\ $\frac{\cancel{h}z}{\cancel{h}} = z $
-	\end{example}
+	\begin{block}{Vision Transform - Criar conjunto de dados e carregar nos Dataloaders}
+		\begin{itemize}
+			\item Carregar as imagens
+			\item Preparar transforms para images
+			\item Carregar images no DataLoader
+			\item Visualizar uma imagem
+		\end{itemize}
+	\end{block}
+\end{frame} 
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Uma visão geral}
+		\begin{itemize}
+			\item Como é formada uma Rede neural: Camadas, Blocos e modelo.
+			\item Como o ViT paper foi feito: Figura 1, Formulas e Tabelas.
+		\end{itemize}
+	\end{block}
+	\begin{block}{Figura 1}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vit_fig_1}
+		\end{figure}
+	
+	\end{block}
+\end{frame} 
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Uma visão geral}
+		A arquitetura ViT é composta por várias etapas:
+		\begin{itemize}
+			\item \textbf{Patch + Position Embedding (inputs)} - Transforma a imagem de entrada em uma sequência de patches de imagem e adiciona um número de posição na ordem em que o patch vem.
+			\item \textbf{Linear projection of flattened patches (Embedded Patches)} - Os patches de imagem são transformados em uma incorporação, o benefício de usar uma incorporação em vez de apenas os valores da imagem é que uma incorporação é uma representação aprendizável (normalmente na forma de um vetor) da imagem que pode melhorar com o treinamento.
+			\item \textbf{Norm} - É a abreviação de "Layer Normalization" ou "LayerNorm", uma técnica para regularizar (reduzir o overfitting) uma rede neural, você pode usar LayerNorm através da camada PyTorch torch.nn.LayerNorm().
+		\end{itemize}
+	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Mais de duas variáveis na função...}
-		Vamos verificar se dividindo a função principal em subfunções é válido.
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Uma visão geral}
+		A arquitetura ViT é composta por várias etapas:
+		\begin{itemize}
+			\item \textbf{Multi-Head Attention} - Esta é uma camada de auto-atenção com várias heads ou "MSA" para abreviar. Você pode criar uma camada MSA por meio da camada PyTorch torch.nn.MultiheadAttention().
+			\item \textbf{MLP (ou Multilayer perceptron)} - Um MLP geralmente pode se referir a qualquer coleção de camadas de feedforward (ou no caso do PyTorch, uma coleção de camadas com um método forward()). No ViT Paper, os autores referem-se ao MLP como "bloco MLP" e contém dois torch.nn.Linear() com uma ativação não linear torch.nn.GELU() entre elas (seção 3.1) e uma camada torch.nn.Dropout() após cada (Apêndice B.1).
+		\end{itemize}
 	\end{block}
-	\begin{example}
-		\renewcommand{\CancelColor}{\color{red}}
-		$\frac{\partial f(x,y, z)}{\partial y} = \lim_{h \rightarrow 0 }\frac{f(x, y+h,z) - f(x,y,z)}{h} = $ \\ 
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Uma visão geral}
+		A arquitetura ViT é composta por várias etapas:
+		\begin{itemize}
+			\item \textbf{Transformer Encoder} - O Transformer Encoder é uma coleção das camadas listadas acima. Existem duas conexões de salto dentro do codificador Transformer (os símbolos "+"), o que significa que as entradas da camada são alimentadas diretamente para as camadas imediatas, bem como para as camadas subsequentes. A arquitetura geral do ViT é composta por vários codificadores Transformer empilhados uns sobre os outros.
+			\item \textbf{MLP Head} - Esta é a camada de saída da arquitetura, ela converte os recursos aprendidos de uma entrada em uma saída de classe. Como estamos trabalhando na classificação de imagens, você também pode chamar isso de "cabeça do classificador". A estrutura do cabeçote MLP é semelhante ao bloco MLP.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Explorando as quatro equações}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vit_eq}
+		\end{figure}
 		
-		$ \frac{(x + y + h)*z - (x + y)*z}{h} = $ \\ $\frac{\cancel{xz}+hz + \cancel{yz} - \cancel{xz} - \cancel{yz}}{h} = $ \\ $\frac{\cancel{h}z}{\cancel{h}} = z $
-	\end{example}
+	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
