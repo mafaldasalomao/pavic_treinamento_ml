@@ -1287,225 +1287,181 @@
 \begin{frame}
 	\frametitle{PyTorch - Paper Replicating}
 	\begin{block}{Vision Transform - Explorando as quatro equações}
+		$\begin{aligned} \mathbf{z}_0 & =\left[\mathbf{x}_{\text {class }} ; \mathbf{x}_p^1 \mathbf{E} ; \mathbf{x}_p^2 \mathbf{E} ; \cdots ; \mathbf{x}_p^N \mathbf{E}\right]+\mathbf{E}_{\text {pos }}, & & \mathbf{E} \in \mathbb{R}^{\left(P^2 \cdot C\right) \times D}, \mathbf{E}_{\text {pos }} \in \mathbb{R}^{(N+1) \times D} \\ \mathbf{z}_{\ell}^{\prime} & =\operatorname{MSA}\left(\mathrm{LN}\left(\mathbf{z}_{\ell-1}\right)\right)+\mathbf{z}_{\ell-1}, & & \ell=1 \ldots L \\ \mathbf{z}_{\ell} & =\operatorname{MLP}\left(\operatorname{LN}\left(\mathbf{z}_{\ell}^{\prime}\right)\right)+\mathbf{z}_{\ell}^{\prime}, & & \ell=1 \ldots L \\ \mathbf{y} & =\operatorname{LN}\left(\mathbf{z}_L^0\right) & & \end{aligned}$
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Explorando as quatro equações}
+		\begin{itemize}
+			\item[Eq.1] O Transformer usa tamanho de vetor latente constante D em todas as suas camadas, então achatamos (flatten) os patches e mapeamos para as dimensões D com uma \textbf{projeção linear treinável} (Eq. 1). Referimo-nos à saída desta projeção como os \textbf{embeddings de patch}... Embeddings de posição são adicionados aos embeddings de patch para reter informações posicionais. Usamos incorporações de posição 1D aprendíveis padrão.
+			\item[Eq.2] O codificador Transformer (Vaswani et al., 2017) consiste em camadas alternadas de multihead self-attention (MSA, consulte o Apêndice A) e blocos MLP (Eq. 2, 3). Layernorm (LN) é aplicado antes de cada bloco e conexões residuais após cada bloco (Wang et al., 2019; Baevski \& Auli, 2019).
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Explorando as quatro equações}
+		\begin{itemize}
+			\item[Eq.3] Idem Eq.2
+			\item[Eq.4] Semelhante ao token [class] do BERT, anexamos learnable embedding que pode ser aprendida à sequência de embedded patches (z00=xclass), cujo estado na saída do codificador Transformer (z0L) serve como a representação da imagem y (Eq. 4).
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Explorando as quatro equações}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/vit_eq}
+			\includegraphics[width=1\linewidth]{figures/vit_fig1_eqs}
 		\end{figure}
-		
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Mais de duas variáveis na função...}
-		Vamos verificar se dividindo a função principal em subfunções é válido.
-	\end{block}
-	\begin{example}
-		\renewcommand{\CancelColor}{\color{red}}
-		$\frac{\partial f(x,y, z)}{\partial z} = \lim_{h \rightarrow 0 }\frac{f(x, y,z+h) - f(x,y,z)}{h} = $ \\ 
-		
-		$ \frac{(x + y)*(z + h) - (x + y)*z}{h} = $ \\ $\frac{\cancel{xz}+xh + \cancel{yz} + yh - \cancel{xz} - \cancel{yz}}{h} = $ \\ $\frac{xh + yh}{h} =  $\\ $\frac{\cancel{h}(x + y)}{\cancel{h}} = x + y $
-		
-		Podemos notar que a saída é a porta de soma, ou seja. o próprio $q$
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Vamos derivar o Neurônio Sigmoide}
 		\begin{itemize}
-			\item $y \in [0, + 1]$
-			\item Regressão Logística
-			\item Geralmente interpretada como probabilidade
-			\item Saída não centrada em $0$
-			\item Satura os gradientes
-			\item Não indicada para camadas ocultas
-			\item Converge lentamente
+			\item \textbf{z0}  is "z zero" (this is the output of the initial patch embedding layer).
+			\item \textbf{z´l } is "z of a particular layer prime" (or an intermediary value of z).
+			\item \textbf{zl}  is "z of a particular layer".
+			\item \textbf{y} is output
 		\end{itemize}
-		Função:
-		$$f(x) = \frac{1}{1-e^{-x}}$$
-	%	Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Vamos derivar o Neurônio Sigmoide}
-		\begin{itemize}
-			\item $y \in [0, + 1]$
-			\item Regressão Logística
-			\item Geralmente interpretada como probabilidade
-			\item Saída não centrada em $0$
-			\item Satura os gradientes
-			\item Não indicada para camadas ocultas
-			\item Converge lentamente
-		\end{itemize}
-		Função:
-		$$f(x) = \frac{1}{1-e^{-x}}$$
-		%	Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Equação 01}
+		$$
+		\begin{aligned}
+			\mathbf{z}_{0} &=\left[\mathbf{x}_{\text {class }} ; \mathbf{x}_{p}^{1} \mathbf{E} ; \mathbf{x}_{p}^{2} \mathbf{E} ; \cdots ; \mathbf{x}_{p}^{N} \mathbf{E}\right]+\mathbf{E}_{\text {pos }}, & & \mathbf{E} \in \mathbb{R}^{\left(P^{2} \cdot C\right) \times D}, \mathbf{E}_{\text {pos }} \in \mathbb{R}^{(N+1) \times D}
+		\end{aligned}
+		$$
+		Esta equação trata do token de classe, incorporação de patch e incorporação de posição ($\mathbf{E}$ é para incorporação) da imagem de entrada. \\
+		x\_input = [class\_token, image\_patch\_1, image\_patch\_2, image\_patch\_3...] + [class\_token\_position, image\_patch\_1\_position, image\_patch\_2\_position, image\_patch\_3\_position...] \\
+		Onde cada um dos elementos no vetor pode ser aprendido (seus requires\_grad=True).
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Vamos derivar o Neurônio Sigmoide}
-		Função:
-		$f(w, x) = \frac{1}{1-e^{-x}}$ \\ 
-		O $w$ são os pesos e o $x$ as entradas... \\
-		$f(w, x) = \frac{1}{1-e^{-(w_0x_0 + w_1x_1 + w_2)}}$
-		%	Derivada: 	$$\frac{\partial y}{\partial x} = y(1-y)$$
-		\begin{figure}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Equação 02}
+		$$
+		\begin{aligned}
+			\mathbf{z}_{\ell}^{\prime} &=\operatorname{MSA}\left(\operatorname{LN}\left(\mathbf{z}_{\ell-1}\right)\right)+\mathbf{z}_{\ell-1}, & & \ell=1 \ldots L
+		\end{aligned}
+		$$
+
+		Isso diz que para cada camada de $1$ até $L$ (o número total de camadas), há uma camada Multi-Head Attention (MSA) envolvendo uma camada LayerNorm (LN). \\
+		A adição no final é o equivalente a adicionar a entrada à saída e formar um skip/residual connection \href{https://paperswithcode.com/method/residual-connection}{\beamergotobutton{skip/residual connection}} \\
+		Chamaremos essa camada de "bloco MSA". \\
+		
+		x\_output\_MSA\_block = MSA\_layer(LN\_layer(x\_input)) + x\_input \\ 
+		Observe a conexão de salto no final (adicionando a entrada das camadas à saída das camadas).
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Equação 03}
+		$$
+		\begin{aligned}
+			\mathbf{z}_{\ell} &=\operatorname{MLP}\left(\operatorname{LN}\left(\mathbf{z}_{\ell}^{\prime}\right)\right)+\mathbf{z}_{\ell}^{\prime}, & & \ell=1 \ldots L \\
+		\end{aligned}
+		$$
+		
+		
+		Isso diz que para cada camada de $1$ até $L$ (o número total de camadas), há também uma camada Multilayer Perceptron (MLP) envolvendo uma camada LayerNorm (LN).
+		
+		A adição no final mostra a presença de uma conexão de salto/residual.
+		
+		Chamaremos essa camada de "bloco MLP". 
+		
+		x\_output\_MLP\_block = MLP\_layer(LN\_layer(x\_output\_MSA\_block)) + x\_output\_MSA\_block
+		\\ Observe a conexão de salto no final (adicionando a entrada das camadas à saída das camadas).
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Equação 04}
+		$$
+		\begin{aligned}
+			\mathbf{y} &=\operatorname{LN}\left(\mathbf{z}_{L}^{0}\right) & &
+		\end{aligned}
+		$$
+		
+		Isso diz que para a última camada $L$, a saída $y$ é o token de índice 0 de $z$ envolvido em uma camada LayerNorm (LN).
+		
+		Ou no nosso caso, o índice 0 de `x\_output\_MLP\_block`: \\
+		y = Linear\_layer(LN\_layer(x\_output\_MLP\_block[0]))
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Tabela 01}
+		\begin{table}[!ht]
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/sigmoidneuron_derivative}
-		\end{figure}
-		
+			\begin{tabular}{|l|l|l|l|l|l|}
+				\hline
+				Model & Layers & Hidden size $D$ & MLP size & Heads & Params \\ \hline
+				ViT-Base & 12 & 768 & 3072 & 12 & $86M$ \\ \hline
+				ViT-Large & 24 & 1024 & 4096 & 16 & $307M$ \\ \hline
+				ViT-Huge & 32 & 1280 & 5120 & 16 & $632M$ \\ \hline
+			\end{tabular}
+		\end{table}
+		\begin{itemize}
+			\item \textbf{Camadas} - Quantos blocos do Transformer Encoder existem? (cada um deles conterá um bloco MSA e um bloco MLP)
+			\item \textbf{Hidden size  D } - Esta é a dimensão de incorporação em toda a arquitetura, este será o tamanho do vetor em que nossa imagem se transforma quando é corrigida e incorporada. Geralmente, quanto maior a dimensão de incorporação, mais informações podem ser capturadas, melhores resultados. No entanto, uma incorporação maior tem o custo de mais computação.
+		\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Vamos praticar um pouquinho... \\
-		A derivada de $x = a * b$ é: \\
-		$da = b * dx$ \\
-		Sempre teremos a derivada de dentro \alert{$da $} multiplicando a derivada de quem está fora \alert{$dx$}. Desta forma, podemos decompor qualquer função complexa. E $db = a * dx$
-		\begin{columns}
-			\begin{column}{0.35\textwidth}
-				 $$x = a * b$$ 
-				$$da = b * dx$$ 
-				$$db = a * dx$$ 
-			\end{column}
-			\begin{column}{0.35\textwidth}
-				$$x = a + b$$ 
-				$$da = 1 * dx$$ 
-				$$db = 1 * dx$$ 
-			\end{column}
-		\end{columns}
-	\end{example}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Tabela 01}
+		\begin{table}[!ht]
+			\centering
+			\begin{tabular}{|l|l|l|l|l|l|}
+				\hline
+				Model & Layers & Hidden size $D$ & MLP size & Heads & Params \\ \hline
+				ViT-Base & 12 & 768 & 3072 & 12 & $86M$ \\ \hline
+				ViT-Large & 24 & 1024 & 4096 & 16 & $307M$ \\ \hline
+				ViT-Huge & 32 & 1280 & 5120 & 16 & $632M$ \\ \hline
+			\end{tabular}
+		\end{table}
+		\begin{itemize}
+			\item \textbf{Heads} - Quantas cabeças existem nas camadas Multi-Head Attention?
+			\item \textbf{Params} - Qual é o número total de parâmetros do modelo? Geralmente, mais parâmetros levam a um melhor desempenho, mas ao custo de mais computação. Você notará que até o ViT-Base tem muito mais parâmetros do que qualquer outro modelo que usamos até agora.
+		\end{itemize}
+	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Vamos ver a derivada da função $x = a + b + c$ \\
-		Primeiro vamos dividir por partes: 
-		$q = a+b$ e  $x = q+c$ 
-		\begin{columns}
-			\begin{column}{0.35\textwidth}
-				$$dq = 1 * dx$$
-				$$dc = 1 * dx$$
-				$$db = 1 * dq$$
-				$$da = 1 * dq$$
-			\end{column}
-			\begin{column}{0.35\textwidth}
-				$$x = a + b + c$$ 
-				$$da = 1 * dx$$ 
-				$$db = 1 * dx$$
-				$$dc = 1 * dx$$ 
-			\end{column}
-		\end{columns}
-		Intuitivamente pode-se perceber que a derivação da soma sempre será $1 * dx$
-	\end{example}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Passos para replicação}
+		\begin{itemize}
+			\item 1. Leia todo o artigo de ponta a ponta uma vez (para ter uma ideia dos principais conceitos).
+			\item 2. Volte a cada seção e veja como elas se alinham e comece a pensar em como elas podem ser transformadas em código (como acima).
+			\item 3. Repita a etapa 2 até obter um esboço razoavelmente bom.
+			\item 4. Use mathpix.com(https://mathpix.com/) (uma ferramenta muito útil) para transformar todas as seções do papel em markdown/LaTeX para colocar em textos.
+			\item 5. Replique a versão mais simples possível do modelo.
+			\item 6. Se ficar preso, procure outros exemplos.
+		\end{itemize}
+	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-
-		\begin{columns}
-			\begin{column}{0.35\textwidth}
-				\begin{example}
-					$$x = a * b + c$$
-					$$q = a*b dx$$ 
-					$$x = q+c$$ 
-					$$dq = 1 * dx$$
-					$$dc = 1 * dx$$
-					$$db = a * dq$$
-					$$da = b * dq$$
-				\end{example}
-			\end{column}
-			\begin{column}{0.35\textwidth}
-				\begin{example}
-					$$x = a * a$$ 
-					$$da = 2a * dx$$
-				\end{example} 
-				\begin{example}
-				$$x = a * a + b * b + c * c$$ 
-				$$da = 2a * dx$$
-				$$db = 2b * dx$$
-				$$dc = 2c * dx$$
-			\end{example} 
-			\end{column}
-		\end{columns}
-
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		Vamos ver este exemplo mais complexo
-		\begin{columns}
-			\begin{column}{0.35\textwidth}
-				$$x = ((a * b + c) * d)^2$$
-				$$x_1 = a*b+c$$ 
-				$$x_2 = x_1*d$$ 
-				$$x = x_2 * x_2 $$
-			\end{column}
-			\begin{column}{0.35\textwidth}
-				$$dx_2 = 2x_2 * dx$$ 
-				$$dx_1 = d * dx_2$$ 
-				$$dd = x_1*dx_2$$
-				$$da = b*dx_1$$
-				$$db = a*dx_1$$
-				$$dc = 1*dx_1$$
-			\end{column}
-		\end{columns}
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-		\begin{example}
-			Vamos ver este exemplo de divisão
-			$$x = \frac{1}{a}$$
-			$$da = (-\frac{1}{a*a})*dx_1$$
-		\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-	\begin{columns}
-		\begin{column}{0.35\textwidth}
-			
-				$$x = \frac{a+ b}{c +d}$$
-				$$x_1 = a + b$$
-				$$x_2 = c + d$$
-				$$x_3 = \frac{1}{x_2} $$
-				$$x = x_1 * x_3$$
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			$$dx_1 = x_3 * dx$$
-			$$dx_3 = x_1 * dx$$
-			$$dx_2 = - \frac{1}{x_2 * x_2}*dx_3$$
-			$$dc = 1 * dx_2$$
-			$$dd = 1 * dx_2$$
-			$$da = 1 * dx_1$$
-			$$db = 1 * dx_1$$
-		\end{column}
-	\end{columns}
-\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}
-		$$x = max(a, b)$$
-		$$da = x == a ? 1 * dx : 0$$
-		$$da = x == b ? 1 * dx : 0$$
-		Lembram da Relu?
-		$$x = max(0, a)$$
-		$$da = a> 0 ? 1 * dx : 0$$
-	\end{example}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Passos para replicação}
+		\begin{itemize}
+			\item 1. Leia todo o artigo de ponta a ponta uma vez (para ter uma ideia dos principais conceitos).
+			\item 2. Volte a cada seção e veja como elas se alinham e comece a pensar em como elas podem ser transformadas em código (como acima).
+			\item 3. Repita a etapa 2 até obter um esboço razoavelmente bom.
+			\item 4. Use mathpix.com(https://mathpix.com/) (uma ferramenta muito útil) para transformar todas as seções do papel em markdown/LaTeX para colocar em textos.
+			\item 5. Replique a versão mais simples possível do modelo.
+			\item 6. Se ficar preso, procure outros exemplos.
+		\end{itemize}
+	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}

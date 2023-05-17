@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.17)  15 MAY 2023 12:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.26)  17 MAY 2023 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./main_2.tex
 (main_2.tex
-LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-07>
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-09-28>
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamer.cls
 Document Class: beamer 2023/02/20 v3.69 A class for typesetting presentations
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasemodes.sty
@@ -28,23 +28,23 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 (C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
-\headdp=\dimen140
-\footheight=\dimen141
-\sidebarheight=\dimen142
-\beamer@tempdim=\dimen143
-\beamer@finalheight=\dimen144
-\beamer@animht=\dimen145
-\beamer@animdp=\dimen146
-\beamer@animwd=\dimen147
-\beamer@leftmargin=\dimen148
-\beamer@rightmargin=\dimen149
-\beamer@leftsidebar=\dimen150
-\beamer@rightsidebar=\dimen151
-\beamer@boxsize=\dimen152
-\beamer@vboxoffset=\dimen153
-\beamer@descdefault=\dimen154
-\beamer@descriptionwidth=\dimen155
-\beamer@lastskip=\skip48
+\headdp=\dimen138
+\footheight=\dimen139
+\sidebarheight=\dimen140
+\beamer@tempdim=\dimen141
+\beamer@finalheight=\dimen142
+\beamer@animht=\dimen143
+\beamer@animdp=\dimen144
+\beamer@animwd=\dimen145
+\beamer@leftmargin=\dimen146
+\beamer@rightmargin=\dimen147
+\beamer@leftsidebar=\dimen148
+\beamer@rightsidebar=\dimen149
+\beamer@boxsize=\dimen150
+\beamer@vboxoffset=\dimen151
+\beamer@descdefault=\dimen152
+\beamer@descriptionwidth=\dimen153
+\beamer@lastskip=\skip47
 \beamer@areabox=\box54
 \beamer@animcurrent=\box55
 \beamer@animshowbox=\box56
@@ -77,8 +77,8 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 ))
-\beamer@paperwidth=\skip49
-\beamer@paperheight=\skip50
+\beamer@paperwidth=\skip48
+\beamer@paperheight=\skip49
 
 (C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -89,14 +89,14 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@cnth=\count277
 \Gm@cntv=\count278
 \c@Gm@tempcnt=\count279
-\Gm@bindingoffset=\dimen156
-\Gm@wd@mp=\dimen157
-\Gm@odd@mp=\dimen158
-\Gm@even@mp=\dimen159
-\Gm@layoutwidth=\dimen160
-\Gm@layoutheight=\dimen161
-\Gm@layouthoffset=\dimen162
-\Gm@layoutvoffset=\dimen163
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
 \Gm@dimlist=\toks17
 
 (C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg))
@@ -104,48 +104,50 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
 (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks18
-\pgfutil@tempdima=\dimen164
-\pgfutil@tempdimb=\dimen165
-)
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex))
 (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
 \pgfutil@abb=\box60
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex
 (C:\Program Files\MiKTeX\tex/generic/pgf\pgf.revision.tex)
-Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
 (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
 (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks19
 \pgfkeys@temptoks=\toks20
 
-(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.
-tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks21
-))) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex
-\pgf@x=\dimen166
-\pgf@xa=\dimen167
-\pgf@xb=\dimen168
-\pgf@xc=\dimen169
-\pgf@y=\dimen170
-\pgf@ya=\dimen171
-\pgf@yb=\dimen172
-\pgf@yc=\dimen173
+\pgf@x=\dimen164
+\pgf@xa=\dimen165
+\pgf@xb=\dimen166
+\pgf@xc=\dimen167
+\pgf@y=\dimen168
+\pgf@ya=\dimen169
+\pgf@yb=\dimen170
+\pgf@yc=\dimen171
 \c@pgf@counta=\count280
 \c@pgf@countb=\count281
 \c@pgf@countc=\count282
 \c@pgf@countd=\count283
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen174
+\pgfmath@dimen=\dimen172
 \pgfmath@count=\count284
 \pgfmath@box=\box61
 \pgfmath@toks=\toks22
 \pgfmath@stack@operand=\toks23
 \pgfmath@stack@operation=\toks24
 )
-(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.co
 de.tex)
@@ -157,12 +159,12 @@ tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmeti
-cs.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex
-) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+cs.code.tex)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count285
 )))
 (C:\Program Files\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 (C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty
 (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
@@ -181,13 +183,17 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 
 (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+\stockwidth=\dimen173
+\stockheight=\dimen174
 ))
 \Gin@req@height=\dimen175
 \Gin@req@width=\dimen176
 )
 (C:\Program Files\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
-Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)
 \pgf@x=\dimen177
 \pgf@y=\dimen178
 \pgf@xa=\dimen179
@@ -210,23 +216,23 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@sys@id@count=\count290
 
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
-File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfsyssoftpath@smallbuffer@items=\count291
 \pgfsyssoftpath@bigbuffer@items=\count292
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))
 (C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
@@ -248,11 +254,12 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
-Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@picminx=\dimen187
 \pgf@picmaxx=\dimen188
 \pgf@picminy=\dimen189
@@ -270,17 +277,17 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.t
 ex
-File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@path@lastx=\dimen257
 \pgf@path@lasty=\dimen258
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@shorten@end@additional=\dimen259
 \pgf@shorten@start@additional=\dimen260
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box62
 \pgf@hbox=\box63
 \pgf@layerbox@main=\box64
@@ -288,49 +295,49 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.te
 x
-File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgflinewidth=\dimen261
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code
 .tex
-File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@pt@x=\dimen262
 \pgf@pt@y=\dimen263
 \pgf@pt@temp=\dimen264
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.
 tex
-File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfarrowsep=\dimen265
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen266
 \pgf@sys@shading@range@num=\count294
 \pgf@shadingcount=\count295
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfexternal@startupbox=\box65
-)
+))
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.te
 x
-File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
@@ -342,7 +349,7 @@ Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
 (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+Package: hyperref 2022-09-22 v7.00t Hypertext links for LaTeX
 
 (C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -395,7 +402,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 \Hy@pagecounter=\count300
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2022-09-22 v7.00t Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -408,27 +415,27 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 \Hy@SavedSpaceFactor=\count301
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2022-09-22 v7.00t Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `bookmarks' set `true' on input line 4060.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 4060.
-Package hyperref Info: Option `implicit' set `false' on input line 4060.
-Package hyperref Info: Hyper figures OFF on input line 4177.
-Package hyperref Info: Link nesting OFF on input line 4182.
-Package hyperref Info: Hyper index ON on input line 4185.
-Package hyperref Info: Plain pages OFF on input line 4192.
-Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4045.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4045.
+Package hyperref Info: Option `implicit' set `false' on input line 4045.
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
-Package hyperref Info: Bookmarks ON on input line 4425.
+Package hyperref Info: Bookmarks ON on input line 4410.
 \c@Hy@tempcnt=\count302
 
 (C:\Program Files\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4763.
+LaTeX Info: Redefining \url on input line 4748.
 \XeTeXLinkMargin=\dimen268
 
 (C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
@@ -441,13 +448,13 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 \Fld@menulength=\count303
 \Field@Width=\dimen269
 \Fld@charsize=\dimen270
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
 \Hy@abspage=\count304
 
 
@@ -456,7 +463,7 @@ Package hyperref Message: Stopped early.
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+File: hpdftex.def 2022-09-22 v7.00t Hyperref driver for pdfTeX
 
 (C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
@@ -511,7 +518,7 @@ Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetwoscreens.sty)
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbaseoverlay.sty
 \beamer@argscount=\count307
-\beamer@lastskipcover=\skip51
+\beamer@lastskipcover=\skip50
 \beamer@trivlistdepth=\count308
 )
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetitle.sty)
@@ -530,10 +537,10 @@ Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 \beamer@zoomframecount=\count315
 \beamer@frametextheight=\dimen271
 \c@subsectionslide=\count316
-\beamer@frametopskip=\skip52
-\beamer@framebottomskip=\skip53
-\beamer@frametopskipautobreak=\skip54
-\beamer@framebottomskipautobreak=\skip55
+\beamer@frametopskip=\skip51
+\beamer@framebottomskip=\skip52
+\beamer@frametopskipautobreak=\skip53
+\beamer@framebottomskipautobreak=\skip54
 \beamer@envbody=\toks29
 \framewidth=\dimen272
 \c@framenumber=\count317
@@ -578,11 +585,11 @@ Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks33
 )
-\beamer@bibiconwidth=\skip56
+\beamer@bibiconwidth=\skip55
 \c@figure=\count319
 \c@table=\count320
-\abovecaptionskip=\skip57
-\belowcaptionskip=\skip58
+\abovecaptionskip=\skip56
+\belowcaptionskip=\skip57
 )
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasenavigation.sty
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasenavigationsymbols.tex)
@@ -591,7 +598,7 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerbasetheorems.sty
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip59
+\@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
@@ -651,8 +658,8 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \totwidth@=\dimen290
 \lineht@=\dimen291
 \@envbody=\toks37
-\multlinegap=\skip60
-\multlinetaggap=\skip61
+\multlinegap=\skip59
+\multlinetaggap=\skip60
 \mathdisplay@stack=\toks38
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -664,9 +671,9 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks41
 \thm@notefont=\toks42
 \thm@headpunct=\toks43
-\thm@preskip=\skip62
-\thm@postskip=\skip63
-\thm@headsep=\skip64
+\thm@preskip=\skip61
+\thm@postskip=\skip62
+\thm@headsep=\skip63
 \dth@everypar=\toks44
 )
 \c@theorem=\count333
@@ -724,10 +731,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 (C:\Program Files\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@tempdima=\dimen294
 \captionmargin=\dimen295
 \caption@leftmargin=\dimen296
@@ -789,19 +796,19 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count345
 \calc@Adimen=\dimen306
 \calc@Bdimen=\dimen307
-\calc@Askip=\skip65
-\calc@Bskip=\skip66
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count346
-\calc@Cskip=\skip67
+\calc@Cskip=\skip66
 )
 (C:\Program Files\MiKTeX\tex/latex/media9\pdfbase.sty
 Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF fe
 atures
 
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count347
 \l__pdf_internal_box=\box78
 )
@@ -843,10 +850,8 @@ Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
 \@anim@@resizeflags=\count363
 )
 (C:\Program Files\MiKTeX\tex/latex/caption\subcaption.sty
-Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
-Package caption Info: New subtype `subfigure' on input line 239.
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count364
-Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count365
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
@@ -1673,707 +1678,162 @@ Package pdftex.def Info: ente.png  used on input line 1285.
  [72
 
 ]
-<figures/vit_eq.png, id=3038, 1065.9825pt x 201.75375pt>
-File: figures/vit_eq.png Graphic file (type png)
-<use figures/vit_eq.png>
-Package pdftex.def Info: figures/vit_eq.png  used on input line 1296.
-(pdftex.def)             Requested size: 239.60567pt x 45.34953pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1296.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [73
+LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 1292
+.
+LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 1292
+.
+LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 1292
+.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+292.
 
- <./figures/vit_eq.png>]
+(C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (12.0451pt too wide) in paragraph at lines 1292--1292
+[]$[][]$  
+ []
+
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1311.
+Package pdftex.def Info: ente.png  used on input line 1292.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+[73
+
+]
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1302.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [74
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1329.
+Package pdftex.def Info: ente.png  used on input line 1312.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [75
 
 ]
+<figures/vit_fig1_eqs.png, id=3161, 2187.67313pt x 814.54312pt>
+File: figures/vit_fig1_eqs.png Graphic file (type png)
+<use figures/vit_fig1_eqs.png>
+Package pdftex.def Info: figures/vit_fig1_eqs.png  used on input line 1328.
+(pdftex.def)             Requested size: 342.2953pt x 127.44604pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
+1328.
+ (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmss.fd
+File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \vbox (7.60075pt too high) detected at line 1328
+ []
+
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1347.
+Package pdftex.def Info: ente.png  used on input line 1328.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [76
+[76
+
+ <./figures/vit_fig1_eqs.png>]
+Overfull \hbox (22.0451pt too wide) detected at line 1342
+[][]
+ []
+
+File: ente.png Graphic file (type png)
+<use ente.png>
+Package pdftex.def Info: ente.png  used on input line 1342.
+(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
+[77
 
 ]
-<figures/sigmoidneuron_derivative.png, id=3209, 1833.85126pt x 650.43pt>
-File: figures/sigmoidneuron_derivative.png Graphic file (type png)
-<use figures/sigmoidneuron_derivative.png>
-Package pdftex.def Info: figures/sigmoidneuron_derivative.png  used on input li
-ne 1363.
-(pdftex.def)             Requested size: 239.60567pt x 84.97571pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1363.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [77
-
- <./figures/sigmoidneuron_derivative.png>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1385.
+Package pdftex.def Info: ente.png  used on input line 1360.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [78
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1409.
+Package pdftex.def Info: ente.png  used on input line 1381.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [79
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1440.
+Package pdftex.def Info: ente.png  used on input line 1397.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [80
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1463.
+Package pdftex.def Info: ente.png  used on input line 1417.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [81
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1472.
+Package pdftex.def Info: ente.png  used on input line 1437.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [82
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1497.
+Package pdftex.def Info: ente.png  used on input line 1451.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [83
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1509.
+Package pdftex.def Info: ente.png  used on input line 1465.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [84
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1527.
+Package pdftex.def Info: ente.png  used on input line 1483.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [85
 
 ]
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1542.
+Package pdftex.def Info: ente.png  used on input line 1498.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [86
 
 ]
-<figures/simple_circuit.png, id=3640, 1156.32pt x 532.99126pt>
+<figures/simple_circuit.png, id=3602, 1156.32pt x 532.99126pt>
 File: figures/simple_circuit.png Graphic file (type png)
 <use figures/simple_circuit.png>
-Package pdftex.def Info: figures/simple_circuit.png  used on input line 1553.
+Package pdftex.def Info: figures/simple_circuit.png  used on input line 1509.
 (pdftex.def)             Requested size: 239.60567pt x 110.44316pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1553.
+Package pdftex.def Info: ente.png  used on input line 1509.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [87
 
  <./figures/simple_circuit.png>]
-<figures/simple_circuit2.png, id=3681, 1213.53375pt x 545.03625pt>
+<figures/simple_circuit2.png, id=3643, 1213.53375pt x 545.03625pt>
 File: figures/simple_circuit2.png Graphic file (type png)
 <use figures/simple_circuit2.png>
-Package pdftex.def Info: figures/simple_circuit2.png  used on input line 1564.
+Package pdftex.def Info: figures/simple_circuit2.png  used on input line 1520.
 (pdftex.def)             Requested size: 239.60567pt x 107.60812pt.
 File: ente.png Graphic file (type png)
 <use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1564.
+Package pdftex.def Info: ente.png  used on input line 1520.
 (pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
  [88
 
  <./figures/simple_circuit2.png>]
-File: figures/sigmoidneuron_derivative.png Graphic file (type png)
-<use figures/sigmoidneuron_derivative.png>
-Package pdftex.def Info: figures/sigmoidneuron_derivative.png  used on input li
-ne 1575.
-(pdftex.def)             Requested size: 342.2953pt x 121.39954pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1575.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [89
-
-]
-<figures/sigmoid_example.png, id=3761, 1909.1325pt x 662.475pt>
-File: figures/sigmoid_example.png Graphic file (type png)
-<use figures/sigmoid_example.png>
-Package pdftex.def Info: figures/sigmoid_example.png  used on input line 1587.
-(pdftex.def)             Requested size: 342.2953pt x 118.77536pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1587.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [90
-
- <./figures/sigmoid_example.png>]
-<figures/sigmoid_example_backprop.png, id=3802, 1945.2675pt x 867.24pt>
-File: figures/sigmoid_example_backprop.png Graphic file (type png)
-<use figures/sigmoid_example_backprop.png>
-Package pdftex.def Info: figures/sigmoid_example_backprop.png  used on input li
-ne 1598.
-(pdftex.def)             Requested size: 342.2953pt x 152.60295pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1598.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [91
-
- <./figures/sigmoid_example_backprop.png>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1605.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [92
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1622.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [93
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1637.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [94
-
-]
-<figures/simple_nn1.png, id=3957, 1075.01625pt x 834.11626pt>
-File: figures/simple_nn1.png Graphic file (type png)
-<use figures/simple_nn1.png>
-Package pdftex.def Info: figures/simple_nn1.png  used on input line 1663.
-(pdftex.def)             Requested size: 136.91603pt x 106.22432pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1663.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [95
-
- <./figures/simple_nn1.png>]
-<figures/simple_nn2.png, id=3998, 1050.92625pt x 834.11626pt>
-File: figures/simple_nn2.png Graphic file (type png)
-<use figures/simple_nn2.png>
-Package pdftex.def Info: figures/simple_nn2.png  used on input line 1690.
-(pdftex.def)             Requested size: 136.91603pt x 108.66801pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1690.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [96
-
- <./figures/simple_nn2.png>]
-<figures/simple_nn3.png, id=4039, 1050.92625pt x 834.11626pt>
-File: figures/simple_nn3.png Graphic file (type png)
-<use figures/simple_nn3.png>
-Package pdftex.def Info: figures/simple_nn3.png  used on input line 1717.
-(pdftex.def)             Requested size: 136.91603pt x 108.66801pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1717.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [97
-
- <./figures/simple_nn3.png>]
-<figures/simple_nn.png, id=4077, 1050.92625pt x 749.80125pt>
-File: figures/simple_nn.png Graphic file (type png)
-<use figures/simple_nn.png>
-Package pdftex.def Info: figures/simple_nn.png  used on input line 1744.
-(pdftex.def)             Requested size: 136.91603pt x 97.68352pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1744.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [98
-
- <./figures/simple_nn.png>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1770.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [99
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1779.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [100
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1816.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [101
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1830.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [102
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1855.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [103
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1877.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [104
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1887.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [105
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1916.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-
-[106
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1927.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [107
-
-]
-<figures/pesos_zeros.png, id=4535, 462.528pt x 346.896pt>
-File: figures/pesos_zeros.png Graphic file (type png)
-<use figures/pesos_zeros.png>
-Package pdftex.def Info: figures/pesos_zeros.png  used on input line 1943.
-(pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
-
-Overfull \vbox (13.46811pt too high) detected at line 1943
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1943.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[108
-
- <./figures/pesos_zeros.png>]
-<figures/pesos_ones.png, id=4576, 462.528pt x 346.896pt>
-File: figures/pesos_ones.png Graphic file (type png)
-<use figures/pesos_ones.png>
-Package pdftex.def Info: figures/pesos_ones.png  used on input line 1959.
-(pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
-
-Overfull \vbox (13.46811pt too high) detected at line 1959
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1959.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[109
-
- <./figures/pesos_ones.png>]
-<figures/pesos_uniform.png, id=4615, 462.528pt x 346.896pt>
-File: figures/pesos_uniform.png Graphic file (type png)
-<use figures/pesos_uniform.png>
-Package pdftex.def Info: figures/pesos_uniform.png  used on input line 1975.
-(pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
-
-Overfull \vbox (1.76347pt too high) detected at line 1975
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1975.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[110
-
- <./figures/pesos_uniform.png>]
-<figures/pesos_normal.png, id=4656, 462.528pt x 346.896pt>
-File: figures/pesos_normal.png Graphic file (type png)
-<use figures/pesos_normal.png>
-Package pdftex.def Info: figures/pesos_normal.png  used on input line 1992.
-(pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
-
-Overfull \vbox (15.33565pt too high) detected at line 1992
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 1992.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[111
-
- <./figures/pesos_normal.png>]
-<figures/pesos_glorot_uniform.png, id=4697, 462.528pt x 346.896pt>
-File: figures/pesos_glorot_uniform.png Graphic file (type png)
-<use figures/pesos_glorot_uniform.png>
-Package pdftex.def Info: figures/pesos_glorot_uniform.png  used on input line 2
-022.
-(pdftex.def)             Requested size: 136.91603pt x 102.68806pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2022.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [112
-
- <./figures/pesos_glorot_uniform.png>]
-<figures/pesos_glorot_normal.png, id=4738, 462.528pt x 346.896pt>
-File: figures/pesos_glorot_normal.png Graphic file (type png)
-<use figures/pesos_glorot_normal.png>
-Package pdftex.def Info: figures/pesos_glorot_normal.png  used on input line 20
-52.
-(pdftex.def)             Requested size: 136.91603pt x 102.68806pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2052.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-
-[113
-
- <./figures/pesos_glorot_normal.png>]
-<figures/weights_init.png, id=4776, 1031.35312pt x 251.43938pt>
-File: figures/weights_init.png Graphic file (type png)
-<use figures/weights_init.png>
-Package pdftex.def Info: figures/weights_init.png  used on input line 2064.
-(pdftex.def)             Requested size: 342.2953pt x 83.44714pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2064.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [114
-
- <./figures/weights_init.png>]
-File: figures/weights_init.png Graphic file (type png)
-<use figures/weights_init.png>
-Package pdftex.def Info: figures/weights_init.png  used on input line 2074.
-(pdftex.def)             Requested size: 342.2953pt x 83.44714pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2074.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-
-[115
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2090.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [116
-
-]
-<figures/dropout.png, id=4896, 239.39438pt x 118.94438pt>
-File: figures/dropout.png Graphic file (type png)
-<use figures/dropout.png>
-Package pdftex.def Info: figures/dropout.png  used on input line 2100.
-(pdftex.def)             Requested size: 342.2953pt x 170.08371pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2100.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [117
-
- <./figures/dropout.png>]
-Overfull \vbox (9.96326pt too high) detected at line 2118
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2118.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[118
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2137.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [119
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2154.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [120
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2170.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [121
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2185.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [122
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2197.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [123
-
-]
-<figures/comparacao_regularizacao.jpeg, id=5172, 1081.03876pt x 395.4775pt>
-File: figures/comparacao_regularizacao.jpeg Graphic file (type jpg)
-<use figures/comparacao_regularizacao.jpeg>
-Package pdftex.def Info: figures/comparacao_regularizacao.jpeg  used on input l
-ine 2210.
-(pdftex.def)             Requested size: 342.2953pt x 125.22176pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2210.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [124
-
- <./figures/comparacao_regularizacao.jpeg>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2228.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [125
-
-]
-<figures/minibatch.png, id=5255, 1854.93pt x 472.76625pt>
-File: figures/minibatch.png Graphic file (type png)
-<use figures/minibatch.png>
-Package pdftex.def Info: figures/minibatch.png  used on input line 2250.
-(pdftex.def)             Requested size: 342.2953pt x 87.23676pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2250.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [126
-
- <./figures/minibatch.png>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2281.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [127
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2294.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [128
-
-]
-<figures/lr_decay1.png, id=5375, 870.25125pt x 652.4375pt>
-File: figures/lr_decay1.png Graphic file (type png)
-<use figures/lr_decay1.png>
-Package pdftex.def Info: figures/lr_decay1.png  used on input line 2322.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-<figures/lr_decay2.png, id=5376, 870.25125pt x 652.4375pt>
-File: figures/lr_decay2.png Graphic file (type png)
-<use figures/lr_decay2.png>
-Package pdftex.def Info: figures/lr_decay2.png  used on input line 2322.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-<figures/lr_decay3.png, id=5377, 870.25125pt x 652.4375pt>
-File: figures/lr_decay3.png Graphic file (type png)
-<use figures/lr_decay3.png>
-Package pdftex.def Info: figures/lr_decay3.png  used on input line 2322.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2322.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [129
-
- <./figures/lr_decay1.png> <./figures/lr_decay2.png> <./figures/lr_decay3.png>]
-<figures/lr_decay4.png, id=5417, 870.25125pt x 652.4375pt>
-File: figures/lr_decay4.png Graphic file (type png)
-<use figures/lr_decay4.png>
-Package pdftex.def Info: figures/lr_decay4.png  used on input line 2351.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-<figures/lr_decay5.png, id=5418, 870.25125pt x 652.4375pt>
-File: figures/lr_decay5.png Graphic file (type png)
-<use figures/lr_decay5.png>
-Package pdftex.def Info: figures/lr_decay5.png  used on input line 2351.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-<figures/lr_decay6.png, id=5419, 870.25125pt x 652.4375pt>
-File: figures/lr_decay6.png Graphic file (type png)
-<use figures/lr_decay6.png>
-Package pdftex.def Info: figures/lr_decay6.png  used on input line 2351.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2351.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [130
-
- <./figures/lr_decay4.png> <./figures/lr_decay5.png> <./figures/lr_decay6.png>]
-<figures/lr_decay7.png, id=5459, 870.25125pt x 652.4375pt>
-File: figures/lr_decay7.png Graphic file (type png)
-<use figures/lr_decay7.png>
-Package pdftex.def Info: figures/lr_decay7.png  used on input line 2379.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-<figures/lr_decay8.png, id=5460, 870.25125pt x 652.4375pt>
-File: figures/lr_decay8.png Graphic file (type png)
-<use figures/lr_decay8.png>
-Package pdftex.def Info: figures/lr_decay8.png  used on input line 2379.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-<figures/lr_decay9.png, id=5461, 870.25125pt x 652.4375pt>
-File: figures/lr_decay9.png Graphic file (type png)
-<use figures/lr_decay9.png>
-Package pdftex.def Info: figures/lr_decay9.png  used on input line 2379.
-(pdftex.def)             Requested size: 102.68962pt x 76.98495pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2379.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [131
-
- <./figures/lr_decay7.png> <./figures/lr_decay8.png> <./figures/lr_decay9.png>]
-<figures/early_stop.png, id=5501, 1085.55562pt x 879.285pt>
-File: figures/early_stop.png Graphic file (type png)
-<use figures/early_stop.png>
-Package pdftex.def Info: figures/early_stop.png  used on input line 2394.
-(pdftex.def)             Requested size: 119.80544pt x 97.03023pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2394.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [132
-
- <./figures/early_stop.png>]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2409.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [133
-
-]
-<figures/batch_norm_feed.png, id=5582, 1207.51125pt x 868.24374pt>
-File: figures/batch_norm_feed.png Graphic file (type png)
-<use figures/batch_norm_feed.png>
-Package pdftex.def Info: figures/batch_norm_feed.png  used on input line 2432.
-(pdftex.def)             Requested size: 171.14764pt x 123.05035pt.
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2432.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [134
-
- <./figures/batch_norm_feed.png>]
-<figures/batch_norm_back.png, id=5622, 1488.56125pt x 865.2325pt>
-File: figures/batch_norm_back.png Graphic file (type png)
-<use figures/batch_norm_back.png>
-Package pdftex.def Info: figures/batch_norm_back.png  used on input line 2443.
-(pdftex.def)             Requested size: 342.2953pt x 198.95969pt.
-
-Overfull \vbox (1.58524pt too high) detected at line 2443
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2443.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[135
-
- <./figures/batch_norm_back.png>]
-File: figures/simple_nn.png Graphic file (type png)
-<use figures/simple_nn.png>
-Package pdftex.def Info: figures/simple_nn.png  used on input line 2458.
-(pdftex.def)             Requested size: 239.60567pt x 170.94044pt.
-
-Overfull \vbox (12.89935pt too high) detected at line 2458
- []
-
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2458.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
-[136
-
-]
-File: ente.png Graphic file (type png)
-<use ente.png>
-Package pdftex.def Info: ente.png  used on input line 2485.
-(pdftex.def)             Requested size: 19.97693pt x 22.76228pt.
- [137
-
-]
-\tf@nav=\write6
-\openout6 = `main_2.nav'.
-
-\tf@toc=\write7
-\openout7 = `main_2.toc'.
-
-\tf@snm=\write8
-\openout8 = `main_2.snm'.
-
- (main_2.aux)
-Package rerunfilecheck Info: File `main_2.out' has not changed.
-(rerunfilecheck)             Checksum: 85EBBE55671BD620C2DD2CC3297D11A1;1930.
- ) 
-Here is how much of TeX's memory you used:
- 28235 strings out of 476339
- 569009 string characters out of 5797934
- 1876340 words of memory out of 5000000
- 47787 multiletter control sequences out of 15000+600000
- 568733 words of font info for 77 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 128i,21n,122p,453b,874s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/M
-iKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips
-/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/Pro
-gram Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/linew10.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/ty
-pe1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.p
-fb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
-blic/lm/lmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Pr
-ogram Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main_2.pdf (137 pages, 8635408 bytes).
-PDF statistics:
- 5880 PDF objects out of 6186 (max. 8388607)
- 286 named destinations out of 1000 (max. 500000)
- 5984 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+<figures/sigmoidneuron_d
