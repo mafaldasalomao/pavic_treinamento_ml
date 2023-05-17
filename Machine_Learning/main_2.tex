@@ -1465,80 +1465,75 @@
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Como fazer derivação de matrizes}
-		O que vimos até agora foram números escalares... \\
-		Como derivar uma matriz?
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Vamos replicar a equação 01}
+		Se você puder representar seus dados de uma maneira boa e aprendível (já que as incorporações são representações aprendíveis), é provável que um algoritmo de aprendizado seja capaz de ter um bom desempenho com eles. Vamos começar com \textbf{\textbf{patch embedding}}: 
+		A entrada do tramsform é de 1D de token embeddings. Para imagens 2D, remodelamos a imagem $\mathbf{x} \in \mathbb{R}^{H \times W \times C}$ em uma sequência de patches 2D achatados (flatten) $\mathbf{x}_{p} \in \mathbb{R}^{N \times\left(P^{2} \cdot C\right)}$, onde $(H, W)$ é a resolução da imagem original, $C$ é o número de canais, $(P, P)$ é a resolução de cada patch de imagem e $N=H W / P^{2}$ é o número resultante de patches, que também serve como o comprimento efetivo da sequência de entrada para o Transformer. O Transformer usa tamanho de vetor latente constante $D$ em todas as suas camadas, portanto achatamos os patches e mapeamos para as dimensões $D$ com uma projeção linear treinável (Eq. 1). Referimo-nos à saída dessa projeção \textbf{como embeddings de patch}.
 	\end{block}
-	\begin{example}	
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Vamos replicar a equação 01}
+		\begin{itemize}
+			\item Training resolution is $224$.
+			\item $D$  is the size of the patch embeddings
+			\item The image starts as $2D$ with size  $H×W×C$.
+			\item The image gets converted to a sequence of flattened 2D patches with size ${N \times\left(P^{2} \cdot C\right)}$.
+			\begin{itemize}
+				\item $(P, P)$ is the resolution of each image patch (patch size).
+				\item $N=H W / P^{2}$ is the resulting number of patches, which also serves as the input sequence length for the Transformer.
+			\end{itemize}
+			
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Vamos replicar a equação 01}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/vit_fig1_eqs1}
+		\end{figure}
+	Vamos calcular os shapes de entrada e saída de patch embedding manualmente. Vamos deicar o valor de \textbf{P} = 16 ``ViT-B/16''.
+	\end{block}
+	
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vision Transform - Vamos replicar a equação 01}
+		Assim teremos: \\
+		- \textbf{input:} Imagens que começa como 2D com tamanho  ${H \times W \times C}$
+		- \textbf{Output:} A imagem convertida em uma sequencia achatada com tamanho ${N \times\left(P^{2} \cdot C\right)}$
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\linewidth]{figures/vit_patch_ex00}
+		\end{figure}
 		
-		$W = np.random.randn(5, 10)$ \\
-		$X = np.random.randn(3, 10)$ \\
-		$Y = X.dot(W^T)$ \\
-		$W$ são nossos pesos, $X$ nossas entradas, $Y$ a saída \\
-		$10$ é a dimensão da entrada, $3$ Qtd de amostras, $5$ Qtd de neurônios. \\
-		Anteriormente só tínhamos 1 neurônio \\ 
-		A multiplicação de uma matriz de $3x10 * 10x5$ gerará uma saída $3x5$
-	\end{example}
+	\end{block}
+	
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{example}	
-		Vamos imaginar que nosso $Y = WX$
-		Se a multiplicação de uma matriz de $3x10 * 10x5$ gerará uma saída $3x5$ a derivação de $dY$ deverá ter a dimensão de $3x5$. Assim, a derivada de uma matriz sempre terá o shape da matriz original \\
-		$dY = np.random.randn(*Y.shape)$ \\
-		A derivada de $W$ dado $Y = WX$ será o de dentro * o de fora $X * dY$, assim: \\
-		$dW = dY^T.dot(X)$\\
-		A derivada de $X$ dado $Y = WX$ será o de dentro * o de fora $W * dY$, assim: \\
-		$dY = dY.dot(W)$
-		
-		\alert{A derivada de uma matriz deverá possuir o mesmo \textit{shape} da matriz original, neste caso $Y$ tem $3x5$ e $dY$ também}
-	\end{example}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Resumo das derivadas}
-		Vamos tomar este exemplo:
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Transformando uma única imagem em patches}
+		Transformando uma única imagem em patches: \\
+		Agora que conhecemos as formas ideais de entrada e saída para nossa camada patch embedding, vamos prosseguir para criá-la. \\
+		Vamos vizualizar nossa imagem em patch
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/simple_circuit}
+			\includegraphics[width=0.4\linewidth]{figures/vit_patch_ex01}
 		\end{figure}
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Resumo das derivadas}
-		Vamos tomar este exemplo:
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{figures/simple_circuit2}
-		\end{figure}
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Derivando o neurônio Sigmoide}
-		Agora que sabemos como derivar, vamos retornar ao neurônio Sigmoide:
-		\begin{figure}
-			\centering
-			\includegraphics[width=1\linewidth]{figures/sigmoidneuron_derivative}
-		\end{figure}
-	\end{block}
-\end{frame}
-%==========================================================================================
-%==========================================================================================
-\begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Derivando o neurônio Sigmoide}
-		Vamos fazer o processo de \textit{forward}.
-		\begin{figure}
-			\centering
-			\includegraphics[width=1\linewidth]{figures/sigmoid_example}
-		\end{figure}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando patches de imagem com torch.nn.Conv2d()}
+		\textbf{Hybrid Architecture: }Como uma alternativa aos patches de imagens brutas, a sequência de entrada pode ser formada a partir de mapas de recursos de uma CNN (LeCun et al., 1989). Neste modelo híbrido, a projeção de patch embedding \textbf{E } (Eq. 1) é aplicada a patches extraídos de um mapa de features CNN. Como um caso especial, os patches podem ter tamanho espacial  1×1 , o que significa que a sequência de entrada é obtida simplesmente achatando as dimensões espaciais do mapa de features e projetando para a dimensão do Transformer. \\
+		O \textbf{"mapa de features"} a que eles se referem são os pesos/ativações produzidos por uma camada convolucional que passa sobre uma determinada imagem.
 	\end{block}
 \end{frame}
 %==========================================================================================
