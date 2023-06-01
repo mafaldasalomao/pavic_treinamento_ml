@@ -1533,136 +1533,117 @@
 	\frametitle{PyTorch - Paper Replicating}
 	\begin{block}{Vamos replicar a equação 01 - Criando patches de imagem com torch.nn.Conv2d()}
 		\textbf{Hybrid Architecture: }Como uma alternativa aos patches de imagens brutas, a sequência de entrada pode ser formada a partir de mapas de recursos de uma CNN (LeCun et al., 1989). Neste modelo híbrido, a projeção de patch embedding \textbf{E } (Eq. 1) é aplicada a patches extraídos de um mapa de features CNN. Como um caso especial, os patches podem ter tamanho espacial  1×1 , o que significa que a sequência de entrada é obtida simplesmente achatando as dimensões espaciais do mapa de features e projetando para a dimensão do Transformer. \\
-		O \textbf{"mapa de features"} a que eles se referem são os pesos/ativações produzidos por uma camada convolucional que passa sobre uma determinada imagem.
+		O \textbf{``mapa de features''} a que eles se referem são os pesos/ativações produzidos por uma camada convolucional que passa sobre uma determinada imagem. \\
+		\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/08-vit-paper-patch-embedding-animation.gif?raw=true}{\beamergotobutton{Acessar}} 
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Backpropagation}
-	\begin{block}{Derivando o neurônio Sigmoide}
-		Após o \textit{forward}, faremos agora a propagação reversa ou \textit{backpropagation}.
-		\begin{figure}
-			\centering
-			\includegraphics[width=1\linewidth]{figures/sigmoid_example_backprop}
-		\end{figure}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando patches de imagem com torch.nn.Conv2d()}
+		Com os parâmetros \textbf{kernel\_size} e \textbf{stride} de uma camada \textbf{torch.nn.Conv2d()} iguais ao \textbf{patch\_size} podemos efetivamente obter uma camada que divide nossa imagem em patches e cria uma incorporação que pode ser aprendida (conhecida como "Linear Projection" no artigo do ViT) de cada patch.
 	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Vamos ver na prática}
-		Vamos praticar utilizando o notebook 04\_backpropagation
-	\end{block}
-\end{frame}
-%==========================================================================================
-
-
-
-
-\section{Redes Neurais Profundas}
-
-\begin{frame}
-	\frametitle{Redes Neurais Profundas}
-	\begin{block}{Dimensão das matrizes}
-		Até o momento vimos que um neurônio pode ser dado pela equação: $y = f(xw^T + b)$. Sendo $f$ uma função de ativação. A função de ativação não altera o \textit{shape} dos dados. \\
-		A princípio tivemos $x = [1x D_{in}]$ \textit{shape}. Onde $1$ era a quantidade de amostras e $D_{in}$ o dimensões da amostra, por exemplo, a porta OR que recebe duas entradas $(x_1, x_2)$, assim $D_{in} = 2$. \\
-		O mesmo ocorre para a saída, $y = [1x D_{out}]$ \textit{shape}. Onde $1$ era a quantidade de amostras e $D_{out}$ a dimensão de saída, em todos casos visto até agora igual a $1$. Mas podemos ter quantas saídas forem necessárias. \\
-		Mas qual a dimensão do \textit{bias} e dos nossos pesos?
-				
-	\end{block}
-\end{frame}
-
-%==========================================================================================
-\begin{frame}
-	\frametitle{Redes Neurais Profundas}
-	\begin{block}{Dimensão das matrizes}
-		Assim...
-		\begin{itemize}
-			\item $x = [1x D_{in}]$
-			\item $y = [1x D_{out}]$
-			\item $bias = [1x D_{out}]$
-			\item $w^T = [D_{in} x D_{out}]$
-			\item $[1x D_{out}] = [1 x D_{in}] * [D_{in} x D_{out}] + [1x D_{out}]$
-		\end{itemize}
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Redes Neurais Profundas}
-	\begin{block}{Dimensão das matrizes}
-		\begin{columns}
-			\begin{column}{0.4\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1\linewidth]{figures/simple_nn1}
-				\end{figure}
-			\end{column}
-			\begin{column}{0.6\textwidth}
-				\begin{table}[]
-					\begin{tabular}{|l|l|l|l|}
-						\hline
-						$[1 x D_{in}]$ & $[D_{in} x D_{out}]$ &  $[1x D_{out}]$ & $ [1x D_{out}]$ \\ \hline
-						$1X3$ & $3x4$ &  $1x4$ & $1x4$  \\ \hline
-					\end{tabular}
-				\end{table}
-			A multiplicação das matrizes $1X3 * 3x4$ nos retornará uma matriz $1x4$, que deve ser a mesma dimensão do \textit{bias}. \\
-			Cada neurônio possui um bias.
-			\end{column}
-		\end{columns}
-
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Redes Neurais Profundas}
-	\begin{block}{Dimensão das matrizes}
-		\begin{columns}
-			\begin{column}{0.4\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1\linewidth]{figures/simple_nn2}
-				\end{figure}
-			\end{column}
-			\begin{column}{0.6\textwidth}
-				\begin{table}[]
-					\begin{tabular}{|l|l|l|l|}
-						\hline
-						$[1 x D_{in}]$ & $[D_{in} x D_{out}]$ &  $[1x D_{out}]$ & $ [1x D_{out}]$ \\ \hline
-						$1X3$ & $3x4$ &  $1x4$ & $1x4$  \\ \hline
-						$1X4$ & $4x4$ &  $1x4$ & $1x4$  \\ \hline
-					\end{tabular}
-				\end{table}
-				A multiplicação das matrizes $1X3 * 4x4$ nos retornará uma matriz $1x4$, que deve ser a mesma dimensão do \textit{bias}. \\
-				Cada neurônio possui um bias.
-			\end{column}
-		\end{columns}
+	\begin{block}{O que vamos fazer}
+		Usaremos: \textbf{torch.nn.Conv2d()} para transformar nossa imagem em patches de mapas de features da CNN. E, \textbf{torch.nn.Flatten()} para achatar as dimensões espaciais do mapa de features. 
+		O kernel size  = 16 = patch size e stride = 16 = patch size, ou seja, filtragem do tamanho do patch e pular 16 pixels para realizar nova filtragem. \\
+		in\_channels=3 e out\_channels=768 vindo da nossa fórmula anterior $D$
 		
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Redes Neurais Profundas}
-	\begin{block}{Dimensão das matrizes}
-		\begin{columns}
-			\begin{column}{0.4\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1\linewidth]{figures/simple_nn3}
-				\end{figure}
-			\end{column}
-			\begin{column}{0.6\textwidth}
-				\begin{table}[]
-					\begin{tabular}{|l|l|l|l|}
-						\hline
-						$[1 x D_{in}]$ & $[D_{in} x D_{out}]$ &  $[1x D_{out}]$ & $ [1x D_{out}]$ \\ \hline
-						$1X3$ & $3x4$ &  $1x4$ & $1x4$  \\ \hline
-						$1X4$ & $4x4$ &  $1x4$ & $1x4$  \\ \hline
-						$1X4$ & $4x1$ &  $1x1$ & $1x1$  \\ \hline
-					\end{tabular}
-				\end{table}
-				A multiplicação das matrizes $1X1 * 4x1$ nos retornará uma matriz $1x1$, que deve ser a mesma dimensão do \textit{bias}.
-			\end{column}
-		\end{columns}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando patches de imagem com torch.nn.Conv2d()}
+		Vamos passar uma imagem pela camada recém criada e analisar sua saída:
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vit_patch_cnn_out01}
+		\end{figure}
+		
+		Observe como todos os mapas de recursos representam a imagem original, depois de visualizar mais alguns, você pode começar a ver os diferentes contornos principais e alguns recursos principais.
+		
+		O importante a observar é que esses recursos podem mudar com o tempo à medida que a rede neural aprende.
+		
+		E por causa disso, esses mapas de recursos podem ser considerados uma \textbf{incorporação que pode ser aprendida} da nossa imagem.
+
+	\end{block}
+\end{frame}
+%==========================================================================================
+
+
+
+
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Achatando a incorporação do patch com torch.nn.Flatten()}
+		Transformamos nossa imagem em incorporações de patch, mas elas ainda estão no formato 2D. \\
+		Como os colocamos na forma de saída desejada da camada de incorporação de patch do modelo ViT? \\
+		Saída desejada (1D sequence of flattened 2D patches): (196, 768) $\rightarrow$ (number of patches, embedding dimension) $\rightarrow$ ${N \times\left(P^{2} \cdot C\right)}$ \\
+		Temos a saída com 768 partes  ( $(P^{2} \cdot C)$ ), mas precisamos do número de patches $N$.
+		
+		\alert{Os patches podem ter tamanho de $1 \times 1$ o que significa que para obtê-lo basta \textbf{achatarmos o mapa de fature} e projetá-lo para o Transformer}
+		
+		
+	\end{block}
+\end{frame}
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 -Transformando a patch embedding layer ViT em um módulo PyTorch}
+		Hora de colocar tudo o que fizemos para criar a incorporação do patch em uma única camada do PyTorch. \\
+		
+		Podemos fazer isso subclassificando nn.Module e criando um pequeno "modelo" PyTorch para fazer todas as etapas acima.
+		
+		Especificamente iremos:
+		\begin{itemize}
+			\item[1] Crie uma classe chamada \textbf{PatchEmbedding} com subclasse nn.Module (para que possa ser usada uma camada PyTorch). 
+			\item[2] Inicialize a classe com os parâmetros \textbf{in\_channels=3}, \textbf{patch\_size=16} (para ViT-Base) e \textbf{embedding\_dim=768} (este é $D$ para ViT-Base da Tabela 1).
+			\item[3] Crie uma camada para transformar uma imagem em patches usando nn.Conv2d() (assim como em 4.3 acima).
+			
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 -Transformando a patch embedding layer ViT em um módulo PyTorch}
+		\begin{itemize}
+			\item[1] Crie uma classe chamada \textbf{PatchEmbedding} com subclasse nn.Module (para que possa ser usada uma camada PyTorch). 
+			\item[2] Inicialize a classe com os parâmetros \textbf{in\_channels=3}, \textbf{patch\_size=16} (para ViT-Base) e \textbf{embedding\_dim=768} (este é $D$ para ViT-Base da Tabela 1).
+			\item[3] Crie uma camada para transformar uma imagem em patches usando nn.Conv2d() (assim como em 4.3 acima).
+			\item[4] Crie uma camada para nivelar os mapas de recursos de patch em uma única dimensão (como em 4.4 acima).
+			\item[5] Defina um método forward() para pegar uma entrada e passá-la pelas camadas criadas em 3 e 4.
+			\item[6] Certifique-se de que a forma de saída reflete a forma de saída necessária da arquitetura ViT (${N \times\left(P^{2} \cdot C\right)}$).
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 -Transformando a patch embedding layer ViT em um módulo PyTorch}
+		A forma de saída corresponde às formas de entrada e saída ideais que gostaríamos de ver na camada de incorporação de patch:
+		
+		\textbf{Input}: A imagem começa como 2D com tamanho ${H \times W \times C}$. \\
+		\textbf{Saída}: a imagem é convertida em uma sequência 1D de patches 2D achatados com tamanho ${N \times\left(P^{2} \cdot C\right)}$.
+		
+		\textbf{Onde}:
+		* $(H, W)$ é a resolução da imagem original. \\
+		* $C$ é o número de canais. \\
+		* $(P, P)$ é a resolução de cada patch de imagem (\textbf{tamanho do patch}). \\
+		* $N=H W / P^{2}$ é o número resultante de patches, que também serve como o comprimento efetivo da sequência de entrada para o Transformer. 
+
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 -Transformando a patch embedding layer ViT em um módulo PyTorch}
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/vit_patch_class_emb}
+	\end{figure}
+
 		
 	\end{block}
 \end{frame}
