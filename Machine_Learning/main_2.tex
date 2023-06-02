@@ -1649,64 +1649,47 @@
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Redes Neurais Profundas}
-	\begin{block}{Dimensão das matrizes}
-		\begin{columns}
-			\begin{column}{0.4\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1\linewidth]{figures/simple_nn}
-				\end{figure}
-			\end{column}
-			\begin{column}{0.6\textwidth}
-				Quantos parâmetros treináveis esta rede possui? \\
-				\begin{table}[]
-					\begin{tabular}{|l|l|l|l|}
-						\hline
-						$[1 x D_{in}]$ & $[D_{in} x D_{out}]$ &  $[1x D_{out}]$ & $ [1x D_{out}]$ \\ \hline
-						$1X3$ & $3x4=\alert{12}$ &  $1x4=\alert{4}$ & $1x4$  \\ \hline
-						$1X4$ & $4x4=\alert{16}$ &  $1x4=\alert{4}$ & $1x4$  \\ \hline
-						$1X4$ & $4x1=\alert{4}$ &  $1x1=\alert{1}$ & $1x1$  \\ \hline
-					\end{tabular}
-				\end{table}
-				$12 + 4 + 16 + 4 + 4 + 1 = 41$ Parâmetros
-			\end{column}
-		\end{columns}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a incorporação do token de classe}
+		Fizemos a incorporação do patch de imagem, hora de começar a trabalhar na classe de incorporação de token. \\
+		Ou $\mathbf{x}_\text {class }$ da equação 1.
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/class_token}
+	\end{figure}
+			
+		
 	\end{block}
 \end{frame}
 %==========================================================================================
 
-
-\section{Funções de Custo}
-
 \begin{frame}
-	\frametitle{Funções de Custo - Regressão}
-		\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\begin{block}{MAE- mean of absolute errors}
-				$$J = \frac{1}{N} \sum |y_i - \hat{y}_i|$$ \\
-				$$\frac{\partial J}{\partial \hat{y}} = \frac{1}{N} \left\{\begin{matrix}
-					+1 se \hat{y} > y
-					\\ 
-					-1 se \hat{y} < y
-				\end{matrix}\right.$$ 
-			\end{block}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			\begin{block}{MSE- mean of squared errors}
-				$$J = \frac{1}{2N} \sum |y_i - \hat{y}_i|^2$$ \\
-				$$\frac{\partial J}{\partial \hat{y}} = -(y-\hat{y})\frac{1}{N}$$ 
-			\end{block}
-		\end{column}
-	\end{columns}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a incorporação do token de classe}
+		Esquerda: Figura 1 do documento ViT com o "token de classificação" ou token de incorporação [class] que vamos recriar em destaque.
+		
+		Direita: Equação 1 e seção 3.1 do documento ViT que se relacionam ao token de incorporação de classe que pode ser aprendido.
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/class_token}
+		\end{figure}
+		
+		
+	\end{block}
 \end{frame}
 %==========================================================================================
 
 \begin{frame}
-	\frametitle{Funções de Custo - Classificação binária}
-	\begin{block}{Binary Cross Entropy}
-		$$J = -\frac{1}{N} \sum y_iln(\hat{y}_i)+(1-y_i)ln(1-\hat{y}_i)$$ \\
-		$$\frac{\partial J}{\partial \hat{y}} = \frac{-(y-\hat{y})}{\hat{y}(1-\hat{y})}\frac{1}{N}$$ 
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Equação 01 - Criando a incorporação do token de classe}
+		Lendo o segundo parágrafo da seção 3.1 do artigo do ViT, vemos a seguinte descrição:
+		
+		Semelhante ao token `[ class ]` do BERT, acrescentamos uma incorporação que pode ser aprendida à sequência de patches incorporados $\left(\mathbf{z}_{0}^{0}=\mathbf{x}_{\text { classe }}\right)$, cujo estado na saída do codificador Transformer $\left(\mathbf{z}_{L}^{0}\right)$ serve como representação da imagem $\mathbf{y}$ (Eq. 4).
+		
+		\textbf{Observação:} [BERT](https://arxiv.org/abs/1810.04805) (Representações de Codificador Bidirecional de Transformers) é um dos trabalhos originais de pesquisa de aprendizado de máquina para usar a arquitetura Transformer para obter resultados excelentes em ambientes naturais tarefas de processamento de linguagem (NLP) e é onde se originou a ideia de ter um token [ class ] no início de uma sequência, class sendo uma descrição para a classe de "classificação" à qual a sequência pertencia.
+		
+		Portanto, precisamos "pré-preparar uma incorporação apreensível para a sequência de patches incorporados".
+		
 	\end{block}
 \end{frame}
 
