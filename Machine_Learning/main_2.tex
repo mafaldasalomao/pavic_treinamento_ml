@@ -1806,124 +1806,86 @@
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/msa}
+			\includegraphics[width=1\linewidth]{figures/msa}
 		\end{figure}
 		
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Distribuição Uniforme Aleatória}
-		\begin{itemize}
-			\item $y \in [0, 1]$ 
-			\item Inicializa todos o pesos com uma Distribuição Uniforme Aleatória 
-			\item Quebra a simetria
-		\end{itemize}
-			$	y = np.random.rand(H, W)$
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{5.1 The LayerNorm (LN) layer}
+		
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.5\linewidth]{figures/pesos_uniform.png}
+			\includegraphics[width=1\linewidth]{figures/msa}
 		\end{figure}
+		
 	\end{block}
 \end{frame}
 %==========================================================================================
 
 \begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Distribuição Normal}
-		\begin{itemize}
-			\item $y \in [-\infty, +\infty]$ 
-			\item Inicializa todos o pesos com uma Distribuição Normal informando média e desvio padrão 
-			\item Ajuda a quebrar a simetria da rede
-		\end{itemize}
-		$	y = np.random.randn(H, W)$
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.5\linewidth]{figures/pesos_normal.png}
-		\end{figure}
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Glorot Uniforme}
-		\begin{columns}
-			\begin{column}{0.6 \textwidth}
-				\begin{itemize}
-					\item $y \in [-\sigma, +\sigma]$
-					\item Conhecida como \textbf{Xavier Uniforme}
-					\item Leva em consideração o tamanho das camadas
-					\item Ajuda a quebrar a simetria
-				\end{itemize}
-				$	y = 2 * \sigma * np.random.rand(H, W) - \sigma$ \\
-				Sendo:
-				$\sigma = \sqrt{\frac{6}{in + out}}$ \\
-				$in$ é a quantidade de neurônio da camada anterior e $out$ a quantidade de neurônio da camada atual
-			\end{column}
-		\begin{column}{0.4 \textwidth}
-			\begin{itemize}
-				\item Torna a convergência mais rápida e eficiente
-				\item Uma das melhores inicializações de peso
-			\end{itemize}
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\linewidth]{figures/pesos_glorot_uniform.png}
-			\end{figure}
-		\end{column}
-		\end{columns}
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Glorot Normal}
-		\begin{columns}
-			\begin{column}{0.6 \textwidth}
-				\begin{itemize}
-					\item $y \in [-\sigma, +\sigma]$
-					\item Conhecida como \textbf{Xavier Normal}
-					\item Leva em consideração o tamanho das camadas
-					\item Ajuda a quebrar a simetria
-				\end{itemize}
-				$	y =  \sigma * np.random.randn(H, W) - \sigma$ \\
-				Sendo:
-				$\sigma = \sqrt{\frac{2}{in + out}}$ \\
-				$in$ é a quantidade de neurônio da camada anterior e $out$ a quantidade de neurônio da camada atual
-			\end{column}
-			\begin{column}{0.4 \textwidth}
-				\begin{itemize}
-					\item Torna a convergência mais rápida e eficiente
-					\item Uma das melhores inicializações de peso
-				\end{itemize}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1\linewidth]{figures/pesos_glorot_normal.png}
-				\end{figure}
-			\end{column}
-		\end{columns}
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Qual método de inicialização utilizar?}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Equation 2: Multi-Head Attention (MSA) Layer}
+		
 	\begin{figure}
 		\centering
-		\includegraphics[width=1\linewidth]{figures/weights_init}
+		\includegraphics[width=1\linewidth]{figures/msa1}
 	\end{figure}
-	Vamos ver isso na prática utilizando o notebook das Redes Neurais! \\
-	Vamos refazer nossos experimentos e analisar os resultados
+		
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Qual método de inicialização utilizar?}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Equation 3: Multilayer Perceptron (MLP)}
+		
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/mlp}
+	\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{7. Create the Transformer Encoder}
+	\begin{itemize}
+			\item Crie uma classe chamada TransformerEncoderBlock que herda de torch.nn.Module.
+			\item Inicialize a classe com hiperparâmetros da Tabela 1 e Tabela 3 do artigo ViT para o modelo ViT-Base.
+			\item Instancie um bloco MSA para a equação 2 usando nosso MultiheadSelfAttentionBlock da seção 5.2 com os parâmetros apropriados.
+			\item Instancie um bloco MLP para a equação 3 usando nosso MLPBlock da seção 6.2 com os parâmetros apropriados.
+			\item Crie um método forward() para nossa classe TransformerEncoderBlock.
+			\item Crie uma conexão residual para o bloco MSA (para a equação 2).
+			\item Crie uma conexão residual para o bloco MLP (para a equação 3).
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{7. Create the Transformer Encoder}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\linewidth]{figures/weights_init}
+			\includegraphics[width=1\linewidth]{figures/mlp1}
 		\end{figure}
+		
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{7. Create the Transformer Encoder}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/final_model}
+		\end{figure}
+		
+		
 	\end{block}
 \end{frame}
 %==========================================================================================
