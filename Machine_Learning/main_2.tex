@@ -1696,163 +1696,105 @@
 %==========================================================================================
 
 \begin{frame}
-	\frametitle{One hot Encode}
-	\begin{block}{One hot Encode}
-		Antes de falar sobre classificação de classes, vamos entender a seguinte situação:
-		\begin{columns}
-			\begin{column}{0.4 \textwidth}
-				\begin{table}[]
-					\begin{tabular}{|l|l|}
-						\hline
-						y & One-hot \\ \hline
-						1 & 1 0 0 0 \\ \hline
-						2 & 0 1 0 0 \\ \hline
-						3 & 0 0 1 0 \\ \hline
-						4 & 0 0 0 1 \\ \hline
-					\end{tabular}
-				\end{table}
-			\end{column}
-			\begin{column}{0.4 \textwidth}
-				\begin{table}[]
-					\begin{tabular}{|l|l|}
-						\hline
-						y & One-hot \\ \hline
-						3 & 0 0 1 0 \\ \hline
-						2 & 0 1 0 0 \\ \hline
-						4 & 0 0 0 1 \\ \hline
-						1 & 1 0 0 0 \\ \hline
-					\end{tabular}
-				\end{table}
-			\end{column}
-		\end{columns}
-
-
-	\end{block}
-\end{frame}
-
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Custo - Classificação Multiclasse}
-	\begin{block}{Softmax}
-		Função:
-		$$S_i = \frac{e^{\hat{y}_i}}{\sum_j e^{\hat{y}_i}} $$
-		Assim para cada k: $P^k = S_i^{[k]}$
-		Derivada: 	$$\frac{\partial S}{\partial y} = p^k * (1-p^k)$$
-	\end{block}
-	\begin{alertblock}{Atenção}
-		A Softmax não é uma função de custo.
-	\end{alertblock}
-\end{frame}
-%==========================================================================================
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Custo - Classificação Multiclasse}
-	
-	\begin{columns}
-		\begin{column}{0.4 \textwidth}
-		\begin{block}{Softmax}
-			$$S_i = \frac{e^{\hat{y}_i}}{\sum_j e^{\hat{y}_i}} $$
-			Assim para cada k: $P^k = S_i^{[k]}$
-			Derivada: 	$$\frac{\partial S}{\partial y} = p^k * (1-p^k)$$
-		\end{block}
-		\end{column}
-		\begin{column}{0.4 \textwidth}
-		\begin{block}{Neg. Log-likelihood}
-			$$J = \frac{1}{N} \sum -ln(p_i^k) $$
-			 $$\frac{\partial J}{\partial p^k} = - \frac{1}{p^k}$$
-			Derivada: 	$$\frac{\partial J}{\partial \hat{y}} = -(1-p^k) = -(y-\hat{y}) \frac{1}{N}$$
-		\end{block}
-		\end{column}
-	\end{columns}
-	\begin{alertblock}{Atenção}
-		A Neg. Log-likelihood será o somatório do logarítmico  da negação para cada elemento da Softmax pelo total de elementos.
-	\end{alertblock}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Custo}
-	\begin{block}{Qual função de custo utilizar?}
-	\begin{table}[]
-		\begin{tabular}{c|ccc|}
-			\cline{2-4}
-			& \multicolumn{3}{c|}{Problema}                                             \\ \hline
-			\multicolumn{1}{|c|}{} &
-			\multicolumn{1}{c|}{Regressão} &
-			\multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Classificação\\ Binária\end{tabular}} &
-			\begin{tabular}[c]{@{}c@{}}Classificação\\ Multiclasse\end{tabular} \\ \hline
-			\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}\#neurônios\\ ult. camada\end{tabular}} & \multicolumn{1}{c|}{\#outputs} & \multicolumn{1}{c|}{1}       & \#classes \\ \hline
-			\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}F. Ativação\\ ult. camada\end{tabular}} & \multicolumn{1}{c|}{Linear}    & \multicolumn{1}{c|}{Sigmoid} & Linear    \\ \hline
-			\multicolumn{1}{|c|}{F. de Custo} &
-			\multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}MSE, MAE,\\ SSE, ...\end{tabular}} &
-			\multicolumn{1}{c|}{Cross Entropy} &
-			\begin{tabular}[c]{@{}c@{}}Softmax +\\ Neg. Log-Likelihood\end{tabular} \\ \hline
-		\end{tabular}
-	\end{table}
-	\end{block}
-\end{frame}
-
-%==========================================================================================
-
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Ativação}
-	\begin{block}{Vamos ver na prática}
-		Vamos praticar utilizando o notebook 05\_redesneuraisintuicao
-	\end{block}
-\end{frame}
-%==========================================================================================
-
-\section{Rede Neural do Zero}
-
-\begin{frame}
-	\frametitle{Funções de Custo - Regressão}
-	\begin{block}{Passo 1}
-		Primeiramente vamos implementar nossas funções de custo... \\
-		Será Utilizado o notebook 06\_rede neural
-	\end{block}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\begin{block}{MAE- mean of absolute errors}
-				$$J = \frac{1}{N} \sum |y_i - \hat{y}_i|$$ \\
-				$$\frac{\partial J}{\partial \hat{y}} = \frac{1}{N} \left\{\begin{matrix}
-					+1 se \hat{y} > y
-					\\ 
-					-1 se \hat{y} < y
-				\end{matrix}\right.$$ 
-			\end{block}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			\begin{block}{MSE- mean of squared errors}
-				$$J = \frac{1}{2N} \sum |y_i - \hat{y}_i|^2$$ \\
-				$$\frac{\partial J}{\partial \hat{y}} = -(y-\hat{y})\frac{1}{N}$$ 
-			\end{block}
-		\end{column}
-	\end{columns}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Funções de Custo - Classificação binária}
-	\begin{block}{Passo 2}
-		Vamos implementar nossas funções de custo... \\
-	\end{block}
-	\begin{block}{Binary Cross Entropy}
-		$$J = -\frac{1}{N} \sum y_iln(\hat{y}_i)+(1-y_i)ln(1-\hat{y}_i)$$ \\
-		$$\frac{\partial J}{\partial \hat{y}} = \frac{-(y-\hat{y})}{\hat{y}(1-\hat{y})}\frac{1}{N}$$ 
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Métodos de Inicialização de Pesos}
-	\begin{block}{Zeros}
-		\begin{itemize}
-			\item $y \in 0$ 
-			\item Inicializa todos o pesos com Zero
-			\item Cuidado pois toda a saída será zero!! Não utilizar, senão a rede vai ser simétrica.
-		\end{itemize}
-			$y = np.zeros((H, W))$
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a incorporação do token de classe}
+		
+		Agora ja adicionamos a classe de token, mudando o shape de 196 para 197
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.5\linewidth]{figures/pesos_zeros}
+			\includegraphics[width=0.8\linewidth]{figures/patch_embedding}
+		\end{figure}
+		
+		
+	\end{block}
+\end{frame}
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a position embedding}
+		Bem, temos a incorporação de token de classe e a incorporação de patch, agora como podemos criar a incorporação de posição?
+		
+		Ou $\mathbf{E}_{\text {pos }}$ da equação 1 onde $E$ significa "embedding".
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/position_embedding}
+	\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a position embedding}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/position_embedding}
+		\end{figure}
+		
+		Esquerda: Figura 1 do documento ViT com a incorporação de posição que vamos recriar destacada. \\ Direita: Equação 1 e seção 3.1 do documento ViT que se relacionam com a incorporação de posição.
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a position embedding}
+	Vamos descobrir mais lendo a seção 3.1 do artigo do ViT (em negrito): \\
+	As incorporações de posição são adicionadas às incorporações de patch para reter as informações posicionais. Usamos\textbf{ embeddings de posição 1D apreensíveis padrão}, já que não observamos ganhos significativos de desempenho com o uso de incorporações de posição 2D mais avançadas (Apêndice D.4). A sequência resultante de vetores de incorporação serve como entrada para o codificador.
+	
+	Por "reter informações posicionais", os autores querem que a arquitetura saiba em que "ordem" os patches vêm. Assim, o patch dois vem depois do patch um e o patch três vem depois do patch dois e assim por diante.
+	
+	Esta informação posicional pode ser importante ao considerar o que está em uma imagem (sem informação posicional, uma sequência achatada pode ser vista como sem ordem e, portanto, nenhum patch se relaciona com qualquer outro patch).
+	
+	Vamos visualizar nossas incorporações atuais.
+	\end{block}
+\end{frame}
+
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Criando a position embedding}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/position_embedding_post}
+		\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Juntando tudo: da imagem à embedding}
+		\begin{itemize}
+			\item Definir o tamanho do patch (usaremos '16', pois é amplamente utilizado em todo o artigo e para ViT-Base).
+			\item Obtendo uma única imagem, imprimindo sua forma e armazenando sua altura e largura.
+			\item Adicionar uma dimensão de lote à imagem única para que seja compatível com nossa camada PatchEmbedding.
+			\item Criando uma camada PatchEmbedding (aquela que fizemos na seção 4.5) com um patch\_size=16 e embedding\_dim=768 (da Tabela 1 para ViT-Base).
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Juntando tudo: da imagem à embedding}
+		\begin{itemize}
+			\item Passar a imagem única através da camada PatchEmbedding em 4 para criar uma sequência de embeddings de patch.
+			\item Criar uma incorporação de token de classe como na seção 4.6.
+			\item Preceder o emebdding do token de classe aos embeddings de patch criados na etapa 5.
+			\item Criando uma incorporação de posição como na seção 4.7.
+			\item Adicionando a incorporação de posição ao token de classe e incorporações de patch criadas na etapa 7.
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{PyTorch - Paper Replicating}
+	\begin{block}{Vamos replicar a equação 01 - Juntando tudo: da imagem à embedding}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/position_embedding_post1}
 		\end{figure}
 	\end{block}
 \end{frame}
