@@ -1888,30 +1888,77 @@
 		
 	\end{block}
 \end{frame}
+\section{VAES - Variational AutoEnconders}
+
+\begin{frame}
+	\frametitle{VAES - Variational AutoEnconders}
+	\begin{block}{O que são VAES}
+		\begin{itemize}
+			\item Um autoencoder variacional é um modelo generativo com uma distribuição prévia e de ruído
+			\item Essa rede neural toma como entrada os próprios pontos de dados e gera parâmetros para a distribuição variacional. À medida que mapeia de um espaço de entrada conhecido para o espaço latente de baixa dimensão.
+			\item O decodificador é a segunda rede neural deste modelo. É uma função que mapeia do espaço latente para o espaço de entrada, por exemplo, como o meio da distribuição do ruído. É possível usar outra rede neural que mapeia a variância, mas isso pode ser omitido para simplificar. Nesse caso, a variação pode ser otimizada com gradiente descendente.
+		\end{itemize}
+	\href{https://en.wikipedia.org/wiki/Variational_autoencoder}{\beamergotobutton{VAES}}
+
+		
+		\end{block}
+\end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Dropout}
+	\frametitle{VAES - Variational AutoEnconders}
+	\begin{block}{Arquitetura de um VAE}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vaes_archi}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Tipos de Vaes}
+	\begin{block}{Com mais neurônios na camada oculta}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vaes_archi1}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{VAES - Variational AutoEnconders}
+	\begin{block}{Tipos de Autoenconders}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vaes_archi1}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\section{GANs - Generative Adversarial Models}
+
+\begin{frame}
+	\frametitle{GANs - Generative Adversarial Models}
+	\begin{block}{O que são GANs}
 		\begin{itemize}
-			\item Zerar aleatoriamente a ativação de alguns neurônios por camada utilizando uma probabilidade $p$
-			\item Se $p=0.5$ é a probabilidade de zerar 50\% dos neurônios
-			\item Cuidado para não tornar a rede ineficiente
-			\item A cada iteração diferentes neurônios serão desabilitados, dando a ideia do treinamento de varias sub-redes
-			\item os neurônios subsequentes não recebem dados de todos neurônios anteriores.
-			\item Uma das melhores técnicas de regularização
-			\item Só aplicado no banco de treinamento
-			\item Só usado quando ocorre overfitting
+			\item Rede neural que pode criar por ela mesma
+			\item Aprendem sobre os objetos do mundo e criam outras versões desses
+			objetos que nunca existiram (como se fosse uma imaginação)
+			\item Podem criar imagens a partir de textos
+			\item Aumento de resolução
+			\item Desenho automático
+			\item Tradução de imagem para imagem
 		\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Dropout}
+	\frametitle{GANs - Generative Adversarial Models}
+	\begin{block}{Arquitetura de uma GAN}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\linewidth]{figures/dropout}
+			\includegraphics[width=0.7\linewidth]{figures/GAN_achi}
 		\end{figure}
+		\href{https://developers.google.com/machine-learning/gan/gan_structure?hl=pt-br}{\beamergotobutton{GAN}} 
 	\end{block}
 \end{frame}
 %==========================================================================================
