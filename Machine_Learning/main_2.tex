@@ -1915,29 +1915,83 @@
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{Tipos de Vaes}
+	\frametitle{Tipos de VAES}
 	\begin{block}{Com mais neurônios na camada oculta}
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.7\linewidth]{figures/vaes_archi1}
 		\end{figure}
+		
 	\end{block}
 \end{frame}
 %==========================================================================================
 \begin{frame}
-	\frametitle{VAES - Variational AutoEnconders}
-	\begin{block}{Tipos de Autoenconders}
+	\frametitle{Tipos de VAES}
+	\begin{block}{Sparse Autoencoder}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/vaes_archi1}
+			\includegraphics[width=0.4\linewidth]{figures/vaes_archi2}
 		\end{figure}
+	\begin{itemize}
+		\item Um dos mais populares
+		\item Usa uma técnica de regularização para prevenir overfitting
+		\item Não usa todos os neurônios da camada oculta (valores pequenos)
+	\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Tipos de VAES}
+	\begin{block}{Denoising Autoencoder}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.2\linewidth]{figures/vaes_archi3}
+		\end{figure}
+		\begin{itemize}
+			\item Modifica os valores da camada de entrada, alterando alguns
+			neurônios para o valor zero
+			\item Quando os pesos são atualizados, a camada de saída é comparada
+			com os valores originais para obter o valor do erro
+		\end{itemize}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Tipos de VAES}
+	\begin{block}{Deep autoencoder}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vaes_archi4}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Tipos de VAES}
+	\begin{block}{Convolutional autoencoder}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/vaes_archi5}
+		\end{figure}
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{Tipos de VAES}
+	\begin{block}{Convolutional autoencoder}
+	\begin{itemize}
+		\item Modifica os valores da camada de entrada, alterando alguns
+		neurônios para o valor zero
+		\item Quando os pesos são atualizados, a camada de saída é comparada
+		com os valores originais para obter o valor do erro
+	\end{itemize}
 	\end{block}
 \end{frame}
 %==========================================================================================
 \section{GANs - Generative Adversarial Models}
 
 \begin{frame}
-	\frametitle{GANs - Generative Adversarial Models}
+		\frametitle{GANs - Generative Adversarial Models}
 	\begin{block}{O que são GANs}
 		\begin{itemize}
 			\item Rede neural que pode criar por ela mesma
