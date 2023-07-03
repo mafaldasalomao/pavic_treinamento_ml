@@ -2016,367 +2016,313 @@
 	\end{block}
 \end{frame}
 %==========================================================================================
+
+
+\section{Object Detection}
+
 \begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L1}
-		\begin{itemize}
-			\item Criar uma rede menor capaz de resolver o problema
-			\item Solução esparsas, atualizando alguns pesos e bias para zeros
-			\item Semelhante ao Dropout
-			\item Ela deixa apenas os atributos mais relevantes para a rede
-			\item A rede é obrigada a aprender com pesos pequenos! E ter o mesmo resultado
-			\item A dificuldade é estimar o $\lambda$
-			\item Só usado quando ocorre overfitting
-		\end{itemize}
-	$$J = L(y, w, b) + \frac{\lambda}{m} \sum ||w||$$
-	$L(y, w, b)$ é nossa Cost Function \\
-	Na L1 é adicionado o termo $ \frac{\lambda}{m} \sum ||w||$  somar o valor absoluto dos pesos e multiplicar por um fator de regularização $\lambda$ e dividir pela Qtd. de amostras. Adicionado isso á nossa MSE, MAE,...
+	\frametitle{Object Detection}
+	\begin{block}{Classificação de imagem}
+		Na tarefa de classificação é dizer se um objeto está presente na imagem ou não. Por exemplo: queremos saber se uma imagem é de cachorro ou gato. Então, treinamos um classificador de imagens que irá prever a qual classe uma imagem pertence.
 	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L1}
-		A derivada da regularização... \\
-		Vamos tomar como exemplo a MSE
-		$$J = \frac{1}{2} \sum (y - \hat{y})^2 + \frac{\lambda}{m} \sum |w|$$
-		A derivada da MSE é:
-		$\frac{\partial J1}{\partial w} = -(y - \hat{y})x$ \\
-		A derivada do termo pode ser dado por:
-		$$\frac{\partial J2}{\partial w} =  \left\{\begin{matrix}
-			+1, w > 0
-			\\ 
-			-1, w < 0
-		\end{matrix}\right.$$
-	Vamos aplicar isso na formula de atualização dos pesos:
-	$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos 
+	\begin{block}{Localização de objetos}
+		Na localização, a tarefa é dizer onde o objeto está presente na imagem. Queremos que uma caixa delimitadora seja desenhada ao redor do objeto. Nosso modelo não apenas dirá que a imagem é de cachorro, mas também prevê as coordenadas de posição do objeto na imagem. Isso lida com um único tipo de objeto por vez.Na localização, a tarefa é dizer onde o objeto está presente na imagem. Queremos que uma caixa delimitadora seja desenhada ao redor do objeto. Nosso modelo não apenas dirá que a imagem é de cachorro, mas também prevê as coordenadas de posição do objeto na imagem. Isso lida com um único tipo de objeto por vez.
 	\end{block}
 \end{frame}
 %==========================================================================================
 
-\begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L1}
-		Vamos aplicar isso na formula de atualização dos pesos:
-		$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos \\
-		Agora... Já que a derivada da soma é a soma das derivadas \\
-		$w = w - \eta [\frac{\partial J1}{\partial w} + \frac{\partial J2}{\partial w}]$ \\
-		Agora vamos atualizar os pesos da seguinte forma:
-		$$w =  \left\{\begin{matrix}
-			w - \eta [-(y-\hat{y})x + \frac{\lambda}{m}], w > 0
-			\\ 
-			w - \eta [-(y-\hat{y})x - \frac{\lambda}{m}], w < 0
-		\end{matrix}\right.$$
-	\end{block}
-\end{frame}
-%==========================================================================================
 
 \begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L2}
-		\begin{itemize}
-			\item Criar uma rede na qual nenhum atributo seja tão mais importante que os outros
-			\item Diminui e espalha os valores dos pesos
-			\item Mais utilizada que a L1
-			\item Conhecida como Weight decay
-			\item A dificuldade é estimar o $\lambda$
-			\item Só usado quando ocorre overfitting
-		\end{itemize}
-		$$J = L(y, w, b) + \frac{\lambda}{2m} \sum w_i^2$$
+	\frametitle{Object Detection}
+	\begin{block}{Detecção de objetos}
+		Se nossa imagem contiver vários objetos e quisermos detectar todos eles e também saber sua posição na imagem, a tarefa é conhecida como Detecção de Objeto. A localização lida com apenas um único objeto, mas na detecção de objetos, temos vários objetos.
 	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/comparing_object_detection}
+	\end{figure}
+
 \end{frame}
-%==========================================================================================
+
+
 \begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L2}
-		A derivada da regularização... \\
-		Vamos tomar como exemplo a MSE
-		$$J = \frac{1}{2} \sum (y - \hat{y})^2 + \frac{\lambda}{2m} \sum w_i^2$$
-		A derivada da MSE é:
-		$\frac{\partial J1}{\partial w} = -(y - \hat{y})x$ \\
-		A derivada do termo pode ser dado por:
-		$$\frac{\partial J2}{\partial w} =  \frac{\lambda w}{m}$$
-		Vamos aplicar isso na formula de atualização dos pesos:
-		$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos 
+	\frametitle{Localização de um objeto}
+	\begin{block}{Localização de um objeto}
+		Temos que prever onde o objeto está presente na imagem. Agora precisamos produzir quatro valores extras que serão as coordenadas da caixa delimitadora ao redor do objeto. Também iremos prever se a imagem contém o objeto ou não. Portanto, temos que produzir cinco valores no total. Precisamos minimizar duas funções de perda, uma é a perda binária e a perda de regressão.
 	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/localizing_object}
+	\end{figure}
+	
 \end{frame}
-%==========================================================================================
+
+
 \begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L2}
-		Vamos aplicar isso na formula de atualização dos pesos:
-		$w = w - \eta \frac{\partial J}{\partial w}$ Valor inicial - LR * derivada dos pesos \\
-		Agora... Já que a derivada da soma é a soma das derivadas \\
-		$w = w - \eta [\frac{\partial J1}{\partial w} + \frac{\partial J2}{\partial w}]$ \\
-		Agora vamos atualizar os pesos da seguinte forma:
-		$$w =  w - \eta [-(y-\hat{y})x + \frac{\lambda w}{m}]$$
+	\frametitle{Detecção de objetos}
+	\begin{block}{Detecção de objetos}
+		Agora queremos detectar diferentes objetos na imagem e também saber onde eles estão presentes na imagem. Isso se torna um pouco difícil, mas já temos um ótimo trabalho sobre esse problema. Como temos YOLO (You Only Look Once).
+		Divida a imagem em grades e cada grade de saída seja o centro do objeto ou não. Se for a grade central de um objeto, ele prevê caixas delimitadoras para o objeto. Conseguimos isso usando camadas de convolução com passo apropriado.
 	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Técnicas de Regularização}
-	\begin{block}{Regularização L2}
-		Vamos ver o impacto da regularização nestas imagens
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\linewidth]{figures/comparacao_regularizacao}
-		\end{figure}
-	Vamos implementar no notebook de redes neurais os métodos de regularização vistos
-	\end{block}
-
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Técnica Momentum}
-	\begin{block}{Momentum}
-		\begin{itemize}
-			\item Utilizada no gradiente descendente
-			\item Adiciona velocidade ao Gradiente Descendente
-			\item Soma o gradiente da iteração anterior $t-1$ multiplicado por um fator momentum $\mu$
-			\item 	\href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/nomomentum1d.gif?raw=true}{\beamergotobutton{Sem Momentum}}
-			\item \href{https://github.com/mafaldasalomao/pavic_treinamento_ml/blob/main/Machine_Learning/figures/momentum1d.gif?raw=true}{\beamergotobutton{Com Momentum}}
-			\item Fonte \href{https://machinelearningcoban.com/2017/01/16/gradientdescent2/}{\beamergotobutton{Fonte}}
-			
-		\end{itemize}
-		
-		$$\triangledown w = \eta \frac{\partial J}{\partial w} + \mu \triangledown w^{t-1}$$
-		Vamos implementar no notebook de redes neurais o nosso momentum
-	\end{block}
-\end{frame}
-%==========================================================================================
-
-
-%==========================================================================================
-\begin{frame}
-	\frametitle{Mini-Batch}
-	\begin{block}{Mini-Batch}
-		\begin{itemize}
-			\item Divide o treinamento em conjuntos menores (memória)
-			\item É importante dar shuffle (embaralhar) antes de cada epoch
-			\item 1 epoch = processar todos os batchs
-			\item Em geral, é a estratégia de GD mais utilizada	
-			
-		\end{itemize}
-		Vamos tomar um dataset com $100$ amostras e seja dividi-lo em $10$ batchs. Cada batch terá $10$ amostras.
-		\begin{figure}
-			\centering
-			\includegraphics[width=1\linewidth]{figures/minibatch.png}
+			\includegraphics[width=0.7\linewidth]{figures/cnn_yolo}
 		\end{figure}
 		
-	\end{block}
-\end{frame}
-%==========================================================================================
-\begin{frame}
-	\frametitle{Gradiente Descendente}
-	\begin{block}{Gradiente Descendente}
-		Qual a diferença entre o Gradiente Estocástico para o Gradiente Baseado em Mini-batch e Bath \\
-		\begin{columns}
-			\begin{column}{0.3 \textwidth}
-				\textbf{Stochastic Gradient} \\
-				Amostra por amostra\\
-				Aponta para a direção da amostra \\
-				Converge lentamente \\
-				Anula vetorização
-			\end{column}
-			\begin{column}{0.3 \textwidth}
-				\textbf{Mini-Batch GD} \\
-				Calcula as atualizações por lote \\
-				Aponta para a direção que desce \\
-				Converge rápido \\
-				Rápida execução
-			\end{column}
-			\begin{column}{0.3 \textwidth}
-				\textbf{Batch GD} \\
-				Todas as amostras de uma vez \\
-				Aponta para a direção que desce sempre \\
-				Converge rápido \\
-				Lenta execução
-			\end{column}
-		\end{columns}
-		
-	\end{block}
+	
 \end{frame}
 
 	
-%==========================================================================================
-\begin{frame}
-	\frametitle{Learning Rate Decay}
-	\begin{block}{Learning Rate Decay}
-		\begin{itemize}
-			\item A learning rate alta irá dificultar o aprendizado do algoritmo, mas se livrará de mínimos locais
-			\item A learning rate baixa irá ajudar no aprendizado da rede mas irá ter problemas com mínimos locais
-			\item Com a Learning Rate Decay, a taxa de aprendizado será reduzida ao longo das épocas
-		\end{itemize}
-	\end{block}
-\end{frame}	
-	%==========================================================================================
-	\begin{frame}
-		\frametitle{Learning Rate Decay}
-		\begin{block}{Learning Rate Decay - Time-based}
-			$$\lambda_t = \frac{1}{1 + \alpha *t}$$ 
-			Onde $t$ são as épocas
-			\begin{columns}
-				\begin{column}{0.3 \textwidth}
-					\begin{figure}
-						\centering
-						\includegraphics[width=1\linewidth]{figures/lr_decay1.png}
-					\end{figure}
-				\end{column}
-				\begin{column}{0.3 \textwidth}
-					\begin{figure}
-						\centering
-						\includegraphics[width=1\linewidth]{figures/lr_decay2.png}
-					\end{figure}
-				\end{column}
-				\begin{column}{0.3 \textwidth}
-					\begin{figure}
-						\centering
-						\includegraphics[width=1\linewidth]{figures/lr_decay3.png}
-					\end{figure}
-				\end{column}
-			\end{columns}
-		\end{block}
-	\end{frame}	
+\section{Conceitos Gerais utilizados em Machine Learning}
 
-%==========================================================================================
 \begin{frame}
-	\frametitle{Learning Rate Decay}
-	\begin{block}{Learning Rate Decay - Exponential}
-		$$\lambda_t = \lambda_0 *\alpha^t$$ 
-		Onde $\alpha^t$ é o fator exponencial do decaimento da Learning rate
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Como avaliar o desempenho de um modelo de aprendizado de máquina?}
+		Consideremos uma tarefa para classificar se uma pessoa está grávida ou não . Se o teste de gravidez for positivo (+ve), então a pessoa está grávida. Por outro lado, se o teste de gravidez for negativo (-ve), a pessoa não está grávida.
+		
+		Agora considere a classificação acima ( grávida ou não grávida ) realizada por um algoritmo de aprendizado de máquina. A saída do algoritmo de aprendizado de máquina pode ser mapeada para uma das seguintes categorias.
+	\end{block}
+\end{frame}
+%==========================================================================================	
+	
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Caso 1}
+		Uma pessoa que está realmente grávida (positivo) e classificada como grávida (positivo). Isso é chamado de VERDADEIRO POSITIVO ( TP ).
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/True_positive}
+	\end{figure}
+
+\end{frame}
+%==========================================================================================	
+	
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Caso 2}
+		Uma pessoa que realmente não está grávida (negativo) e classificada como não grávida (negativo). Isso é chamado de VERDADEIRO NEGATIVO ( TN ).
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/True_negative}
+	\end{figure}
+	
+\end{frame}
+%==========================================================================================		
+	
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Caso 3}
+		Uma pessoa que realmente não está grávida (negativo) e classificada como grávida (positivo). Isso é chamado de FALSO POSITIVO ( FP ).
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/false_positive}
+	\end{figure}
+	
+\end{frame}
+%==========================================================================================			
+	
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Caso 4}
+		Pessoa realmente grávida (positiva) e classificada como não grávida (negativa). Isso é chamado de FALSO NEGATIVO ( FN ).
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/false_negative}
+	\end{figure}
+	
+\end{frame}
+%==========================================================================================		
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	O que desejamos é VERDADEIRO POSITIVO e VERDADEIRO NEGATIVO , mas devido às classificações incorretas, também podemos acabar em FALSO POSITIVO e FALSO NEGATIVO. Então existe uma confusão em classificar se uma pessoa está grávida ou não. Isso ocorre porque nenhum algoritmo de aprendizado de máquina é perfeito. Em breve descreveremos essa confusão na classificação dos dados em uma matriz chamada matriz de confusão.
+	
+	Agora, selecionamos 100 pessoas que incluem mulheres grávidas, mulheres não grávidas e homens com barriga gorda. Vamos supor que dessas 100 pessoas 40 estejam grávidas e as 60 restantes incluam mulheres não grávidas e homens com barriga gorda. Agora usamos um algoritmo de aprendizado de máquina para prever o resultado. O resultado previsto (gravidez +ve ou -ve) usando um algoritmo de aprendizado de máquina é denominado rótulo previsto e o resultado verdadeiro (neste caso, que conhecemos pelo registro do médico/especialista) é denominado rótulo verdadeiro .
+	
+\end{frame}
+%==========================================================================================	
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/cij}
+		\end{figure}
 		\begin{columns}
-			\begin{column}{0.3 \textwidth}
+			\begin{column}{0.4\textwidth}
 				\begin{figure}
 					\centering
-					\includegraphics[width=1\linewidth]{figures/lr_decay4.png}
+					\includegraphics[width=1\linewidth]{figures/confusion_matrix}
 				\end{figure}
+				
 			\end{column}
-			\begin{column}{0.3 \textwidth}
+			\begin{column}{0.4\textwidth}
 				\begin{figure}
 					\centering
-					\includegraphics[width=1\linewidth]{figures/lr_decay5.png}
-				\end{figure}
-			\end{column}
-			\begin{column}{0.3 \textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1\linewidth]{figures/lr_decay6.png}
+					\includegraphics[width=1\linewidth]{figures/confusion_matrix1}
 				\end{figure}
 			\end{column}
 		\end{columns}
-	\end{block}
-\end{frame}	
-%==========================================================================================
+\end{frame}
+%==========================================================================================	
+
+
 \begin{frame}
-		\frametitle{Learning Rate Decay}
-		\begin{block}{Learning Rate Decay - Staircase}
-			$$\lambda_t = \lambda_0 *\alpha^{t/ds}$$ 
-			Onde $\alpha^{t/ds}$ é o fator exponencial do decaimento da Learning rate e o $ds$ é de quanta em quanta épocas ocorrerá o decay.
-			\begin{columns}
-				\begin{column}{0.3 \textwidth}
-					\begin{figure}
-						\centering
-						\includegraphics[width=1\linewidth]{figures/lr_decay7.png}
-					\end{figure}
-				\end{column}
-				\begin{column}{0.3 \textwidth}
-					\begin{figure}
-						\centering
-						\includegraphics[width=1\linewidth]{figures/lr_decay8.png}
-					\end{figure}
-				\end{column}
-				\begin{column}{0.3 \textwidth}
-					\begin{figure}
-						\centering
-						\includegraphics[width=1\linewidth]{figures/lr_decay9.png}
-					\end{figure}
-				\end{column}
-			\end{columns}
-		\end{block}
-	\end{frame}	
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	Voltaremos agora ao exemplo anterior de classificação de 100 pessoas (que inclui 40 grávidas e as restantes 60 não grávidas e homens com barriga gorda) como grávidas ou não grávidas. Das 40 gestantes, 30 gestantes são classificadas corretamente e as 10 gestantes restantes são classificadas como não grávidas pelo algoritmo de aprendizado de máquina. Por outro lado, das 60 pessoas na categoria não grávidas, 55 são classificadas como não grávidas e as restantes 5 são classificadas como grávidas.
 	
-%==========================================================================================
-\begin{frame}
-	\frametitle{Stop Early}
-	\begin{block}{Stop Early}
-		\begin{itemize}
-			\item A ideia é guardar seu melhor modelo. Quando a perda tiver valor mínimo em validação!
-			\item Fator patient indica quando o modelo deve parar de treinar a partir da última melhor acurácia. Por exemplo, se na época 7 o modelo apresentou acurácia de 75\% e nas 10 (patient) próximas épocas o modelo não melhorou, então o treinamento é finalizado.
-		\end{itemize}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.35\linewidth]{figures/early_stop}
-		\end{figure}
-	\end{block}
+	Neste caso, TN = 55, FP = 5, FN = 10, TP = 30.
 \end{frame}	
 	
-%==========================================================================================
+	
+	
+
+%==========================================================================================	
+
 \begin{frame}
-	\frametitle{Batch Normalization}
-	\begin{block}{Batch Normalization}
-		\begin{itemize}
-			\item Normaliza entradas ou saídas das camadas de ativação
-			\item Estima a média e desvio padrão baseado no batch (média móvel)
-			\item Regulariza camadas e não neurônios
-			\item Pode substituir o dropout
-			\item Uma das melhores técnicas
-			\item Não usado na validação ou teste!
-		\end{itemize}
-	\end{block}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/confusion_matrix_res}
+	\end{figure}
 \end{frame}	
 
-%==========================================================================================
-\begin{frame}
-	\frametitle{Batch Normalization}
-	\begin{block}{Batch Normalization - FeedForward}
-	\begin{columns}
-		\begin{column}{0.5 \textwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\linewidth]{figures/batch_norm_feed.png}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.5 \textwidth}
-			\begin{itemize}
-				\item Cada batch será normalizado subtraindo da média $\mu$ e dividindo pelo desvio padrão $\sigma^2$ = $\hat{x}_i$
-				\item $\gamma$ e $\beta$ são parâmetros que a rede vai aprender
-				\item se $\gamma = \sigma^2 $ e $\mu = \beta$ a função se anula, assim a rede pode recusar o batch normalization sozinha!
-			\end{itemize}
-		\end{column}
-	\end{columns}
+%==========================================================================================			
 
-	\end{block}
-\end{frame}	
-	
-%==========================================================================================
 \begin{frame}
-	\frametitle{Batch Normalization}
-	\begin{block}{Batch Normalization - Backpropagation}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.5\linewidth]{figures/accuracy}
+	\end{figure}
+	
+	\begin{block}{Qual a Acurácia do modelo?}
+		Ela representa o número de instâncias de dados classificadas corretamente sobre o número total de instâncias de dados.
+		
+		Neste exemplo, Precisão = (55 + 30)/(55 + 5 + 30 + 10 ) = 0,85 e em porcentagem a precisão será de 85\%.
+	\end{block}
+	\begin{alertblock}{A acurácia é a melhor medida?}
+		A precisão pode não ser uma boa medida se o conjunto de dados não for equilibrado (tanto as classes negativas quanto as positivas têm um número diferente de instâncias de dados). Explicaremos isso com um exemplo.
+	\end{alertblock}
+
+\end{frame}
+%==========================================================================================		
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Qual a Acurácia do modelo?}
+	Considere o seguinte cenário: Existem 90 pessoas saudáveis;(negativas) e 10 pessoas com alguma doença (positivas). 
+	Agora, digamos que nosso modelo de aprendizado de máquina classificou perfeitamente as 90 pessoas como saudáveis, mas também classificou as pessoas não saudáveis;como saudáveis. 
+	O que acontecerá neste cenário?
+	\end{block}
+
+\end{frame}
+%==========================================================================================		
+
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{block}{Qual a Acurácia do modelo?}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\linewidth]{figures/batch_norm_back.png}
+			\includegraphics[width=0.4\linewidth]{figures/acc_mc1}
 		\end{figure}
+		A precisão neste caso será (90 + 0)/(100) = 0,9.
 	\end{block}
-\end{frame}		
-	
-%==========================================================================================
+	\begin{alertblock}{Atenção}
+		A acurácia não é uma boa métrica quando o conjunto de dados é desbalanceado.
+	\end{alertblock}
+\end{frame}
+%==========================================================================================		
+
 \begin{frame}
-	\frametitle{Freezing}
-	\begin{block}{Freezing}
-		\begin{itemize}
-			\item Congelamento de certas camadas no \textbf{treinamento}
-			\item Muito usada em transfer learning e Fine-tuning
-		\end{itemize}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{figures/simple_nn.png}
-		\end{figure}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/precision}
+	\end{figure}
+	\begin{block}{Qual a Precisão do modelo?}
+		A precisão deve ser idealmente 1 (alta) para um bom classificador. A precisão se torna 1 somente quando o numerador e o denominador são iguais, ou seja, TP = TP +FP , isso também significa que FP é zero. À medida que FP aumenta, o valor do denominador torna-se maior que o numerador e o valor da precisão diminui (o que não queremos). \\
+		Portanto, no exemplo da gravidez, precisão = 30/(30+ 5) = 0,857
 	\end{block}
-\end{frame}			
+\end{frame}
+%==========================================================================================		
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/recall}
+	\end{figure}
+	\begin{block}{Qual a Recall do modelo?}
+		O recall deve ser idealmente 1 (alto) para um bom classificador. Recall se torna 1 somente quando o numerador e o denominador são iguais, ou seja, TP = TP +FN , isso também significa que FN é zero. À medida que FN aumenta, o valor do denominador torna-se maior que o numerador e o valor de recuperação diminui (o que não queremos).
+		
+		Então, no exemplo da gravidez, vejamos qual será o recall.
+		
+		Recall = 30/(30+ 10) = 0,75
+	\end{block}
+\end{frame}
+%==========================================================================================		
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/f1_score}
+	\end{figure}
+	\begin{block}{Qual a Recall do modelo?}
+		Portanto, idealmente, em um bom classificador, queremos que a precisão e o recall sejam um, o que também significa que FP e FN são zero. Portanto, precisamos de uma métrica que leve em consideração a precisão e o recall . O F1-score é uma métrica que leva em consideração tanto a precisão quanto o recall e é definido da seguinte forma. \\
+		A pontuação F1 torna-se 1 apenas quando a precisão e a recuperação são ambas 1. A pontuação F1 torna-se alta apenas quando a precisão e a recuperação são altas. A pontuação F1 é a média harmônica de precisão e recuperação e é uma medida melhor do que a precisão .
+		
+		No exemplo da gravidez, F1 Score = 2* ( 0,857 * 0,75)/(0,857 + 0,75) = 0,799.
+	\end{block}
+\end{frame}
+%==========================================================================================	
+
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/segmentação}
+	\end{figure}
+
+	\begin{alertblock}{Atenção}
+		Que métrica usar para avaliar modelos de Segmentação semântica e detecção?
+	\end{alertblock}
+\end{frame}
+%==========================================================================================		
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.2\linewidth]{figures/dice_formula}
+	\end{figure}
+	\begin{block}{Qual a Dice do modelo?}
+	A ideia é simples: contamos os pixels semelhantes (tomando a interseção, presentes em ambas as imagens) nas duas imagens que estamos comparando e multiplicamos por 2. E dividimos pelo total de pixels em ambas as imagens
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.3\linewidth]{figures/dice_formula1}
+
+	\end{figure}
+
+\end{frame}
+%==========================================================================================	
+\begin{frame}
+	\frametitle{Conceitos Gerais utilizados em Machine Learning}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{figures/iou_formula}
+	\end{figure}
+	\begin{block}{Qual a IoU (Interseção sobre União) do modelo?}
+		Como o nome sugere, dividimos a interseção significa o número de pixels semelhantes pela união significa o número total de pixels únicos em ambas as imagens.
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.3\linewidth]{figures/iou_formula1}
+	\end{figure}
 	
-	
-	
-	
+\end{frame}
+%==========================================================================================	
+
 \begin{frame}	
 \frametitle{Highlighting text}
 %

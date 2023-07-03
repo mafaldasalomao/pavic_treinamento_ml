@@ -8,3 +8,5 @@
 \beamer@sectionintoc {8}{PyTorch Paper Replicating}{62}{0}{8}
 \beamer@sectionintoc {9}{VAES - Variational AutoEnconders}{116}{0}{9}
 \beamer@sectionintoc {10}{GANs - Generative Adversarial Models}{124}{0}{10}
+\beamer@sectionintoc {11}{Object Detection}{126}{0}{11}
+\beamer@sectionintoc {12}{Conceitos Gerais utilizados em Machine Learning}{130}{0}{12}
