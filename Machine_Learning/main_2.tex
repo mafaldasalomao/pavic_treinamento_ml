@@ -1888,6 +1888,194 @@
 		
 	\end{block}
 \end{frame}
+%==========================================================================================
+\section{RNN - Redes Neurais Recorrentes}
+
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		\begin{itemize}
+			\item Dados sequenciais. Ex? fato que acontece de hora em hora, temperatura, velocidade do vento, frames anteriores de um video pode prever qual será o atual, etc
+			\item Comumente usada em processamento de linguagem natural.
+			\begin{itemize}
+				\item Qual a próxima palavra que deverá aparecer no texto.
+				\item Tradução de texto
+				\item Geração de poema
+				\item Criação de notícias
+			\end{itemize}
+		\end{itemize}
+		
+		\begin{example}
+			Meu nome é Salomão ......\\........................................\\........................................\\ Brasil.
+		\end{example}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		\begin{itemize}
+			\item Dados sequenciais. Ex: fato que acontece de hora em hora, temperatura, velocidade do vento, frames anteriores de um video pode prever qual será o atual, etc
+			\item Comumente usada em processamento de linguagem natural.
+			\item Geração de legendas para vídeos
+			\item Séries temporais (time series)
+			\item Necessariamente necessita-se de algo prévio!
+		\end{itemize}
+
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		RNNs têm sido usadas como parte de um modelo para gerar descrições para imagens não rotuladas. É incrível como isso parece funcionar bem. O modelo combinado ainda alinha as palavras geradas com características encontradas nas imagens.
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{figures/rnn_img_text}
+		\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		Os humanos não começam a pensar a partir do zero a cada segundo. Ao ler este ensaio, você entende cada palavra com base em sua compreensão das palavras anteriores. Você não joga tudo fora e começa a pensar de novo. Seus pensamentos têm persistência. \\ 
+		Redes neurais tradicionais não podem fazer isso, e isso parece uma grande falha. \alert{As Redes neurais normais não armazenam}.
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		Redes neurais recorrentes resolvem esse problema. São redes com loops, permitindo que as informações persistam.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.3\linewidth]{figures/rnn_neuron}
+	\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		Uma rede neural recorrente pode ser imaginada como múltiplas \textbf{cópias da mesma rede}, cada uma passando uma mensagem a um sucessor. Considere o que acontece se desenrolarmos o loop:
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/rnn_neuron_loop}
+		\end{figure}
+	Uma rede neural recorrente desenrolada. Essa natureza de cadeia revela que redes neurais recorrentes estão intimamente relacionadas a sequências e listas. \\
+	Definimos o total de $X_t$ que a rede terá, não é indefinido.
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes}
+		\begin{itemize}
+			\item Como são vários neurônios em conjunto, temos que dar atenção de como atualizar os pesos e qual o impacto destes neurônios
+			\item Gradiente desaparecendo (vanish gradient): Pode-se usar o Backpropagation through time BPTT que atualiza os pesos de frente para trás no tempo.
+			\item Xavier initialization: inicialização de pesos. É o mesmo Glorot.
+			\item LSTM
+			\item Exploding gradient: Contrário do Vanish. onde o valor do gradiente fique muito grande, não chegando no mínimo global. Usa o RMSProp que calcula a taxa de aprendizado baseado no gradiente.
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{Redes Neurais Recorrentes - Problemas}
+		\textbf{Problema 01:} Por exemplo, considere um modelo de linguagem tentando prever a próxima palavra com base nas anteriores. Se estamos tentando prever a última palavra em \textit{``as nuvens estão no \textit{céu}''}, não precisamos de mais nenhum contexto — é bastante óbvio que a próxima palavra será o \textbf{céu}. \\
+		Nesses casos, onde a lacuna entre as informações relevantes e o local necessário é pequena, os RNNs podem aprender a usar as informações passadas. \\
+		\textbf{Problema 02:} Mas também há casos em que precisamos de mais contexto. Considere tentar prever a última palavra no texto ``Eu cresci na França… falo fluentemente francês ''. \textbf{Não pode ser inglês?} \\
+		Para isso, precisaríamos de muito mais informações anteriores, o que pode tornar uma RNN muito grande e até incapazes de aprender a conectar as informações. \\
+		\textbf{LSTM resolvem este problema}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{LSTM}
+		\begin{itemize}
+			\item Adiciona células de memória na rede neural e manipula essas células
+			\item Aprende dependências de longo prazo
+		\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/lstm}
+		\caption{O módulo de repetição em um RNN padrão contém uma única camada}
+	\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{LSTM}
+		Os LSTMs também possuem esta estrutura de cadeia, mas o módulo de repetição possui uma estrutura diferente. Em vez de ter uma única camada de rede neural, existem quatro, interagindo de uma maneira muito especial.
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/lstm1}
+			\caption{O módulo de repetição em um LSTM contém quatro camadas de interação}
+		\end{figure}
+		
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{LSTM}
+		Os LSTMs também possuem esta estrutura de cadeia, mas o módulo de repetição possui uma estrutura diferente. Em vez de ter uma única camada de rede neural, existem quatro, interagindo de uma maneira muito especial.
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/lstm2}
+		\end{figure}
+		Os círculos cor-de-rosa representam operações pontuais, como a adição de vetores, enquanto as caixas amarelas são camadas de redes neurais aprendidas. As linhas que se fundem denotam a concatenação, enquanto uma linha bifurcada denota que seu conteúdo está sendo copiado e as cópias vão para locais diferentes.
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{A idéia central por trás dos LSTMs}
+		A chave para os LSTMs é o estado da célula, a linha horizontal que passa pela parte superior do diagrama. \\
+		O estado da célula é como uma correia transportadora. Ele percorre toda a cadeia, com apenas algumas interações lineares menores. É muito fácil que as informações fluam sem alterações.
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{figures/lstm3}
+		\end{figure}
+		O LSTM tem a capacidade de remover ou adicionar informações ao estado da célula, cuidadosamente reguladas por estruturas chamadas portas.		
+		Os portões são uma forma de, opcionalmente, deixar passar as informações. Eles são compostos de uma camada de rede neural sigmóide e uma operação de multiplicação pontual.
+	\end{block}
+\end{frame}
+%==========================================================================================
+\begin{frame}
+	\frametitle{RNN - Redes Neurais Recorrentes}
+	\begin{block}{A idéia central por trás dos LSTMs}
+		Os portões são uma forma de, opcionalmente, deixar passar as informações. Eles são compostos de uma camada de rede neural sigmóide e uma operação de multiplicação pontual.
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.15\linewidth]{figures/lstm4}
+		\end{figure}
+		A camada sigmoide produz números entre zero e um, descrevendo quanto de cada componente deve ser liberado. Um valor de zero significa “não deixe nada passar”, enquanto um valor de um significa “deixe tudo passar!”
+			
+		Um LSTM possui três desses portões, para proteger e controlar o estado da célula.
+		
+		\href{https://medium.com/@web2ajax/redes-neurais-recorrentes-lstm-b90b720dc3f6}{\beamergotobutton{LSTM}}
+		\href{https://colah.github.io/posts/2015-08-Understanding-LSTMs/}{\beamergotobutton{LSTM}}
+	\end{block}
+\end{frame}
+%==========================================================================================
+
+
+
+
+
+
 \section{VAES - Variational AutoEnconders}
 
 \begin{frame}
